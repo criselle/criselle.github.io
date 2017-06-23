@@ -48,29 +48,29 @@ sap.ui.controller("maxicareactuarial.detail.newQuotation.tab.otherArrangement.hy
 			oView.byId("idMaxAmountInpt").setEnabled(bApplicable);
 		}
 		//Max Loss Ratio
-		oView.byId("idMaxLossRatioBtn").setEnabled(bApplicable);
+		oView.byId("idMaxLossRatioRadio").setEnabled(bApplicable);
 		oView.byId("idMaxLossRatioInpt").setEnabled(bApplicable);
 		//Max Amount
-		oView.byId("idMaxAmountBtn").setEnabled(bApplicable);
+		oView.byId("idMaxAmountRadio").setEnabled(bApplicable);
 	},
 	
 	onPressMaxLossRatio: function(oEvent){
 		var oView = this.getView();
 		//Max Amount
-		oView.byId("idMaxAmountBtn").setEnabled(true);
+		oView.byId("idMaxAmountRadio").setEnabled(true);
 		oView.byId("idMaxAmountInpt").setEnabled(false);
 		//Max Loss Ratio
-		oView.byId("idMaxLossRatioBtn").setEnabled(true);
+		oView.byId("idMaxLossRatioRadio").setEnabled(true);
 		oView.byId("idMaxLossRatioInpt").setEnabled(true);
 	},
 	
 	onPressMaxAmount: function(oEvent){
 		var oView = this.getView();
 		//Max Amount
-		oView.byId("idMaxAmountBtn").setEnabled(true);
+		oView.byId("idMaxAmountRadio").setEnabled(true);
 		oView.byId("idMaxAmountInpt").setEnabled(true);
 		//Max Loss Ratio
-		oView.byId("idMaxLossRatioBtn").setEnabled(true);
+		oView.byId("idMaxLossRatioRadio").setEnabled(true);
 		oView.byId("idMaxLossRatioInpt").setEnabled(false);
 	}
 

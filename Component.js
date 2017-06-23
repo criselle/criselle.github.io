@@ -48,17 +48,17 @@ sap.ui.define([
 					pattern: "planList",
 					target: ["quotationList100", "planList100"]
 				},{
-                	name: "createNewPlan100",
-                	pattern: "planList/createNewPlan",
-                	target: ["createNewPlan100", "planDetails100"]
+                	name: "planItem100",
+                	pattern: "planList/planItem",
+                	target: ["planItem100", "planDetails100"]
                 },{
                 	name: "planDetails100",
-                	pattern: "planList/createNewPlan/planDetails",
-                	target: ["createNewPlan100", "planDetails100"]
+                	pattern: "planList/planItem/planDetails",
+                	target: ["planItem100", "planDetails100"]
                 },{
                 	name: "membershipEligibility100",
                 	pattern: "planList/createNewPlan/membershipEligibility",
-                	target: ["createNewPlan100", "membershipEligibility100"]
+                	target: ["planItem100", "membershipEligibility100"]
                 }],
                 
                 targets: {
@@ -97,8 +97,8 @@ sap.ui.define([
                 		controlAggregation: "detailPages",
                 		viewLevel: 1
                 	},
-                	createNewPlan100: {
-                		viewName: "master.createNewPlan100",
+                	planItem100: {
+                		viewName: "master.planItem100",
                 		controlAggregation: "masterPages",
                 		viewLevel: 1
                 	},

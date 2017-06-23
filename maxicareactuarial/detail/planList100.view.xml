@@ -3,56 +3,50 @@
 		xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="Company Name">
 		<content>
-			<f:Form id="PlanListForm" editable="true">
-				<f:layout>
-					<f:ResponsiveGridLayout
-						labelSpanXL="3"
-						labelSpanL="3"
-						labelSpanM="3"
-						labelSpanS="12"
-						adjustLabelSpan="false"
-						emptySpanXL="3"
-						emptySpanL="3"
-						emptySpanM="3"
-						emptySpanS="0"
-						columnsXL="1"
-						columnsL="1"
-						columnsM="1"
-						singleContainerFullSize="false" />
-				</f:layout>
-				<f:formContainers>
-					<f:FormContainer>
-						<f:formElements>
-							<f:FormElement>
-								<Button id="idViewPolicyBtn" text="View Policy"
-										press="onPressViewPolicy">
-									<layoutData>
-										<l:GridData span="XL2 L2 M2 S6" />
-									</layoutData>
-								</Button>
-								<Button id="idComparePolicyBtn" text="Compare Policy"
-										press="onPressComparePolicy">
-									<layoutData>
-										<l:GridData span="XL2 L2 M2 S6" />
-									</layoutData>
-								</Button>
-								<Button id="idCreatePlanBtn" text="Create New Plan"
-										press="onPressCreatePlan">
-									<layoutData>
-										<l:GridData indent="XL4 L4 M4 S0" span="XL2 L2 M2 S6" />
-									</layoutData>
-								</Button>
-								<Button id="idCopyAsBtn" text="Copy As"
-										press="onPressCopyAs">
-									<layoutData>
-										<l:GridData span="XL2 L2 M2 S6" />
-									</layoutData>
-								</Button>
-							</f:FormElement>
-						</f:formElements>
-					</f:FormContainer>
-				</f:formContainers>
-			</f:Form>
+			<Table id="idPlanListTable" inset="false" items="" mode="MultiSelect">
+				<columns>
+					<Column hAlign="Center">
+						<Text text="Material" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Rank Classification" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Contract Type" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Premium" />
+					</Column>
+					<Column/>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle" type="Navigation" press="onPressItemList">
+						<cells>
+							<ObjectIdentifier title="Maxi Platinum Principal"
+											type="Active"/>
+							<Text
+								text="Supervisor" />
+							<Text
+								text="Full HMO" />
+							<Text
+								text="10000" />
+							<Button icon="sap-icon://delete"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
 		</content>
+		<footer>
+			<Bar>
+				<contentLeft>
+					<Button id="idViewPolicyBtn" text="View Policy" press="onPressViewPolicy"/>
+					<Button id="idComparePolicyBtn" text="Compare Policy" press="onPressComparePolicy"/>
+				</contentLeft>
+				<contentRight>
+					<Button id="idCreatePlanBtn" text="Create New Plan" press="onPressCreatePlan"/>
+					<Button id="idCopyAsBtn" text="Copy As" press="onPressCopyAs"/>
+				</contentRight>
+			</Bar>
+		</footer>
 	</Page>
 </core:View>

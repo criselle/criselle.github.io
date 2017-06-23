@@ -36,12 +36,12 @@
 						</f:FormElement>
 						<f:FormElement label="">
 							<f:fields>
-								<Button id="idMaxLossRatioBtn" text="Maximum Loss Ratio"
-										press="onPressMaxLossRatio">
+								<RadioButton id="idMaxLossRatioRadio" groupName="hybridRadioA"
+											text="Maximum Loss Ratio" select="onPressMaxLossRatio">
 									<layoutData>
 										<l:GridData span="XL3 L3 M3 S6" />
 									</layoutData>
-								</Button>
+								</RadioButton>
 								<Input value="" id="idMaxLossRatioInpt">
 									<layoutData>
 										<l:GridData span="XL3 L3 M3 S6" />
@@ -51,12 +51,12 @@
 						</f:FormElement>
 						<f:FormElement label="">
 							<f:fields>
-								<Button id="idMaxAmountBtn" text="Maximum Amount"
-										press="onPressMaxAmount">
+								<RadioButton id="idMaxAmountRadio" groupName="hybridRadioA"
+											text="Maximum Amount" select="onPressMaxAmount">
 									<layoutData>
 										<l:GridData span="XL3 L3 M3 S6" />
 									</layoutData>
-								</Button>
+								</RadioButton>
 								<Input value="" id="idMaxAmountInpt">
 									<layoutData>
 										<l:GridData span="XL3 L3 M3 S6" />

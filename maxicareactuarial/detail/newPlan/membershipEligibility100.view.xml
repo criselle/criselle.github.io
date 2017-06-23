@@ -3,7 +3,7 @@
 		xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="Member Eligibility">
 		<content>
-			<ObjectHeader binding="" title="Company Name"
+			<ObjectHeader class="custom-padding" binding="" title="Company Name"
 						  number="Quotation No 0001">
 				<statuses>
 					<ObjectStatus text="Plan ID"/>
@@ -13,6 +13,250 @@
 					<ObjectAttribute text="Company TIN" />
 				</attributes>
 			</ObjectHeader>
+			<VBox class="sapUiSmallMargin">
+				<f:Form id="idMembershipEligibilityForm1" editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="3"
+							adjustLabelSpan="false"
+							emptySpanXL="3"
+							emptySpanL="3"
+							emptySpanM="3"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Number of Enrollees">
+									<Input value="" id="idNumOfEnrolleesInpt" />
+								</f:FormElement>
+								<f:FormElement label="Contributory">
+									<Switch id="idContributorySwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangeContributory">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6" />
+										</layoutData>
+									</Switch>
+								</f:FormElement>
+								<f:FormElement label="Voluntary">
+									<Switch id="idVoluntarySwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangeVoluntary">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6" />
+										</layoutData>
+									</Switch>
+								</f:FormElement>
+								<f:FormElement label="Seafarers">
+									<Switch id="idSeafarersSwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangeSeafarers">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6" />
+										</layoutData>
+									</Switch>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+				<Panel id="idAgeEligibilityPanel" width="auto">
+					<Toolbar>
+						<Title level="H3" text="Age Eligibility" />
+					</Toolbar>
+					<Table id="idAgeEligibilityTable" inset="false" items="">
+						<columns>
+							<Column/>
+							<Column hAlign="Center">
+								<Text text="Minimum" />
+							</Column>
+							<Column/>
+							<Column hAlign="Center">
+								<Text text="Maximum" />
+							</Column>
+							<Column/>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle">
+								<cells>
+									<Text text="Principals" />
+									<Input value="" id="idPrincipalsMinAEInpt" />
+									<Select id="idPrincipalsMinAESelect" selectedKey="">
+										<items>
+											<core:Item text="Day/s" key="Day/s"/>
+											<core:Item text="Months/s" key="Month/s"/>
+											<core:Item text="Year/s" key="Year/s"/>
+										</items>
+									</Select>
+									<Input value="" id="idPrincipalsMaxAEInpt" />
+									<Select id="idPrincipalsMaxAESelect" selectedKey="">
+										<items>
+											<core:Item text="Day/s" key="Day/s"/>
+											<core:Item text="Months/s" key="Month/s"/>
+											<core:Item text="Year/s" key="Year/s"/>
+										</items>
+									</Select>
+								</cells>
+							</ColumnListItem>
+							<ColumnListItem vAlign="Middle">
+								<cells>
+									<Text text="Minor Dependents" />
+									<Input value="" id="idMinorDepMinAEInpt" />
+									<Select id="idMinorDepMinAESelect" selectedKey="">
+										<items>
+											<core:Item text="Day/s" key="Day/s"/>
+											<core:Item text="Months/s" key="Month/s"/>
+											<core:Item text="Year/s" key="Year/s"/>
+										</items>
+									</Select>
+									<Input value="" id="idMinorDepMaxAEInpt" />
+									<Select id="idMinorDepMaxAESelect" selectedKey="">
+										<items>
+											<core:Item text="Day/s" key="Day/s"/>
+											<core:Item text="Months/s" key="Month/s"/>
+											<core:Item text="Year/s" key="Year/s"/>
+										</items>
+									</Select>
+								</cells>
+							</ColumnListItem>
+							<ColumnListItem vAlign="Middle">
+								<cells>
+									<Text text="Adult Dependents" />
+									<Input value="" id="idAdultDepMinAEInpt" />
+									<Select id="idAdultDepMinAESelect" selectedKey="">
+										<items>
+											<core:Item text="Day/s" key="Day/s"/>
+											<core:Item text="Months/s" key="Month/s"/>
+											<core:Item text="Year/s" key="Year/s"/>
+										</items>
+									</Select>
+									<Input value="" id="idAdultDepMaxAEInpt" />
+									<Select id="idAdultDepMaxAESelect" selectedKey="">
+										<items>
+											<core:Item text="Day/s" key="Day/s"/>
+											<core:Item text="Months/s" key="Month/s"/>
+											<core:Item text="Year/s" key="Year/s"/>
+										</items>
+									</Select>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</Panel>
+				<Panel id="idEligibleDepPanel" width="auto" class="custom-panel">
+					<Toolbar>
+						<Title level="H3" text="Eligible Dependents" />
+					</Toolbar>
+					<f:Form id="idEligibileDepForm1" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="3"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer title="Married Employees">
+								<f:formElements>
+									<f:FormElement label="Immediate">
+										<Switch id="idMEImmediateSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeMEImmediate">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S3" />
+											</layoutData>
+										</Switch>
+										<Select id="idMEImmediateSelect" selectedKey="">
+											<items>
+												<core:Item text="Spouse and children" key="Spouse and children"/>
+												<core:Item text="Spouse only" key="Spouse only"/>
+												<core:Item text="Children only" key="Children only"/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL6 L6 M6 S6" />
+											</layoutData>
+										</Select>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+					<f:Form id="idMarriedEmployeesForm" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement>
+										<CheckBox text="Parents">
+											<layoutData>
+												<l:GridData span="XL3 L3 M3 S6" />
+											</layoutData>
+										</CheckBox>	
+										<CheckBox text="Grandparents">
+											<layoutData>
+												<l:GridData span="XL3 L3 M3 S6" />
+											</layoutData>
+										</CheckBox>	
+										<CheckBox text="Nieces/Nephews">
+											<layoutData>
+												<l:GridData span="XL3 L3 M3 S6" />
+											</layoutData>
+										</CheckBox>	
+										<CheckBox text="Aunts/Uncles">
+											<layoutData>
+												<l:GridData span="XL3 L3 M3 S6" />
+											</layoutData>
+										</CheckBox>
+										<CheckBox text="Parents-in-law">
+											<layoutData>
+												<l:GridData span="XL3 L3 M3 S6" />
+											</layoutData>
+										</CheckBox>	
+										<CheckBox text="Grandchildren">
+											<layoutData>
+												<l:GridData span="XL3 L3 M3 S6" />
+											</layoutData>
+										</CheckBox>	
+										<CheckBox text="Cousins">
+											<layoutData>
+												<l:GridData span="XL3 L3 M3 S6" />
+											</layoutData>
+										</CheckBox>		
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</Panel>
+			</VBox>
 		</content>
 	</Page>
 </core:View>

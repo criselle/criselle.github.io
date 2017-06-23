@@ -3,7 +3,7 @@
 		xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="Plan Details">
 		<content>
-			<ObjectHeader binding="" title="Company Name"
+			<ObjectHeader class="custom-padding" binding="" title="Company Name"
 						  number="Quotation No 0001">
 				<statuses>
 					<ObjectStatus text="Plan ID"/>
