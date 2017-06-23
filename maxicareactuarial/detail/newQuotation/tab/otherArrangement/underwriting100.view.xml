@@ -1,0 +1,163 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.newQuotation.tab.otherArrangement.underwriting100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Toolbar>
+		<Title level="H3" text="Type of Underwriting" />
+	</Toolbar>
+	<VBox class="sapUiSmallMargin">
+		<f:Form id="TypeOfUnderwritingForm" editable="true">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="3"
+					emptySpanL="3"
+					emptySpanM="3"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="Principals">
+							<f:fields>
+								<Select id="idPrincipalsInitialSelect" selectedKey=""
+										placeholder="Initial">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Select>
+								<Select id="idPrincipalsAdditionalSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Select>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Dependents">
+							<f:fields>
+								<Select id="idDependentsInitialSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Select>
+								<Select id="idDependentsAdditionalSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Select>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<Toolbar>
+			<Title level="H3" text="ID Team" />
+		</Toolbar>
+		<f:Form id="IDTeamForm1" editable="true">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="1"
+					adjustLabelSpan="false"
+					emptySpanXL="3"
+					emptySpanL="3"
+					emptySpanM="3"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer title="Company Name to Reflect on ID Cards">
+					<f:formElements>
+						<f:FormElement label="">
+							<RadioButton groupName="underwritingRadioA" text="Same as Company Name"
+										select="onPressSameAsCNUnderwriting"/>
+						</f:FormElement>
+						<f:FormElement label="">
+							<RadioButton groupName="underwritingRadioA" text="Per Affiliate"
+										select="onPressPAUnderWriting"/>
+						</f:FormElement>
+						<f:FormElement label="">
+							<RadioButton id="idOthersUnderwritingRadio" groupName="underwritingRadioA"
+										text="Others" select="onPressOthersUnderwriting">
+								<layoutData>
+									<l:GridData span="XL2 L2 M2 S4" />
+								</layoutData>
+							</RadioButton>
+							<Input value="" id="idOthersUnderwritingInpt">
+								<layoutData>
+									<l:GridData span="XL4 L4 M4 S7" />
+								</layoutData>
+							</Input>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<f:Form id="IDTeamForm2" editable="true">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="5"
+					adjustLabelSpan="false"
+					emptySpanXL="3"
+					emptySpanL="3"
+					emptySpanM="3"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="MRC Card">
+							<Switch id="idMRCSwitch" state="false" customTextOn="Yes"
+									customTextOff="No">
+								<layoutData>
+									<l:GridData span="XL3 L3 M3 S6" />
+									<FlexItemData growFactor="1" />
+								</layoutData>
+							</Switch>
+						</f:FormElement>
+						<f:FormElement label="Co-Branding">
+							<Switch id="idCoBrandingSwitch" state="false" customTextOn="Yes"
+									customTextOff="No">
+								<layoutData>
+									<l:GridData span="XL3 L3 M3 S6" />
+								</layoutData>
+							</Switch>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+	</VBox>
+</core:View>

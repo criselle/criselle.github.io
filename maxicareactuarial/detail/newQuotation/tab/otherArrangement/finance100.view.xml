@@ -1,0 +1,133 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.newQuotation.tab.otherArrangement.finance100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Toolbar>
+		<Title level="H3" text="Finance" />
+	</Toolbar>
+	<VBox class="sapUiSmallMargin">
+		<f:Form id="FinanceForm" editable="true">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="3"
+					emptySpanL="3"
+					emptySpanM="3"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="Billing To">
+							<f:fields>
+								<Select id="idBillingToSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Billing Cycle">
+							<Select id="idBillingCycleSelect" selectedKey="">
+								<items>
+									<core:Item text="" key=""/>
+								</items>
+							</Select>
+						</f:FormElement>
+						<f:FormElement label="Credit Term">
+							<f:fields>
+								<Input value="" id="idCreditTermInpt">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Input>
+								<Select id="idCreditTermSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Select>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Payment First">
+							<Switch id="idPaymentSwitch" state="false" customTextOn="Yes"
+									customTextOff="No">
+								<layoutData>
+									<l:GridData span="XL3 L3 M3 S6" />
+									<FlexItemData growFactor="1" />
+								</layoutData>
+							</Switch>
+						</f:FormElement>
+						<f:FormElement label="Pro-rating of Member Fee">
+							<Select id="idProratingSelect" selectedKey="">
+								<items>
+									<core:Item text="" key=""/>
+								</items>
+							</Select>
+						</f:FormElement>
+						<f:FormElement label="Treatment of Unused MFs">
+							<Input value="" id="idTreatmentOfUnusedMFsInpt"/>
+						</f:FormElement>
+						<f:FormElement label="Replenishment of Revolving Fund">
+							<RadioButton groupName="financeRadioA" text="based on LOA"
+										select="">
+								<layoutData>
+									<l:GridData span="XL3 L3 M3 S6" />
+								</layoutData>
+							</RadioButton>
+							<RadioButton groupName="financeRadioA" text="based on Claims"
+										select="">
+								<layoutData>
+									<l:GridData span="XL3 L3 M3 S6" />
+								</layoutData>
+							</RadioButton>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+				<f:FormContainer title="Delivery Instruction">
+					<f:formElements>
+						<f:FormElement label="Email (SMTP)">
+							<Switch id="idEmailSwitch" state="false" customTextOn="Yes"
+									customTextOff="No">
+								<layoutData>
+									<l:GridData span="XL3 L3 M3 S6" />
+								</layoutData>
+							</Switch>
+						</f:FormElement>
+						<f:FormElement label="Courier">
+							<Switch id="idCourierSwitch" state="false" customTextOn="Yes"
+									customTextOff="No">
+								<layoutData>
+									<l:GridData span="XL3 L3 M3 S6" />
+								</layoutData>
+							</Switch>
+						</f:FormElement>
+						<f:FormElement label="Claims Prescription Period">
+							<Select id="idClaimsPrescriptSelect" selectedKey="">
+								<items>
+									<core:Item text="" key=""/>
+								</items>
+							</Select>
+						</f:FormElement>
+						<f:FormElement label="Required Documents for Claims Processing">
+							<Select id="idReqDocsForCPSelect" selectedKey="">
+								<items>
+									<core:Item text="" key=""/>
+								</items>
+							</Select>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+	</VBox>
+</core:View>

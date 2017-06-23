@@ -1,0 +1,37 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.newQuotation.accountInformation100"
+		xmlns:html="http://www.w3.org/1999/xhtml" xmlns:c="sap.ui.commons">
+	<Page title="Account Information">
+		<content>
+			<IconTabBar id="idAccountInformationIconTabBar" select="handleIconTabBarSelect"
+						class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter icon="sap-icon://approvals" text="General Information"
+									key="GeneralInformation">
+						<mvc:XMLView viewName="maxicareactuarial.detail.newQuotation.tab.accountInformation.generalInformation100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://employee-approvals" text="Company Signatory"
+								key="CompanySignatory">
+						<mvc:XMLView viewName="maxicareactuarial.detail.newQuotation.tab.accountInformation.companySignatory100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://collaborate" text="Contact Person"
+								key="ContactPerson">
+						<mvc:XMLView viewName="maxicareactuarial.detail.newQuotation.tab.accountInformation.contactPerson100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://documents" text="Distribution Channel"
+								key="DistributionChannel">
+						<mvc:XMLView viewName="maxicareactuarial.detail.newQuotation.tab.accountInformation.distributionChannel100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://documents" text="Coverage Information"
+								key="CoverageInformation">
+						<mvc:XMLView viewName="maxicareactuarial.detail.newQuotation.tab.accountInformation.coverageInformation100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://documents" text="Other Information"
+								key="OtherInformation">
+						<mvc:XMLView viewName="maxicareactuarial.detail.newQuotation.tab.accountInformation.otherInformation100"/>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</core:View>

@@ -1,0 +1,648 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.newQuotation.clinicManagement100"
+		xmlns:html="http://www.w3.org/1999/xhtml" xmlns:tnt="sap.tnt">
+	<Page title="Clinic Management">
+		<content>
+			<ObjectHeader class="custom-padding" binding="" title="Company Name"
+						  number="Quotation No" numberUnit="######" >
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+			<VBox id="ClinicManagementVBox" class="sapUiSmallMargin">
+				<Panel width="auto">
+					<Toolbar>
+						<Title level="H3" text="Clinic Management" />
+					</Toolbar>
+					<l:Grid
+						class="sapUiSmallMarginTop"
+						hSpacing="2"
+						defaultIndent="XL3 L3 M3 S0"
+						defaultSpan="XL6 L6 M6 S12">
+						<l:content>
+							<SearchField width="90%" class="sapUiSmallMargin"/>
+						</l:content>
+					</l:Grid>
+					<f:Form id="ClinicManagementForm1" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="0"
+								labelSpanL="0"
+								labelSpanM="0"
+								labelSpanS="0"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement>
+										<f:fields>
+											<Button id="idAddClinicMgmtBtn" icon="sap-icon://add"
+													press="onPressAddClinicMgmt">
+												<layoutData>
+													<l:GridData indent="XL9 L9 M9 S0" span="XL1 L1 M1 S4" />
+												</layoutData>
+											</Button>
+											<Button id="idEditClinicMgmtBtn" icon="sap-icon://edit">
+												<layoutData>
+													<l:GridData span="XL1 L1 M1 S4" />
+												</layoutData>
+											</Button>
+											<Button id="idDeleteClinicMgmtBtn" icon="sap-icon://delete">
+												<layoutData>
+													<l:GridData span="XL1 L1 M1 S4" />
+												</layoutData>
+											</Button>
+										</f:fields>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+					<Table id="ClinicManagementTable1" inset="false" items="">
+					<columns>
+						<Column hAlign="Center">
+							<Text text="Personnel" />
+						</Column>
+						<Column hAlign="Center">
+							<Text text="Specialization" />
+						</Column>
+						<Column hAlign="Center">
+							<Text text="No. of Personnel" />
+						</Column>
+						<Column hAlign="Center">
+							<Text text="Inclusive of one hour break" />
+						</Column>
+						<Column hAlign="Center">
+							<Text text="Occurence of Schedule" />
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text
+									text="" />
+								<Text
+									text="" />
+								<Text
+									text="" />
+								<Text
+									text="" />
+								<Text
+									text="" />
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+				</Panel>
+				<Panel width="auto">
+					<f:Form id="ClinicManagementForm2" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="Medical Supplies and Equipment">
+										<Input value="" id="idMedSuppliesInpt"/>
+									</f:FormElement>
+									<f:FormElement label="Quantity">
+										<Input value="" id="idMedSuppliesQtyInpt" />
+									</f:FormElement>
+									<f:FormElement>
+										<Button id="idAddMedSuppliesBtn" icon="sap-icon://add">
+											<layoutData>
+												<l:GridData indent="XL6 L6 M6 S0" span="XL1 L1 M1 S4" />
+											</layoutData>
+										</Button>
+										<Button id="idEditMedSuppliesBtn" icon="sap-icon://edit">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S4" />
+											</layoutData>
+										</Button>
+										<Button id="idDeleteMedSuppliesBtn" icon="sap-icon://delete">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S4" />
+											</layoutData>
+										</Button>
+									</f:FormElement>
+									<f:FormElement>
+										<Table id="idMedSuppliesTable" inset="false" items="">
+												<columns>
+													<Column hAlign="Center">
+														<Text text="Medical Supplies and Equipment" />
+													</Column>
+													<Column hAlign="Center">
+														<Text text="Quantity" />
+													</Column>
+												</columns>
+												<items>
+													<ColumnListItem>
+														<cells>
+															<Text
+																text="" />
+															<Text
+																text="" />
+														</cells>
+													</ColumnListItem>
+												</items>
+												<layoutData>
+													<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+												</layoutData>
+											</Table>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</Panel>
+				<Panel width="auto">
+					<f:Form id="ClinicManagementForm3" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="Medicines">
+										<Input value="" id="idMedicineInpt"/>
+									</f:FormElement>
+									<f:FormElement label="Quantity">
+										<Input value="" id="idMedicineQtyInpt" />
+									</f:FormElement>
+									<f:FormElement>
+										<Button id="idAddMedicineBtn" icon="sap-icon://add">
+											<layoutData>
+												<l:GridData indent="XL6 L6 M6 S0" span="XL1 L1 M1 S4" />
+											</layoutData>
+										</Button>
+										<Button id="idEditMedicineBtn" icon="sap-icon://edit">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S4" />
+											</layoutData>
+										</Button>
+										<Button id="idDeleteMedicineBtn" icon="sap-icon://delete">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S4" />
+											</layoutData>
+										</Button>
+									</f:FormElement>
+									<f:FormElement>
+										<Table id="idMedicineTable" inset="false" items="">
+												<columns>
+													<Column hAlign="Center">
+														<Text text="Medicines" />
+													</Column>
+													<Column hAlign="Center">
+														<Text text="Quantity" />
+													</Column>
+												</columns>
+												<items>
+													<ColumnListItem>
+														<cells>
+															<Text
+																text="" />
+															<Text
+																text="" />
+														</cells>
+													</ColumnListItem>
+												</items>
+												<layoutData>
+													<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+												</layoutData>
+											</Table>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</Panel>
+				<f:Form id="ClinicManagementForm4" editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="3"
+							emptySpanL="3"
+							emptySpanM="3"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Waste Management">
+									<Input value="" id="idWasteMgmtInpt"/>
+								</f:FormElement>
+								<f:FormElement label="Quantity">
+									<Input value="" id="idWasteMgmtQtyInpt" />
+								</f:FormElement>
+								<f:FormElement>
+									<Button id="idAddWasteMgmtBtn" icon="sap-icon://add">
+										<layoutData>
+											<l:GridData indent="XL6 L6 M6 S0" span="XL1 L1 M1 S4" />
+										</layoutData>
+									</Button>
+									<Button id="idEditWasteMgmtBtn" icon="sap-icon://edit">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S4" />
+										</layoutData>
+									</Button>
+									<Button id="idDeleteWasteMgmtBtn" icon="sap-icon://delete">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S4" />
+										</layoutData>
+									</Button>
+								</f:FormElement>
+								<f:FormElement>
+									<Table id="idWasteMgmtTable" inset="false" items="">
+											<columns>
+												<Column hAlign="Center">
+													<Text text="Waste Management" />
+												</Column>
+												<Column hAlign="Center">
+													<Text text="Quantity" />
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<Text
+															text="" />
+														<Text
+															text="" />
+													</cells>
+												</ColumnListItem>
+											</items>
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+											</layoutData>
+										</Table>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+			</VBox>
+			<VBox id="ClinicManagementItemVBox" class="sapUiSmallMargin">
+				<tnt:ToolHeader>
+					<Bar>
+				    	<contentRight>
+						    <Button icon="sap-icon://decline" type="Transparent"
+						    		press="onPressCloseClinicMgmtItem">
+					            <layoutData>
+					                <OverflowToolbarLayoutData priority="NeverOverflow" />
+					            </layoutData>
+					        </Button>
+				   		</contentRight>
+					</Bar>
+			    </tnt:ToolHeader>
+				<f:Form id="ClinicManagementItemForm1" editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="3"
+							emptySpanL="3"
+							emptySpanM="3"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Personnel">
+									<Select id="idPersonnelSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</f:FormElement>
+								<f:FormElement label="Specialization">
+									<Select id="idSpecializationSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</f:FormElement>
+								<f:FormElement label="No. of Personnel">
+									<Input value="" id="idNumOfPersonnelInpt" />
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+				<Toolbar>
+					<Title level="H3" text="Schedule per shift" />
+				</Toolbar>
+				<f:Form id="ClinicManagementItemForm2" editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="3"
+							emptySpanL="3"
+							emptySpanM="3"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Monday">
+									<TimePicker id="idMonStartTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+									<Label text="to" textAlign="Center"
+											class="custom-label-align-small">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S2"/>
+										</layoutData>
+									</Label>
+									<TimePicker id="idMonEndTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+								</f:FormElement>
+								<f:FormElement label="Tuesday">
+									<TimePicker id="idTuesStartTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+									<Label text="to" textAlign="Center"
+											class="custom-label-align-small">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S2"/>
+										</layoutData>
+									</Label>
+									<TimePicker id="idTuesEndTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+								</f:FormElement>
+								<f:FormElement label="Wednesday">
+									<TimePicker id="idWedStartTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+									<Label text="to" textAlign="Center"
+											class="custom-label-align-small">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S2"/>
+										</layoutData>
+									</Label>
+									<TimePicker id="idWedEndTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+								</f:FormElement>
+								<f:FormElement label="Thursday">
+									<TimePicker id="idThuStartTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+									<Label text="to" textAlign="Center"
+											class="custom-label-align-small">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S2"/>
+										</layoutData>
+									</Label>
+									<TimePicker id="idThuEndTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+								</f:FormElement>
+								<f:FormElement label="Friday">
+									<TimePicker id="idFriStartTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+									<Label text="to" textAlign="Center"
+											class="custom-label-align-small">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S2"/>
+										</layoutData>
+									</Label>
+									<TimePicker id="idFriEndTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+								</f:FormElement>
+								<f:FormElement label="Saturday">
+									<TimePicker id="idSatStartTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+									<Label text="to" textAlign="Center"
+											class="custom-label-align-small">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S2"/>
+										</layoutData>
+									</Label>
+									<TimePicker id="idSatEndTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+								</f:FormElement>
+								<f:FormElement label="Sunday">
+									<TimePicker id="idSunStartTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+									<Label text="to" textAlign="Center"
+											class="custom-label-align-small">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S2"/>
+										</layoutData>
+									</Label>
+									<TimePicker id="idSunEndTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+								</f:FormElement>
+								<f:FormElement label="Occurence of the Above Schedule">
+									<Select id="idSchedOccurenceSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</f:FormElement>
+								<f:FormElement>
+									<f:fields>
+										<Label text="Inclusive of One Hour Break" textAlign="Center"
+												class="custom-label-align-small">
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL2 L2 M2 S6"/>
+											</layoutData>
+										</Label>
+										<Switch id="idOneHrInclusiveSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeOneHrInclusive">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S6" />
+											</layoutData>
+										</Switch>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+				<Toolbar>
+					<Title level="H3" text="Other Benefits" />
+				</Toolbar>
+				<f:Form id="ClinicManagementItemForm3" editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="5"
+							labelSpanL="5"
+							labelSpanM="5"
+							labelSpanS="6"
+							adjustLabelSpan="false"
+							emptySpanXL="3"
+							emptySpanL="3"
+							emptySpanM="3"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="13th month pay">
+									<Switch id="id13thMonthPaySwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChange13thMonthPay">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S6" />
+										</layoutData>
+									</Switch>
+								</f:FormElement>
+								<f:FormElement label="Uniform">
+									<Switch id="idUniformSwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangeUniform">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S6" />
+										</layoutData>
+									</Switch>
+								</f:FormElement>
+								<f:FormElement label="Desktop Computer">
+									<Switch id="idDesktopSwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangeDesktop">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S6" />
+										</layoutData>
+									</Switch>
+								</f:FormElement>
+								<f:FormElement label="Printer">
+									<Switch id="idPrinterSwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangePrinter">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S6" />
+										</layoutData>
+									</Switch>
+								</f:FormElement>
+								<f:FormElement>
+									<Button id="idAddClinicMgmtItemBtn" text="Add"
+											press="onPressAddClinicMgmtItem">
+										<layoutData>
+											<l:GridData indent="XL8 L8 M8 S0" span="XL2 L2 M2 S6" />
+										</layoutData>
+									</Button>
+									<Button id="idCancelClinicMgmtItemBtn" text="Cancel"
+											press="onPressCloseClinicMgmtItem">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S6" />
+										</layoutData>
+									</Button>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+			</VBox>
+		</content>
+	</Page>
+</core:View>

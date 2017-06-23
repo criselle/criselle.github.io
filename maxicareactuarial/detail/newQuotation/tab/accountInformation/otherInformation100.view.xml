@@ -1,0 +1,339 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:u="sap.ui.unified" xmlns:f="sap.ui.layout.form"
+		controllerName="maxicareactuarial.detail.newQuotation.tab.accountInformation.otherInformation100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel>
+			<f:Form id="UploadForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="0"
+						emptySpanL="0"
+						emptySpanM="0"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Terms of Reference">
+								<u:FileUploader id="idTermsOfReferenceUpload"
+												uploadUrl="upload/" width="100%"
+												uploadComplete="">
+								</u:FileUploader>
+								<Button id="idUploadTermsBtn" text="Upload"
+										press="onPressUploadTerms">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S6" />
+									</layoutData>
+								</Button>
+							</f:FormElement>
+							<f:FormElement label="Masterlist">
+								<u:FileUploader id="idMasterlistUpload"
+												uploadUrl="upload/" width="100%"
+												uploadComplete="">
+								</u:FileUploader>
+								<Button id="idUploadMasterlistBtn" text="Upload"
+										press="onPressUploadMasterlist">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S6" />
+									</layoutData>
+								</Button>
+							</f:FormElement>
+							<f:FormElement label="Utilization Report">
+								<u:FileUploader id="idUtilizationReportUpload"
+												uploadUrl="upload/" width="100%"
+												uploadComplete="">
+								</u:FileUploader>
+								<Button id="idUtilizationReportBtn" text="Upload"
+										press="onPressUploadUtilizationReport">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S6" />
+									</layoutData>
+								</Button>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<f:Form id="EnrolleesForm" editable="true">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="4"
+					emptySpanL="4"
+					emptySpanM="4"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="Number of Enrollees">
+							<f:fields>
+								<Input value="" id="idNumOfEnrolleesPrincipalsInpt"
+										placeholder="Principals">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+								<Input value="" id="idNumOfEnrolleesDependentsInpt"
+										placeholder="Dependents">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+								<Input value="" id="idNumOfEnrolleesTotalInpt"
+										placeholder="Total">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<Toolbar>
+			<Title level="H3" text="Age Profile" />
+		</Toolbar>
+		<f:Form id="AgeProfileForm" editable="true">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="4"
+					emptySpanL="4"
+					emptySpanM="4"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="Average Age">
+							<f:fields>
+								<Input value="" id="idAveAgePrincipalsInpt"
+										placeholder="Principals">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+								<Input value="" id="idAveAgeDependentsInpt"
+										placeholder="Dependents">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+								<Input value="" id="idAveAgeTotalInpt"
+										placeholder="Total">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<Toolbar>
+			<Title level="H3" text="Gender Distribution" />
+		</Toolbar>
+		<f:Form id="GenderDistributionForm" editable="true">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="4"
+					emptySpanL="4"
+					emptySpanM="4"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="Male">
+							<f:fields>
+								<Input value="" id="idMalePrincipalsInpt"
+										placeholder="Principals">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+								<Input value="" id="idMaleDependentsInpt"
+										placeholder="Dependents">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+								<Input value="" id="idMaleTotalInpt"
+										placeholder="Total">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Female">
+							<f:fields>
+								<Input value="" id="idFemalePrincipalsInpt"
+										placeholder="Principals">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+								<Input value="" id="idFemaleDependentsInpt"
+										placeholder="Dependents">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+								<Input value="" id="idFemaleTotalInpt"
+										placeholder="Total">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<Toolbar>
+			<Title level="H3" text="Marital Status Distribution" />
+		</Toolbar>
+		<f:Form id="MaritalStatusDistributionForm" editable="true">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="4"
+					emptySpanL="4"
+					emptySpanM="4"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="Single">
+							<f:fields>
+								<Input value="" id="idSinglePrincipalsInpt"
+										placeholder="Principals">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+								<Input value="" id="idSingleDependentsInpt"
+										placeholder="Dependents">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+								<Input value="" id="idSingsleTotalInpt"
+										placeholder="Total">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Married">
+							<f:fields>
+								<Input value="" id="idMarriedPrincipalsInpt"
+										placeholder="Principals">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+								<Input value="" id="idMarriedDependentsInpt"
+										placeholder="Dependents">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+								<Input value="" id="idMarriedTotalInpt"
+										placeholder="Total">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<Toolbar>
+			<Title level="H3" text="Employees Distribution by Location" />
+		</Toolbar>
+		<Table id="idEmployeesDistributionTable" inset="false" items="">
+			<columns>
+				<Column hAlign="Left">
+					<Text text="City/Municipality" />
+				</Column>
+				<Column hAlign="Center">
+					<Text text="Province" />
+				</Column>
+				<Column hAlign="Center">
+					<Text text="Region" />
+				</Column>
+				<Column hAlign="Center">
+					<Text text="Count" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<cells>
+						<Text
+							text="" />
+						<Text
+							text="" />
+						<Text
+							text="" />
+						<Text
+							text="" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</VBox>
+</core:View>

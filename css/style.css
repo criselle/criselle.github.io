@@ -1,0 +1,39 @@
+.custom-label-align-small {
+	margin-top: 10% !important;
+}
+
+.custom-label-align-medium {
+	margin-top: 20% !important;
+}
+
+#__xmlview3--idRebateTable-tblHead1, #__xmlview3--idRebateTable-tblHead2,
+#__xmlview3--idRenewalEscalationTable-tblHead1, #__xmlview3--idRenewalEscalationTable-tblHead2,
+#__xmlview3--idRenewalEscalationTable-tblHead3, #__xmlview2--idMedSuppliesTable-tblHead1,
+#__xmlview2--idMedSuppliesTable-tblHead2, #__xmlview2--idMedicineTable-tblHead1,
+#__xmlview2--idMedicineTable-tblHead2, #__xmlview2--idWasteMgmtTable-tblHead1,
+#__xmlview2--idWasteMgmtTable-tblHead2 {
+	padding: 0px;
+}
+
+#__text12 ol, #__text13 ol {
+	counter-reset: item
+}
+#__text12 li, #__text13 li {
+	display: block
+}
+#__text12 li:before, #__text13 li:before {
+	content: counters(item, ".") " ";
+	counter-increment: item
+}
+
+#__grid0 {
+    margin-bottom: -40px;
+}
+
+.custom-padding {
+    padding-bottom: 0px;
+}
+
+.custom-th-padding {
+	padding: 0px;
+}

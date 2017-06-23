@@ -1,0 +1,18 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.newPlan.membershipEligibility100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Member Eligibility">
+		<content>
+			<ObjectHeader binding="" title="Company Name"
+						  number="Quotation No 0001">
+				<statuses>
+					<ObjectStatus text="Plan ID"/>
+				</statuses>
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+		</content>
+	</Page>
+</core:View>

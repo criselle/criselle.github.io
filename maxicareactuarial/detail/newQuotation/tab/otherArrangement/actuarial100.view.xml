@@ -1,0 +1,95 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.newQuotation.tab.otherArrangement.actuarial100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Toolbar>
+		<Title level="H3" text="Service Agreement" />
+	</Toolbar>
+	<VBox class="sapUiSmallMargin">
+		<f:Form id="ServiceAgreementForm" editable="true">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="3"
+					emptySpanL="3"
+					emptySpanM="3"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="Service Agreement Type">
+							<Select id="idSATypeSelect" selectedKey="">
+								<items>
+									<core:Item text="" key=""/>
+								</items>
+							</Select>
+						</f:FormElement>
+						<f:FormElement label="SA Notarization">
+							<Select id="idSANotarizationSelect" selectedKey="">
+								<items>
+									<core:Item text="" key=""/>
+								</items>
+							</Select>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<Toolbar>
+			<Title level="H3" text="Company Name to Reflect on Service Agreement" />
+		</Toolbar>
+		<f:Form id="CNToRefectOnSAForm" editable="true">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="1"
+					adjustLabelSpan="false"
+					emptySpanXL="3"
+					emptySpanL="3"
+					emptySpanM="3"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="">
+							<RadioButton id="idSameAsCNActuarialRadio" groupName="actuarialRadioA"
+										text="Same as Company Name" select="onPressSameAsCNActuarial"/>
+						</f:FormElement>
+						<f:FormElement label="">
+							<RadioButton id="idPerAffiliateActuarialRadio" groupName="actuarialRadioA"
+										text="Per Affiliate" select="onPressPAActuarial"/>
+						</f:FormElement>
+						<f:FormElement label="">
+							<RadioButton id="idOthersActuarialRadio" groupName="actuarialRadioA"
+										text="Others" select="onPressOthersActuarial">
+								<layoutData>
+									<l:GridData span="XL2 L2 M2 S4" />
+								</layoutData>
+							</RadioButton>
+							<Input value="" id="idOthersActuarialInpt">
+								<layoutData>
+									<l:GridData span="XL4 L4 M4 S7" />
+								</layoutData>
+							</Input>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+	</VBox>
+</core:View>

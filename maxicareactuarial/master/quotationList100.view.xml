@@ -1,0 +1,36 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="maxicareactuarial.master.quotationList100" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Products">
+		<headerContent>
+     		<Button icon="sap-icon://filter" tooltip="Settings" press="" />
+		</headerContent>
+  		<subHeader>
+	        <Bar id="idSearchQuotation">
+	            <contentMiddle>
+	                <SearchField id="idSearchQuotationInput" liveChange="onSearchQuotation" width="100%" />
+	            </contentMiddle>
+	        </Bar>
+        </subHeader>
+		<content>
+			<List items="">
+				<items>
+					<ObjectListItem title="Corporate" type="Active"
+									press="onListItemPress">
+						<attributes>
+							<ObjectAttribute text="Quotation Version Number 1" />
+							<ObjectAttribute text="Date Created: August 27, 2000" />
+							<ObjectAttribute text="Average Premium: P 100000000.00" />
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button icon="sap-icon://add" press="onPressNewQuotation"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

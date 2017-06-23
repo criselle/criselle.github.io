@@ -1,0 +1,113 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.newPlan.planDetails100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Plan Details">
+		<content>
+			<ObjectHeader binding="" title="Company Name"
+						  number="Quotation No 0001">
+				<statuses>
+					<ObjectStatus text="Plan ID"/>
+				</statuses>
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+			<VBox class="sapUiSmallMargin">
+				<f:Form id="idPlanDetailsForm1" editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="3"
+							emptySpanL="3"
+							emptySpanM="3"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Plan Type">
+									<Select id="idPlanTypeSelect" selectedKey="">
+										<items>
+											<core:Item text="Platinum" key="Platinum"/>
+											<core:Item text="Gold" key="Gold"/>
+											<core:Item text="Silver" key="Silver"/>
+											<core:Item text="Bronze" key="Bronze"/>
+										</items>
+									</Select>
+								</f:FormElement>
+								<f:FormElement label="Member Type">
+									<RadioButton groupName="GroupA" text="Principal" />
+									<RadioButton groupName="GroupA" text="Dependent" />
+								</f:FormElement>
+								<f:FormElement label="Rank Classification">
+									<Input value="" id="idRankClassificationInpt"/>
+								</f:FormElement>
+								<f:FormElement label="Contract Type">
+									<Select id="idContractTypeSelect" selectedKey="">
+										<items>
+											<core:Item text="Full HMO" key="Full HMO"/>
+											<core:Item text="Unbundled IP" key="Unbundled IP"/>
+											<core:Item text="Unbundled OP" key="Unbundled OP"/>
+										</items>
+									</Select>
+								</f:FormElement>
+								<f:FormElement label="Availment Type">
+									<Select id="idAvailmentTypeSelect" selectedKey="">
+										<items>
+											<core:Item text="Hospital" key="Hospital"/>
+											<core:Item text="Clinic" key="Clinic"/>
+										</items>
+									</Select>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+				<Toolbar>
+					<Title level="H3" text="Funding Arrangement" />
+				</Toolbar>
+				<f:Form id="FundingArrangementForm" editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="4"
+							emptySpanL="4"
+							emptySpanM="4"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Inpatient">
+									<RadioButton groupName="GroupB" text="Full Risk" />
+									<RadioButton groupName="GroupB" text="ASO" />
+								</f:FormElement>
+								<f:FormElement label="Outpatient">
+									<RadioButton groupName="GroupC" text="Full Risk" />
+									<RadioButton groupName="GroupC" text="ASO" />
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+			</VBox>
+		</content>
+	</Page>
+</core:View>

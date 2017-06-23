@@ -1,0 +1,56 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.newQuotation.otherArrangement100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Other Arrangement">
+		<content>
+			<ObjectHeader binding="" title="Company Name"
+						  number="Quotation No" numberUnit="######" >
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+			<IconTabBar id="idOtherArrangementIconTabBar" select="handleIconTabBarSelect"
+						class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter icon="sap-icon://approvals" text="Underwriting"
+									key="Underwriting">
+						<mvc:XMLView viewName="maxicareactuarial.detail.newQuotation.tab.otherArrangement.underwriting100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Finance"
+									key="Finance">
+						<mvc:XMLView viewName="maxicareactuarial.detail.newQuotation.tab.otherArrangement.finance100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Claims"
+									key="Claims">
+						<mvc:XMLView viewName="maxicareactuarial.detail.newQuotation.tab.otherArrangement.claims100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Actuarial"
+									key="Actuarial">
+						<mvc:XMLView viewName="maxicareactuarial.detail.newQuotation.tab.otherArrangement.actuarial100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Experience Refund"
+									key="Experience Refund">
+						<mvc:XMLView viewName="maxicareactuarial.detail.newQuotation.tab.otherArrangement.experienceRefund100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Provision"
+									key="Provision">
+						<mvc:XMLView viewName="maxicareactuarial.detail.newQuotation.tab.otherArrangement.provision100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Hybrid Arrangement"
+									key="Hybrid Arrangement">
+						<mvc:XMLView viewName="maxicareactuarial.detail.newQuotation.tab.otherArrangement.hybridArrangement100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Lock-in Coverage"
+									key="Lock-in Coverage">
+						<mvc:XMLView viewName="maxicareactuarial.detail.newQuotation.tab.otherArrangement.lockInCoverage100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Refund Provision"
+									key="Refund Provision">
+						<mvc:XMLView viewName="maxicareactuarial.detail.newQuotation.tab.otherArrangement.refundProvision100"/>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</core:View>

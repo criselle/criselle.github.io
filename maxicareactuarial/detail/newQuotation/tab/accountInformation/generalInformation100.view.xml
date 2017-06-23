@@ -1,0 +1,62 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.newQuotation.tab.accountInformation.generalInformation100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Toolbar>
+		<Title level="H3" text="General Information" />
+	</Toolbar>
+	<VBox class="sapUiSmallMargin">
+		<f:Form id="GeneralInformationForm" editable="true">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="3"
+					emptySpanL="3"
+					emptySpanM="3"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="Client Code">
+							<f:fields>
+								<Input value="" id="idClientCodeInpt"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Client Name">
+							<f:fields>
+								<Input value="" id="idClientNameInpt" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Conglomerate Name">
+							<f:fields>
+								<Input value="" id="idConglomerateNameInpt"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Industry">
+							<f:fields>
+								<Input value="" id="idIndustryInpt"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Product Type">
+							<f:fields>
+								<Select id="idProductSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+	</VBox>
+</core:View>

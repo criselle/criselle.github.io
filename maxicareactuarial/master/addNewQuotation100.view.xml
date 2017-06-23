@@ -1,0 +1,15 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="maxicareactuarial.master.addNewQuotation100" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Add New Quotation" navButtonPress="onPressNavBack" showNavButton="true">
+		<content>
+			<List itemPress="onListItemPress">
+				<items>
+					<StandardListItem id="AccountInformation" title="Account Information" type="Active"/>
+					<StandardListItem id="ClinicManagement" title="Clinic Management" type="Active"/>
+					<StandardListItem id="OtherArrangement" title="Other Arrangement" type="Active"/>
+					<StandardListItem id="WellnessProgram" title="Wellness Program" type="Active"/>
+				</items>
+			</List>
+		</content>
+	</Page>
+</core:View>

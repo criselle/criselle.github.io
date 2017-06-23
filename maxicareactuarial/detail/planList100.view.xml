@@ -1,0 +1,58 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.planList100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Company Name">
+		<content>
+			<f:Form id="PlanListForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement>
+								<Button id="idViewPolicyBtn" text="View Policy"
+										press="onPressViewPolicy">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S6" />
+									</layoutData>
+								</Button>
+								<Button id="idComparePolicyBtn" text="Compare Policy"
+										press="onPressComparePolicy">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S6" />
+									</layoutData>
+								</Button>
+								<Button id="idCreatePlanBtn" text="Create New Plan"
+										press="onPressCreatePlan">
+									<layoutData>
+										<l:GridData indent="XL4 L4 M4 S0" span="XL2 L2 M2 S6" />
+									</layoutData>
+								</Button>
+								<Button id="idCopyAsBtn" text="Copy As"
+										press="onPressCopyAs">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S6" />
+									</layoutData>
+								</Button>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</content>
+	</Page>
+</core:View>

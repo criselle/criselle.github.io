@@ -1,0 +1,53 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.newQuotation.tab.accountInformation.coverageInformation100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Toolbar>
+		<Title level="H3" text="Coverage Information" />
+	</Toolbar>
+	<VBox class="sapUiSmallMargin">
+		<f:Form id="FormChange480_12120Dual"
+			editable="true">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="3"
+					emptySpanL="3"
+					emptySpanM="3"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer title="Coverage Period:">
+					<f:formElements>
+						<f:FormElement label="Effective Date">
+							<f:fields>
+								<DatePicker id="idEffectiveDateInpt" value=""/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Expiry Date">
+							<f:fields>
+								<DatePicker id="idExpiryDateInpt" value=""/>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+					<f:FormElement label="FlexBen">
+							<f:fields>
+								<Select id="idFlexBenSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:fields>
+						</f:FormElement>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+	</VBox>
+</core:View>

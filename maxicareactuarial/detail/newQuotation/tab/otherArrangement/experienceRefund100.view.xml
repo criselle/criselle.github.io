@@ -1,0 +1,167 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.newQuotation.tab.otherArrangement.experienceRefund100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Toolbar>
+		<Title level="H3" text="Experience Refund" />
+	</Toolbar>
+	<VBox class="sapUiSmallMargin">
+		<f:Form id="ExperienceRefundForm1" editable="true">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="3"
+					emptySpanL="3"
+					emptySpanM="3"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="Applicable">
+							<Switch id="idApplicableERSwitch" state="false" customTextOn="Yes"
+									customTextOff="No" change="onChangeApplicableER">
+								<layoutData>
+									<l:GridData span="XL3 L3 M3 S6" />
+									<FlexItemData growFactor="1" />
+								</layoutData>
+							</Switch>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<f:Form id="ExperienceRefundForm2" editable="true">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="0"
+					labelSpanL="0"
+					labelSpanM="0"
+					labelSpanS="0"
+					adjustLabelSpan="false"
+					emptySpanXL="1"
+					emptySpanL="1"
+					emptySpanM="1"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement>
+							<f:fields>
+								<Button id="idFormulaBtn" text="Formula"
+										press="onPressFormula">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S12" />
+									</layoutData>
+								</Button>
+								<Input value="" id="idFormulaInpt1">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S3" />
+									</layoutData>
+								</Input>
+								<Label text="(TCV *" textAlign="Right"
+									class="custom-label-align-medium">
+									<layoutData>
+										<l:GridData span="XL1 L1 M1 S2" />
+									</layoutData>
+								</Label>
+								<Input value="" id="idFormulaInpt2">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S3" />
+									</layoutData>
+								</Input>
+								<Label text="- Total Utilization)" textAlign="Left"
+										class="custom-label-align-small">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S2" />
+									</layoutData>
+								</Label>
+								<Select id="idFormulaSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S2" />
+									</layoutData>
+								</Select>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement>
+							<f:fields>
+								<Button id="idRebateBtn" text="Rebate"
+										press="onPressRebate">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S12" />
+									</layoutData>
+								</Button>
+								<Input value="" id="idRebateInpt1">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+								<Label text="Loss Ratio" textAlign="Right"
+										class="custom-label-align-small">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S2" />
+									</layoutData>
+								</Label>
+								<Input value="" id="idRebateInpt2">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</Input>
+								<Button id="idAddRebateBtn" icon="sap-icon://add"
+										press="onPressAddRebate">
+									<layoutData>
+										<l:GridData span="XL1 L1 M1 S1" />
+									</layoutData>
+								</Button>
+								<Button id="idDeleteRebateBtn" icon="sap-icon://delete"
+										press="onPressDeleteRebate">
+									<layoutData>
+										<l:GridData span="XL1 L1 M1 S1" />
+									</layoutData>
+								</Button>
+								<Table id="idRebateTable" inset="false" items="">
+									<columns>
+										<Column hAlign="Center">
+											<Text text="Rebate" />
+										</Column>
+										<Column hAlign="Center">
+											<Text text="Loss Ratio" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text
+													text="" />
+												<Text
+													text="" />
+											</cells>
+										</ColumnListItem>
+									</items>
+									<layoutData>
+										<l:GridData indent="XL2 L2 M2 S0" span="XL8 L8 M8 S12"/>
+									</layoutData>
+								</Table>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+	</VBox>
+</core:View>
