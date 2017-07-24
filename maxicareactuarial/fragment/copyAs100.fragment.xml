@@ -1,0 +1,76 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<Dialog title = "Copy As">
+		<l:Grid defaultSpan = "L12 M12 S12" width = "auto" id = "idGrid">
+    		<l:content>
+				<f:Form editable="true" class="custom-bg-form">
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="3"
+							emptySpanL="3"
+							emptySpanM="3"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="QTN Ver No.">
+									<Input value=""/>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+						<f:FormContainer title="Copy Quotation From">
+							<f:formElements>
+								<f:FormElement label="QTN Ver No.">
+									<Select id="idQtnVerNumSelect2" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+				<Table inset="false" items="{}">
+					<columns>
+						<Column hAlign="Center">
+							<Text text="Material" />
+						</Column>
+						<Column hAlign="Center">
+							<Text text="Rank Classification" />
+						</Column>
+						<Column hAlign="Center">
+							<Text text="Contract Type" />
+						</Column>
+						<Column hAlign="Center">
+							<Text text="Premium" />
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem vAlign="Middle">
+							<cells>
+								<Text text=""/>
+								<Text text=""/>
+								<Text text=""/>
+								<Text text=""/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</l:content>
+		</l:Grid>
+		<buttons>
+		    <Button text="Close" press="onPressCloseDialog"/>
+		    <Button text="Copy As" press="onPressCopyAs" type="Accept"/>
+	    </buttons>
+	</Dialog>
+</core:FragmentDefinition>

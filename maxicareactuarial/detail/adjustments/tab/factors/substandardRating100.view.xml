@@ -1,0 +1,86 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" 
+		controllerName="maxicareactuarial.detail.adjustments.tab.factors.substandardRating100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel expandable="true" expanded="true" id="idOveragedEnrolleesPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Overaged Enrollees"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idOveragedEnrolleesForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="66-70 years old">
+								<Input value="" id="id6670yoInpt"/>
+							</f:FormElement>
+							<f:FormElement label="71-75 years old">
+								<Input value="" id="id7175yoInpt"/>
+							</f:FormElement>
+							<f:FormElement label="76 years old and above">
+								<Input value="" id="id76yoAboveInpt"/>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idExtendedDependentsPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Extended Dependents"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idExtendedDependentsForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Adult (Parents, Grandparents, etc.)">
+								<Input value="" id="idAdultInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Children (Siblings, Nieces, Nephews, etc)">
+								<Input value="" id="idChildrenInpt"/>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+	</VBox>
+</core:View>

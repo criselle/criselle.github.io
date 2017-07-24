@@ -6,15 +6,6 @@
 	margin-top: 20% !important;
 }
 
-#__xmlview3--idRebateTable-tblHead1, #__xmlview3--idRebateTable-tblHead2,
-#__xmlview3--idRenewalEscalationTable-tblHead1, #__xmlview3--idRenewalEscalationTable-tblHead2,
-#__xmlview3--idRenewalEscalationTable-tblHead3, #__xmlview2--idMedSuppliesTable-tblHead1,
-#__xmlview2--idMedSuppliesTable-tblHead2, #__xmlview2--idMedicineTable-tblHead1,
-#__xmlview2--idMedicineTable-tblHead2, #__xmlview2--idWasteMgmtTable-tblHead1,
-#__xmlview2--idWasteMgmtTable-tblHead2 {
-	padding: 0px;
-}
-
 #__text12 ol, #__text13 ol {
 	counter-reset: item
 }
@@ -34,10 +25,77 @@
     padding-bottom: 0px;
 }
 
-.custom-th-padding {
+.sapMListTblCell .sapMListTblHeaderCell {
 	padding: 0px;
 }
 
 .custom-panel {
 	padding-top: 20px;
+}
+
+.custom-panel-bottom .sapMPanelContent {
+	border-bottom: none !important;
+}
+
+.custom-title {
+ 	text-decoration: underline;
+	padding-top: 8%;
+}
+
+.custom-title-padding {
+	padding-top: 3%;
+	padding-bottom: 2%;
+}
+
+.custom-form-title {
+	padding-top: 4%;
+	padding-bottom: 3%;
+	margin-right: 100px;
+}
+
+.custom-top-zero {
+	padding-top: 0px;
+}
+
+.sapMCrslControls.sapMCrslControlsTop, .sapMCrslControlsNoArrows.sapMCrslControlsTop {
+    background: none;
+    border-bottom: none;
+}
+
+.custom-title-top {
+	padding-top: 14px;
+}
+
+.custom-numbering {
+    font-size: 50px;
+}
+
+.custom-margin-left {
+	margin-left: 30px;
+}
+
+.custom-title-exlimit {
+	margin-left: 30px;
+	padding-top: 4%;
+	padding-bottom: 3%;
+	text-decoration: underline;
+}
+
+.custom-title-exlimit {
+	margin-left: 30px;
+	padding-top: 4%;
+	padding-bottom: 3%;
+	text-decoration: underline;
+}
+
+.custom-padding-zero {
+	padding: 0px;
+}
+
+.sapMLabel {
+	white-space: normal !important;
+}
+
+.custom-bg-form {
+	background-color: white;
 }

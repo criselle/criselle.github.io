@@ -1,0 +1,27 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" 
+		controllerName="maxicareactuarial.detail.adjustments.tab.benefits.conditions100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel id="idConditionsPanel" width="auto" class="custom-panel-bottom">
+			<Table id="idConditionsTable" inset="false" items="{}">
+				<columns>
+					<Column hAlign="Center">
+						<Text text="Benefits" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Cost" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="" />
+							<Input value=""/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+	</VBox>
+</core:View>

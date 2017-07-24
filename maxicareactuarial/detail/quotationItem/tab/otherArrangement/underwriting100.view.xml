@@ -1,0 +1,310 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.quotationItem.tab.otherArrangement.underwriting100"
+		xmlns:html="http://www.w3.org/1999/xhtml" xmlns:t="sap.ui.table">
+	<VBox class="sapUiSmallMargin">
+		<Panel expandable="true" expanded="true" id="idTypeOfUnderwritingPanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Type of Underwriting (Medical)"/>
+				</Toolbar>
+			</headerToolbar>
+			<Table id="idTypeOfUnderwritingTable" inset="false" items="">
+				<columns>
+					<Column/>
+					<Column hAlign="Center">
+						<Text text="Initial" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Additional" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Principals:" textAlign="Right"/>
+							<Switch id="idPrincipalsInitSwitch" state="false" customTextOn="Yes"
+									customTextOff="No"/>
+							<Switch id="idPrincipalsAddtlSwitch" state="false" customTextOn="Yes"
+									customTextOff="No"/>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Dependents:" textAlign="Right"/>
+							<Switch id="idDependentsInitSwitch" state="false" customTextOn="Yes"
+									customTextOff="No"/>
+							<Switch id="idDependentsAddtlSwitch" state="false" customTextOn="Yes"
+									customTextOff="No"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idTATForEnrollmentPanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="TAT for Enrollment"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idTATForEnrollmentForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Initial Enrollees">
+								<Input value="" id="idInitEnrolleesInpt">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Input>
+								<Select id="idInitEnrolleesSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Additional Enrollees">
+								<Input value="" id="idAddtlEnrolleesInpt">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Input>
+								<Select id="idAddtlEnrolleesSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idIDTeamPanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="ID Team"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idIDTeamForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Sub-category">
+								<Select id="idSubcategorySelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Type of ID Card">
+								<Select id="idTypeOfIDCardsSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="MRC Card">
+								<Switch id="idMRCCardSwitch" state="false" customTextOn="Yes"
+										customTextOff="No"/>
+							</f:FormElement>
+							<f:FormElement label="Card Details">
+								<Select id="idCardDetailsSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL4 L4 M4 S8" />
+									</layoutData>
+								</Select>
+								<Button id="idCardDetailsBtn" icon="sap-icon://add"
+										press="onPressAddCardDetails">
+									<layoutData>
+										<l:GridData span="XL1 L1 M1 S2" />
+									</layoutData>
+								</Button>
+								<Button id="idDeleteCardDetailsBtn" icon="sap-icon://delete"
+										press="onPressCardDetails">
+									<layoutData>
+										<l:GridData span="XL1 L1 M1 S2" />
+									</layoutData>
+								</Button>
+							</f:FormElement>
+							<f:FormElement>
+								<List id="idCardDetailsList" mode="MultiSelect"
+									  delete="handleDeleteCardDetails" enableBusyIndicator="true"
+									  headerText="Card Details" growing="true" items="{}" >
+									<StandardListItem title=""/>
+									<layoutData>
+										<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12" />
+									</layoutData>
+								</List>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Company Name to Reflect on ID Cards" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement label="">
+								<RadioButton groupName="underwritingRadioA" text="Same as Company Name"
+											select="onPressSameAsCNUnderwriting"/>
+							</f:FormElement>
+							<f:FormElement label="">
+								<RadioButton groupName="underwritingRadioA" text="Per Affiliate"
+											select="onPressPAUnderWriting"/>
+							</f:FormElement>
+							<f:FormElement label="">
+								<RadioButton id="idOthersUnderwritingRadio" groupName="underwritingRadioA"
+											text="Others:" select="onPressOthersUnderwriting">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</RadioButton>
+								<Input value="" id="idOthersUnderwritingInpt">
+									<layoutData>
+										<l:GridData span="XL4 L4 M4 S7" />
+									</layoutData>
+								</Input>
+							</f:FormElement>
+							<f:FormElement label="Packaging Style">
+								<Select id="idPackagingStyleSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Transmittal Listing">
+								<Select id="idTransmittalListingSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Marketing Kit" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement>
+								<CheckBox text="LOD-MRC">
+									<layoutData>
+										<l:GridData indent="XL3 L3 M3 S0" span="XL4 L4 M4 S12" />
+									</layoutData>
+								</CheckBox>	
+								<CheckBox text="LOD-NON MRC">
+									<layoutData>
+										<l:GridData span="XL4 L4 M4 S12" />
+									</layoutData>
+								</CheckBox>	
+								<CheckBox text="Dental Booklet">
+									<layoutData>
+										<l:GridData indent="XL3 L3 M3 S0" span="XL4 L4 M4 S12" />
+									</layoutData>
+								</CheckBox>	
+								<CheckBox text="SOC-Summary of Coverage">
+									<layoutData>
+										<l:GridData span="XL4 L4 M4 S12" />
+									</layoutData>
+								</CheckBox>
+								<CheckBox text="CIF - Customer Information Form">
+									<layoutData>
+										<l:GridData indent="XL3 L3 M3 S0" span="XL4 L4 M4 S12" />
+									</layoutData>
+								</CheckBox>	
+								<CheckBox text="Brochure">
+									<layoutData>
+										<l:GridData span="XL4 L4 M4 S12" />
+									</layoutData>
+								</CheckBox>	
+								<CheckBox text="Others:">
+									<layoutData>
+										<l:GridData indent="XL3 L3 M3 S0" span="XL2 L2 M2 S4" />
+									</layoutData>
+								</CheckBox>
+								<Input value="" id="idOthersMKInpt">
+									<layoutData>
+										<l:GridData span="XL4 L4 M4 S8" />
+									</layoutData>
+								</Input>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="TAT for Release of ID Cards">
+								<Input value="" id="idTATReleaseInpt">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Input>
+								<Select id="idTATReleaseSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Cost of Onsite ID Distribution">
+								<Select id="idCostOnsiteSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Delivery Address">
+								<Select id="idDeliveryAddrSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>			
+		</Panel>
+	</VBox>
+</core:View>

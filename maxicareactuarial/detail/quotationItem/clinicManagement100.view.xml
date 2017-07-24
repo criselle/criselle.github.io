@@ -1,0 +1,586 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.quotationItem.clinicManagement100"
+		xmlns:html="http://www.w3.org/1999/xhtml" xmlns:tnt="sap.tnt" xmlns:t="sap.ui.table"
+		xmlns:cl="sap.ui.commons.layout">
+	<Page title="Clinic Management">
+		<content>
+			<ObjectHeader title="Company Name" backgroundDesign="Solid"
+						  number="Quotation No" numberUnit="######" >
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+			<VBox id="ClinicManagementVBox" class="sapUiSmallMargin">
+				<Panel id="idClinicManagementPanel" width="auto" class="custom-panel-bottom">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Clinic Management"/>
+						</Toolbar>
+					</headerToolbar>
+					<t:Table
+						id="idClinigMgmtTable"
+						selectionMode="MultiToggle"
+						rows="{}"
+						visibleRowCount="7"
+						enableCellFilter=""
+						filter=""
+						ariaLabelledBy="title"
+						class="sapUiSizeCozy">
+						<t:toolbar>
+							<Toolbar>
+								<ToolbarSpacer/>
+								<Button id="idAddClinicMgmtBtn" icon="sap-icon://add"
+										press="onPressAddClinicMgmt"/>
+								<Button id="idEditClinicMgmtBtn" icon="sap-icon://edit"
+										press="onPressEditClinicMgmt"/>
+								<Button id="idDeleteClinicMgmtBtn" icon="sap-icon://delete"
+										press="onPressDeleteClinicMgmt"/>
+								<ToolbarSeparator/>
+								<SearchField
+									placeholder="Search"
+									value=""
+									search="filterGlobally"
+									width="15rem"/>
+							</Toolbar>
+						</t:toolbar>
+						<t:columns>
+							<t:Column
+								width=""
+								filterProperty="Personnel">
+								<Label text="Personnel" />
+								<t:template>
+									<Text text="{}"/>
+								</t:template>
+							</t:Column>
+							<t:Column
+								width=""
+								filterProperty="Specialization"
+								defaultFilterOperator="StartsWith">
+								<Label text="Specialization" />
+								<t:template>
+									<Text text="{}"/>
+								</t:template>
+							</t:Column>
+							<t:Column width="">
+								<Label text="No. of Personnel" />
+								<t:template>
+									<Text text="{}"/>
+								</t:template>
+							</t:Column>
+							<t:Column
+								width=""
+								filterProperty="InclusiveOfOneHourBreak"
+								defaultFilterOperator="StartsWith">
+								<Label text="Inclusive of one hour break" />
+								<t:template>
+									<Text text="{}"/>
+								</t:template>
+							</t:Column>
+							<t:Column
+								width=""
+								filterProperty="OccurrenceOfSchedule"
+								defaultFilterOperator="StartsWith">
+								<Label text="Occurrence of Schedule" />
+								<t:template>
+									<Text text="{}"/>
+								</t:template>
+							</t:Column>
+						</t:columns>
+					</t:Table>
+					<f:Form id="ClinicManagementForm1" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="6"
+								adjustLabelSpan="false"
+								emptySpanXL="0"
+								emptySpanL="0"
+								emptySpanM="0"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement>
+										<cl:MatrixLayout width="99%" widths="33%,33%,33%">
+											<cl:MatrixLayoutRow>
+												<cl:MatrixLayoutCell>
+													<Label text="Desktop Computer:" textAlign="Left"
+															class="custom-label-align-small"/>
+													<Input value="" id="idDesktopInpt"/>
+												</cl:MatrixLayoutCell>
+												<cl:MatrixLayoutCell>
+													<Label text="Printer:" textAlign="Left"
+															class="custom-label-align-small"/>
+													<Input value="" id="idPrinterInpt"/>
+												</cl:MatrixLayoutCell>
+												<cl:MatrixLayoutCell>
+													<Label text="Broadband:" textAlign="Left"
+															class="custom-label-align-small"/>
+													<Input value="" id="idBroadbandInpt"/>
+												</cl:MatrixLayoutCell>
+											</cl:MatrixLayoutRow>
+										</cl:MatrixLayout>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+					<f:Form id="ClinicManagementForm2" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="Supply Type">
+										<Select id="idSupplyTypeSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="Supply ID">
+										<Input value="" id="idMSupplyIdInpt" />
+									</f:FormElement>
+									<f:FormElement label="Quantity">
+										<Input value="" id="idSupplyQtyInpt" />
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+					<t:Table
+						id="idSuppliesTable"
+						selectionMode="MultiToggle"
+						rows="{}"
+						visibleRowCount="7"
+						enableCellFilter=""
+						filter=""
+						ariaLabelledBy="title"
+						class="sapUiSizeCozy">
+						<t:toolbar>
+							<Toolbar>
+								<ToolbarSpacer/>
+								<Button id="idAddSupplyBtn" icon="sap-icon://add"
+										press="onPressAddSupply"/>
+								<Button id="idEditSupplyBtn" icon="sap-icon://edit"
+										press="onPressEditSupply"/>
+								<Button id="idDeleteSupplyBtn" icon="sap-icon://delete"
+										press="onPressDeleteSupply"/>
+								<ToolbarSeparator/>
+								<SearchField
+									placeholder="Search"
+									value=""
+									search="filterGlobally"
+									width="15rem"/>
+							</Toolbar>
+						</t:toolbar>
+						<t:columns>
+							<t:Column
+								width=""
+								filterProperty="SupplyType">
+								<Label text="Supply Type" />
+								<t:template>
+									<Text text="{}"/>
+								</t:template>
+							</t:Column>
+							<t:Column
+								width=""
+								filterProperty="SupplyId"
+								defaultFilterOperator="StartsWith">
+								<Label text="Supply ID" />
+								<t:template>
+									<Text text="{}"/>
+								</t:template>
+							</t:Column>
+							<t:Column width="">
+								<Label text="Quantity" />
+								<t:template>
+									<Text text="{}"/>
+								</t:template>
+							</t:Column>
+						</t:columns>
+					</t:Table>
+				</Panel>
+			</VBox>
+			<VBox id="ClinicManagementItemVBox" class="sapUiSmallMargin">
+				<tnt:ToolHeader>
+					<Bar>
+				    	<contentRight>
+						    <Button icon="sap-icon://decline" type="Transparent"
+						    		press="onPressCloseClinicMgmtItem">
+					            <layoutData>
+					                <OverflowToolbarLayoutData priority="NeverOverflow" />
+					            </layoutData>
+					        </Button>
+				   		</contentRight>
+					</Bar>
+			    </tnt:ToolHeader>
+				<f:Form id="ClinicManagementItemForm1" editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="3"
+							emptySpanL="3"
+							emptySpanM="3"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Personnel">
+									<Input id="idPersonnelInput" type="Text"
+										textFormatMode="KeyValue"
+										showSuggestion="true"
+										showValueHelp="true"
+										valueHelpRequest="handleValueHelp"
+										suggestionItems="{oPersonnel>/arr}"
+										suggestionItemSelected="suggestionItemSelected">
+										<suggestionItems>
+											<core:ListItem key="{oPersonnel>Specialization}" text="{oPersonnel>Personnel}" 
+															additionalText="{oPersonnel>Specialization}" />
+										</suggestionItems>
+									</Input>
+								</f:FormElement>
+								<f:FormElement label="No. of Personnel">
+									<Input value="" id="idNumOfPersonnelInpt" />
+								</f:FormElement>
+								<f:FormElement label="Mode of Payment">
+									<Select id="idModeOfPaymentSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+				<Toolbar>
+					<Title level="H3" text="Schedule per shift" />
+				</Toolbar>
+				<f:Form id="ClinicManagementItemForm2" editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="3"
+							emptySpanL="3"
+							emptySpanM="3"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Monday">
+									<TimePicker id="idMonStartTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+									<Label text="to" textAlign="Center"
+											class="custom-label-align-small">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S2"/>
+										</layoutData>
+									</Label>
+									<TimePicker id="idMonEndTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+								</f:FormElement>
+								<f:FormElement label="Tuesday">
+									<TimePicker id="idTuesStartTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+									<Label text="to" textAlign="Center"
+											class="custom-label-align-small">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S2"/>
+										</layoutData>
+									</Label>
+									<TimePicker id="idTuesEndTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+								</f:FormElement>
+								<f:FormElement label="Wednesday">
+									<TimePicker id="idWedStartTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+									<Label text="to" textAlign="Center"
+											class="custom-label-align-small">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S2"/>
+										</layoutData>
+									</Label>
+									<TimePicker id="idWedEndTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+								</f:FormElement>
+								<f:FormElement label="Thursday">
+									<TimePicker id="idThuStartTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+									<Label text="to" textAlign="Center"
+											class="custom-label-align-small">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S2"/>
+										</layoutData>
+									</Label>
+									<TimePicker id="idThuEndTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+								</f:FormElement>
+								<f:FormElement label="Friday">
+									<TimePicker id="idFriStartTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+									<Label text="to" textAlign="Center"
+											class="custom-label-align-small">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S2"/>
+										</layoutData>
+									</Label>
+									<TimePicker id="idFriEndTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+								</f:FormElement>
+								<f:FormElement label="Saturday">
+									<TimePicker id="idSatStartTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+									<Label text="to" textAlign="Center"
+											class="custom-label-align-small">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S2"/>
+										</layoutData>
+									</Label>
+									<TimePicker id="idSatEndTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+								</f:FormElement>
+								<f:FormElement label="Sunday">
+									<TimePicker id="idSunStartTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+									<Label text="to" textAlign="Center"
+											class="custom-label-align-small">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S2"/>
+										</layoutData>
+									</Label>
+									<TimePicker id="idSunEndTP" valueFormat="hh:mm a"
+												displayFormat="hh:mm a" change="">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S5"/>
+										</layoutData>
+									</TimePicker>
+								</f:FormElement>
+								<f:FormElement label="Occurence of the Above Schedule">
+									<Select id="idSchedOccurenceSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</f:FormElement>
+								<f:FormElement>
+									<f:fields>
+										<Label text="Inclusive of One Hour Break" textAlign="Center"
+												class="custom-label-align-small">
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL2 L2 M2 S6"/>
+											</layoutData>
+										</Label>
+										<Switch id="idOneHrInclusiveSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeOneHrInclusive">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S6" />
+											</layoutData>
+										</Switch>
+									</f:fields>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+				<Toolbar>
+					<Title level="H3" text="Other Benefits" />
+				</Toolbar>
+				<f:Form id="ClinicManagementItemForm3" editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="5"
+							labelSpanL="5"
+							labelSpanM="5"
+							labelSpanS="6"
+							adjustLabelSpan="false"
+							emptySpanXL="3"
+							emptySpanL="3"
+							emptySpanM="3"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="13th month pay">
+									<Switch id="id13thMonthPaySwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChange13thMonthPay">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S6" />
+										</layoutData>
+									</Switch>
+								</f:FormElement>
+								<f:FormElement label="Uniform">
+									<Switch id="idUniformSwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangeUniform">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S6" />
+										</layoutData>
+									</Switch>
+								</f:FormElement>
+								<f:FormElement label="5 Day Service Incentive Leave">
+									<Switch id="id5DaySILeaveSwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChange5DaySILeave">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S6" />
+										</layoutData>
+									</Switch>
+								</f:FormElement>
+								<f:FormElement label="HMO Coverage">
+									<Switch id="idHMOCoverageSwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangeHMOCoverage">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S6" />
+										</layoutData>
+									</Switch>
+								</f:FormElement>
+								<f:FormElement label="E-Cola">
+									<Switch id="idEColaSwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangeECola">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S6" />
+										</layoutData>
+									</Switch>
+								</f:FormElement>
+								<f:FormElement label="Indirect Labor">
+									<Switch id="idIndirectLaborSwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangeIndirectLabor">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S6" />
+										</layoutData>
+									</Switch>
+								</f:FormElement>
+								<f:FormElement label="Performance Bonus">
+									<Switch id="idPerfBonusSwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangePerfBonus">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S6" />
+										</layoutData>
+									</Switch>
+								</f:FormElement>
+								<f:FormElement label="Provider's Service Fee">
+									<Switch id="idProvServiceFeeSwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangeProvServiceFee">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S6" />
+										</layoutData>
+									</Switch>
+								</f:FormElement>
+								<f:FormElement>
+									<Button id="idAddClinicMgmtItemBtn" text="Add"
+											press="onPressAddClinicMgmtItem">
+										<layoutData>
+											<l:GridData indent="XL8 L8 M8 S0" span="XL2 L2 M2 S6" />
+										</layoutData>
+									</Button>
+									<Button id="idCancelClinicMgmtItemBtn" text="Cancel"
+											press="onPressCloseClinicMgmtItem">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S6" />
+										</layoutData>
+									</Button>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+			</VBox>
+		</content>
+	</Page>
+</core:View>

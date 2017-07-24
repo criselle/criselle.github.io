@@ -1,0 +1,377 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form"
+		controllerName="maxicareactuarial.detail.adjustments.tab.pricingInstructions.ridersCost100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel expandable="true" expanded="true" id="idAnnualCheckupPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Annual Check-up"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idAnnualCheckupForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement>
+								<RadioButton groupName="AnnualCheckupGroupA" text="Applicable Plan">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" span="XL3 L3 M3 S6" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="AnnualCheckupGroupA" text="Distributed to Principals">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</RadioButton>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idDentalPanel1" width="auto">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Dental"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idDentalForm1" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement>
+								<RadioButton groupName="DentalGroupA" text="Standard Capitation">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" span="XL3 L3 M3 S6" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="DentalGroupA" text="Discounted">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</RadioButton>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel id="idDentalPanel2" width="auto" class="custom-panel-bottom">
+			<f:Form id="idDentalForm2" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement>
+								<RadioButton groupName="DentalGroupB" text="Applicable Plan">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="DentalGroupB" text="Distributed to all Members">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="DentalGroupB" text="Distributed to Principals">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idOPMedicinesPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="OP Medicines"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idOPMedicinesForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement>
+								<RadioButton groupName="OPMedsGroupA" text="Applicable Plan">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="OPMedsGroupA" text="Distributed to all Members">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="OPMedsGroupA" text="Distributed to Principals">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idOpticalPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Optical"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idOpticalForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement>
+								<RadioButton groupName="OpticalGroupA" text="Applicable Plan">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="OpticalGroupA" text="Distributed to all Members">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="OpticalGroupA" text="Distributed to Principals">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idMaternityPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Maternity"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idMaternityForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement>
+								<RadioButton groupName="MaternityGroupA" text="Applicable Plan">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="MaternityGroupA" text="Distributed to all Members">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="MaternityGroupA" text="Distributed to Principals">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idWellnessProgramPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Wellness Program"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idWellnessProgramForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement>
+								<RadioButton groupName="WellnessGroupA" text="Applicable Plan">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="WellnessGroupA" text="Distributed to all Members">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="WellnessGroupA" text="Distributed to Principals">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idClinicPersonnelPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Clinic Personnel"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idClinicPersonnelForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement>
+								<RadioButton groupName="CPersonnelGroupA" text="Distributed to all Members">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" span="XL3 L3 M3 S6" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="CPersonnelGroupA" text="Distributed to Principals">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</RadioButton>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+	</VBox>
+</core:View>

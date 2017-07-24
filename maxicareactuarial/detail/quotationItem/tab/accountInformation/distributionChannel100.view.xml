@@ -1,0 +1,157 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.quotationItem.tab.accountInformation.distributionChannel100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel id="idDistributionChannelPanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Distribution Channel"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="DistributionChannelForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Account Officer">
+								<f:fields>
+									<Input value="" id="idAccountOfficerInpt"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Sales AVP">
+								<f:fields>
+									<Input value="" id="idSalesAvpInpt" />
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Sales Manager">
+								<f:fields>
+									<Input value="" id="idSalesManagerInpt"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Sales Team">
+								<f:fields>
+									<Input value="" id="idSalesTeamInpt"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Distribution Channel Type">
+								<f:fields>
+									<Input value="" id="idDistributionChannelTypeInpt"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Broker/Agent">
+								<f:fields>
+									<Input value="" id="idBrokerAgentInpt">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6" />
+										</layoutData>
+									</Input>
+									<Label text="TIN:" textAlign="Right"
+											class="custom-label-align-medium">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S2"/>
+										</layoutData>
+									</Label>
+									<Input value="" id="idBrokerAgentTinInpt">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S4" />
+										</layoutData>
+									</Input>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Point of Contract">
+								<f:fields>
+									<Input value="" id="idPointOfContractInpt"/>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Agency Unit Manager">
+								<f:fields>
+									<Input value="" id="idAgencyUnitManagerInpt">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6" />
+										</layoutData>
+									</Input>
+									<Label text="TIN:" textAlign="Right"
+											class="custom-label-align-medium">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S2"/>
+										</layoutData>
+									</Label>
+									<Input value="" id="idAgencyUnitManagerTinInpt">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S4" />
+										</layoutData>
+									</Input>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Agency Unit Head">
+								<f:fields>
+									<Input value="" id="idAgencyUnitHeadInpt">
+										<layoutData>
+											<l:GridData span="XL6 L6 M6 S6" />
+										</layoutData>
+									</Input>
+									<Label text="TIN:" textAlign="Right"
+											class="custom-label-align-medium">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S2"/>
+										</layoutData>
+									</Label>
+									<Input value="" id="idAgencyUnitHeadTinInpt">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S4" />
+										</layoutData>
+									</Input>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Share-the-Care">
+								<f:fields>
+									<Input value="" id="idShareTheCareInpt1">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S2" />
+										</layoutData>
+									</Input>
+									<Input value="" id="idShareTheCareInpt2">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S2" />
+										</layoutData>
+									</Input>
+									<Input value="" id="idShareTheCareInpt3">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S2" />
+										</layoutData>
+									</Input>
+									<Label text="TIN:" textAlign="Right"
+											class="custom-label-align-medium">
+										<layoutData>
+											<l:GridData span="XL1 L1 M1 S2"/>
+										</layoutData>
+									</Label>
+									<Input value="" id="idShareTheCareTinInpt">
+										<layoutData>
+											<l:GridData span="XL2 L2 M2 S4" />
+										</layoutData>
+									</Input>
+								</f:fields>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>				
+	</VBox>
+</core:View>

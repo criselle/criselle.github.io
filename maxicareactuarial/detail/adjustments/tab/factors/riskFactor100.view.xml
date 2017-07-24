@@ -1,0 +1,57 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.adjustments.tab.factors.riskFactor100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel id="idRiskFactorPanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Risk Factor"/>
+				</Toolbar>
+			</headerToolbar>
+			<Table id="idRiskFactorTable" inset="false" items="">
+				<columns>
+					<Column hAlign="Center">
+						<Text text="Member Type" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Industry" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Age" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Gender" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Geolocation" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Risk Factor" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Principals:" />
+							<Input value="" id="idPrincipalsIndustryInpt" />
+							<Input value="" id="idPrincipalsAgeInpt" />
+							<Input value="" id="idPrincipalsGenderInpt" />
+							<Input value="" id="idPrincipalsGeolocInpt" />
+							<Input value="" id="idPrincipalsRiskFactorInpt" />
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Dependents:" />
+							<Input value="" id="idDepIndustryInpt" />
+							<Input value="" id="idDepAgeInpt" />
+							<Input value="" id="idDepGenderInpt" />
+							<Input value="" id="idDepGeolocInpt" />
+							<Input value="" id="idDepRiskFactorInpt" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+	</VBox>
+</core:View>

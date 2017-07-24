@@ -1,0 +1,241 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:u="sap.ui.unified" xmlns:f="sap.ui.layout.form"
+		controllerName="maxicareactuarial.detail.quotationItem.tab.accountInformation.otherInformation100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel>
+			<f:Form id="UploadForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="0"
+						emptySpanL="0"
+						emptySpanM="0"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Terms of Reference">
+								<u:FileUploader id="idTermsOfReferenceUpload"
+												uploadUrl="upload/" width="100%"
+												uploadComplete="">
+								</u:FileUploader>
+								<Button id="idUploadTermsBtn" text="Upload"
+										press="onPressUploadTerms">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S6" />
+									</layoutData>
+								</Button>
+							</f:FormElement>
+							<f:FormElement label="Masterlist">
+								<u:FileUploader id="idMasterlistUpload"
+												uploadUrl="upload/" width="100%"
+												uploadComplete="">
+								</u:FileUploader>
+								<Button id="idUploadMasterlistBtn" text="Upload"
+										press="onPressUploadMasterlist">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S6" />
+									</layoutData>
+								</Button>
+							</f:FormElement>
+							<f:FormElement label="Utilization Report">
+								<u:FileUploader id="idUtilizationReportUpload"
+												uploadUrl="upload/" width="100%"
+												uploadComplete="">
+								</u:FileUploader>
+								<Button id="idUtilizationReportBtn" text="Upload"
+										press="onPressUploadUtilizationReport">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S6" />
+									</layoutData>
+								</Button>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel width="auto" class="custom-panel-bottom">
+			<Table id="idEnrolleesTable" inset="false" items="">
+				<columns>
+					<Column/>
+					<Column hAlign="Center">
+						<Text text="Principals" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Dependents" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Total" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Number of Enrollees:" textAlign="Right"/>
+							<Input value="" id="idNumOfEnrolleesPrincipalsInpt"/>
+							<Input value="" id="idNumOfEnrolleesDependentsInpt"/>
+							<Input value="" id="idNumOfEnrolleesTotalInpt"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idAgeProfilePanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Age Profile"/>
+				</Toolbar>
+			</headerToolbar>
+			<Table id="idAgeProfileTable" inset="false" items="">
+				<columns>
+					<Column/>
+					<Column hAlign="Center">
+						<Text text="Principals" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Dependents" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Total" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Average Age:" textAlign="Right"/>
+							<Input value="" id="idAveAgePrincipalsInpt"/>
+							<Input value="" id="idAveAgeDependentsInpt"/>
+							<Input value="" id="idAveAgeTotalInpt"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idGenderDistributionPanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Gender Distribution"/>
+				</Toolbar>
+			</headerToolbar>
+			<Table id="idGenderDistributionTable" inset="false" items="">
+				<columns>
+					<Column/>
+					<Column hAlign="Center">
+						<Text text="Principals" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Dependents" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Total" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Male:" textAlign="Right"/>
+							<Input value="" id="idMalePrincipalsInpt"/>
+							<Input value="" id="idMaleDependentsInpt"/>
+							<Input value="" id="idMaleTotalInpt"/>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Female:" textAlign="Right"/>
+							<Input value="" id="idFemalePrincipalsInpt"/>
+							<Input value="" id="idFemaleDependentsInpt"/>
+							<Input value="" id="idFemaleTotalInpt"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idMaritalStatusDistributionPanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Marital Status Distribution"/>
+				</Toolbar>
+			</headerToolbar>
+			<Table id="idMaritalStatusTable" inset="false" items="">
+				<columns>
+					<Column/>
+					<Column hAlign="Center">
+						<Text text="Principals" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Dependents" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Total" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Single:" textAlign="Right"/>
+							<Input value="" id="idSinglePrincipalsInpt"/>
+							<Input value="" id="idSingleDependentsInpt"/>
+							<Input value="" id="idSingleTotalInpt"/>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Married:" textAlign="Right"/>
+							<Input value="" id="idMarriedPrincipalsInpt"/>
+							<Input value="" id="idMarriedDependentsInpt"/>
+							<Input value="" id="idMarriedTotalInpt"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idEmployeesDistributionPanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Employees Distribution by Location"/>
+				</Toolbar>
+			</headerToolbar>
+			<Table id="idEmployeesDistributionTable" inset="false" items="{}">
+				<columns>
+					<Column hAlign="Left">
+						<Text text="City/Municipality" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Province" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Region" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Count" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text
+								text="" />
+							<Text
+								text="" />
+							<Text
+								text="" />
+							<Text
+								text="" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+	</VBox>
+</core:View>

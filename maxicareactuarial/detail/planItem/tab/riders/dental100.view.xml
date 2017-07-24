@@ -1,0 +1,263 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"  xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.planItem.tab.riders.dental100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel expandable="true" expanded="true" id="idDentalPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Dental"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idDentalForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Package">
+								<Select id="idPackageSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Amount">
+								<Input value="" id="idAmountInpt">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Input>
+								<Select id="idAmountSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Provider">
+								<Select id="idProviderSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Funding Arrangement">
+								<Select id="idFundingDentalSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Mode of Availment">
+								<Select id="idModeOfAvailSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Out of Network (Covered)">
+								<Switch id="idOutOfNetworkSwitch" state="false" customTextOn="Yes"
+										customTextOff="No" change="onChangeOutOfNetwork"/>
+							</f:FormElement>
+							<f:FormElement label="Package Code">
+								<Select id="idPackageCodeDentalSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL4 L4 M4 S8" />
+									</layoutData>
+								</Select>
+								<Button id="idAddProcedureDentalBtn" icon="sap-icon://add"
+										press="onPressAddProcedureDental">
+									<layoutData>
+										<l:GridData span="XL1 L1 M1 S2" />
+									</layoutData>
+								</Button>
+								<Button id="idDeleteProcedureDentalBtn" icon="sap-icon://delete"
+										press="onPressDeleteProcedureDental">
+									<layoutData>
+										<l:GridData span="XL1 L1 M1 S2" />
+									</layoutData>
+								</Button>
+							</f:FormElement>
+							<f:FormElement>
+								<Table id="idProcedureDentalTable" inset="false" items="{}">
+									<columns>
+										<Column hAlign="Left">
+											<Text text="Procedure" />
+										</Column>
+										<Column hAlign="Center">
+											<Text text="Limit Type" />
+										</Column>
+										<Column hAlign="Center">
+											<Text text="Value" />
+										</Column>
+										<Column hAlign="Center">
+											<Text text="Frequency" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="" />
+												<Text text="" />
+												<Text text="" />
+												<Text text="" />
+											</cells>
+										</ColumnListItem>
+									</items>
+									<layoutData>
+										<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+									</layoutData>
+								</Table>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idAddtlProcedurePanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Additional Procedure"/>
+					<Switch id="idAddtlProcedureSwitch" state="false" customTextOn="Yes"
+							customTextOff="No" change="onChangeAddtlProcedure"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idAddtnlProcedureForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Funding Arrangement">	
+								<Select id="idFundingAPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Package Code">
+								<Select id="idPackageCodeAPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Description">
+								<Select id="idDescriptionSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Limit Type">
+								<Select id="idLimitTypeSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Value">
+								<Input value="" id="idValueInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Label text="Frequency:" textAlign="Right"
+								 		class="custom-label-align-small">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Label>
+								<Input value="" id="idFrequencyInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+							</f:FormElement>
+							<f:FormElement>
+								<Button id="idAddProcedureAPBtn" icon="sap-icon://add"
+										press="onPressAddProcedureAP">
+									<layoutData>
+										<l:GridData indent="XL7 L7 M7 S0" span="XL1 L1 M1 S6" />
+									</layoutData>
+								</Button>
+								<Button id="idDeleteProcedureAPBtn" icon="sap-icon://delete"
+										press="onPressDeleteProcedureAP">
+									<layoutData>
+										<l:GridData span="XL1 L1 M1 S6" />
+									</layoutData>
+								</Button>
+							</f:FormElement>
+							<f:FormElement>
+								<Table id="idProcedureAPTable" inset="false" items="{}">
+									<columns>
+										<Column hAlign="Left">
+											<Text text="Procedure" />
+										</Column>
+										<Column hAlign="Center">
+											<Text text="Limit Type" />
+										</Column>
+										<Column hAlign="Center">
+											<Text text="Value" />
+										</Column>
+										<Column hAlign="Center">
+											<Text text="Frequency" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="" />
+												<Text text="" />
+												<Text text="" />
+												<Text text="" />
+											</cells>
+										</ColumnListItem>
+									</items>
+									<layoutData>
+										<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+									</layoutData>
+								</Table>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+	</VBox>
+</core:View>

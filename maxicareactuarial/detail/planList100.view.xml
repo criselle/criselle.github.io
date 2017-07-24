@@ -4,6 +4,13 @@
 	<Page title="Company Name">
 		<content>
 			<Table id="idPlanListTable" inset="false" items="" mode="MultiSelect">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="Plans" level="H2"/>
+						<ToolbarSpacer></ToolbarSpacer>
+						<SearchField id="idSearchPlanInput" liveChange="onSearchPlan" width="30%" />
+					</Toolbar>
+				</headerToolbar>
 				<columns>
 					<Column hAlign="Center">
 						<Text text="Material" />

@@ -1,0 +1,653 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" xmlns:cl="sap.ui.commons.layout"
+		controllerName="maxicareactuarial.detail.adjustments.tab.loadingAndFees.aso100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel id="idAsoPanel" width="auto">
+			<f:Form id="idAsoForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Revolving Fund">
+								<Input value="" id="idRevolvingFundInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Threshold Limit">
+								<Input value="" id="idThresholdLimitInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Security Deposit">
+								<Input value="" id="idRSecurityDepositInpt"/>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idFeesPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Fees"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idFeesForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer title="Network Access Fee">
+						<f:formElements>
+							<f:FormElement label="Principal">
+								<Input value="" id="idPrincipalInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Dependent">
+								<Input value="" id="idDependentInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Aggregate">
+								<Input value="" id="idAggregateInpt"/>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Claims Handling Fee">
+						<f:formElements>
+							<f:FormElement>
+								<RadioButton groupName="CHFGroupA" text="Per Claim">
+									<layoutData>
+										<l:GridData indent="XL3 L3 M3 S0" span="XL3 L3 M3 S6" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="CHFGroupA" text="Per Member">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</RadioButton>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+			<Table id="idClaimsHandlingFeeTable" inset="false" items="">
+				<columns>
+					<Column/>
+					<Column hAlign="Center">
+						<Text text="Principals" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Dependents" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Aggregate" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Inpatient"/>
+							<Input value="" id="idIPPrincipalsCHFInpt"/>
+							<Input value="" id="idIPDepCHFInpt"/>
+							<Input value="" id="idIPAggregateCHFInpt"/>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Outpatient" />
+							<Input value="" id="idOPPrincipalsCHFInpt"/>
+							<Input value="" id="idOPDepCHFInpt"/>
+							<Input value="" id="idOPAggregateCHFInpt"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			<f:Form id="idContributionMarginForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer title="Contribution Margin">
+						<f:formElements>
+							<f:FormElement>
+								<RadioButton groupName="CMGroupA" text="Per Claim">
+									<layoutData>
+										<l:GridData indent="XL3 L3 M3 S0" span="XL3 L3 M3 S6" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="CMGroupA" text="Per Member">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</RadioButton>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+			<Table id="idContributionMarginTable" inset="false" items="">
+				<columns>
+					<Column/>
+					<Column hAlign="Center">
+						<Text text="Principals" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Dependents" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Aggregate" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Riders"/>
+							<Input value="" id="idRidersPrincipalsCMInpt"/>
+							<Input value="" id="idRidersDepCMInpt"/>
+							<Input value="" id="idRidersAggregateCMInpt"/>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Clinic Management" />
+							<Input value="" id="idCMPrincipalsCMInpt"/>
+							<Input value="" id="idCMDepCMInpt"/>
+							<Input value="" id="idCMAggregateCMInpt"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idCommissionPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Commission"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idCommissionForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement>
+								<RadioButton groupName="CommissionGroupA" text="Per Member">
+									<layoutData>
+										<l:GridData indent="XL3 L3 M3 S0" span="XL3 L3 M3 S6" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="CommissionGroupA" text="Per Account">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</RadioButton>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+			<Table id="idCommissionTable" inset="false" items="">
+				<columns>
+					<Column/>
+					<Column hAlign="Center">
+						<Text text="Principals" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Dependents" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Aggregate" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Membership Fees"/>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idMFPrincipalsCommInpt"/>
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idMFPrincipalsCommSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idMFDepCommInpt"/>
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idMFDepCommSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idMFAggregateCommInpt"/>
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idMFAggregateCommSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="CHF (IP)"/>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idCHFIPPrincipalsCommInpt"/>
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idCHFIPPrincipalsCommSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idCHFIPDepCommInpt"/>
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idCHFIPDepCommSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idCHFIPAggregateCommInpt"/>
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idCHFIPAggregateCommSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="CHF (OP)"/>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idCHFOPPrincipalsCommInpt"/>
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idCHFOPPrincipalsCommSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idCHFOPDepCommInpt"/>
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idCHFOPDepCommSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idCHFOPAggregateCommInpt"/>
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idCHFOPAggregateCommSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Riders"/>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idRidersPrincipalsCommInpt"/>
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idRidersPrincipalsCommSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idRidersDepCommInpt"/>
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idRidersDepCommSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idRidersAggregateCommInpt"/>
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idRidersAggregateCommSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Clinic Management"/>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idCMPrincipalsCommInpt"/>
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idCMPrincipalsCommSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idCMDepCommInpt"/>
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idCMDepCommSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idCMAggregateCommInpt"/>
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idCMAggregateCommSelect" selectedKey="">
+								<items>
+									<core:Item text="" key=""/>
+								</items>
+							</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+		<Title level="H5" text="Agency Level Set-up" class="custom-form-title"/>
+		<Table id="idAgencyLevelSetupTable" inset="false" items="">
+			<columns>
+				<Column/>
+				<Column hAlign="Center">
+					<Text text="Principals" />
+				</Column>
+				<Column hAlign="Center">
+					<Text text="Dependents" />
+				</Column>
+				<Column hAlign="Center">
+					<Text text="Aggregate" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem vAlign="Middle">
+					<cells>
+						<Text text="Health Benefit Agent"/>
+						<cl:MatrixLayout width="100%" widths="50%,50%">
+							<cl:MatrixLayoutRow>
+								<cl:MatrixLayoutCell>
+									<Input value="" id="idHealthBenPrincipalsALSInpt"/>
+								</cl:MatrixLayoutCell>
+								<cl:MatrixLayoutCell>
+									<Select id="idHealthBenPrincipalsALSSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</cl:MatrixLayoutCell>
+							</cl:MatrixLayoutRow>
+						</cl:MatrixLayout>
+						<cl:MatrixLayout width="100%" widths="50%,50%">
+							<cl:MatrixLayoutRow>
+								<cl:MatrixLayoutCell>
+									<Input value="" id="idHealthBenDepALSInpt"/>
+								</cl:MatrixLayoutCell>
+								<cl:MatrixLayoutCell>
+									<Select id="idHealthBenDepALSSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</cl:MatrixLayoutCell>
+							</cl:MatrixLayoutRow>
+						</cl:MatrixLayout>
+						<cl:MatrixLayout width="100%" widths="50%,50%">
+							<cl:MatrixLayoutRow>
+								<cl:MatrixLayoutCell>
+									<Input value="" id="idHealthBenAggregateALSInpt"/>
+								</cl:MatrixLayoutCell>
+								<cl:MatrixLayoutCell>
+									<Select id="idHealthBenAggregateALSSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</cl:MatrixLayoutCell>
+							</cl:MatrixLayoutRow>
+						</cl:MatrixLayout>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem vAlign="Middle">
+					<cells>
+						<Text text="Unit Head"/>
+						<cl:MatrixLayout width="100%" widths="50%,50%">
+							<cl:MatrixLayoutRow>
+								<cl:MatrixLayoutCell>
+									<Input value="" id="idUnitHeadPrincipalsALSInpt"/>
+								</cl:MatrixLayoutCell>
+								<cl:MatrixLayoutCell>
+									<Select id="idUnitHeadPrincipalsALSSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</cl:MatrixLayoutCell>
+							</cl:MatrixLayoutRow>
+						</cl:MatrixLayout>
+						<cl:MatrixLayout width="100%" widths="50%,50%">
+							<cl:MatrixLayoutRow>
+								<cl:MatrixLayoutCell>
+									<Input value="" id="idUnitHeadDepALSInpt"/>
+								</cl:MatrixLayoutCell>
+								<cl:MatrixLayoutCell>
+									<Select id="idUnitHeadDepALSSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</cl:MatrixLayoutCell>
+							</cl:MatrixLayoutRow>
+						</cl:MatrixLayout>
+						<cl:MatrixLayout width="100%" widths="50%,50%">
+							<cl:MatrixLayoutRow>
+								<cl:MatrixLayoutCell>
+									<Input value="" id="idUnitHeadAggregateALSInpt"/>
+								</cl:MatrixLayoutCell>
+								<cl:MatrixLayoutCell>
+									<Select id="idUnitHeadAggregateALSSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</cl:MatrixLayoutCell>
+							</cl:MatrixLayoutRow>
+						</cl:MatrixLayout>
+					</cells>
+				</ColumnListItem>
+				<ColumnListItem vAlign="Middle">
+					<cells>
+						<Text text="Unit Managers"/>
+						<cl:MatrixLayout width="100%" widths="50%,50%">
+							<cl:MatrixLayoutRow>
+								<cl:MatrixLayoutCell>
+									<Input value="" id="idUnitMngrsPrincipalsALSInpt"/>
+								</cl:MatrixLayoutCell>
+								<cl:MatrixLayoutCell>
+									<Select id="idUnitMngrsPrincipalsALSSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</cl:MatrixLayoutCell>
+							</cl:MatrixLayoutRow>
+						</cl:MatrixLayout>
+						<cl:MatrixLayout width="100%" widths="50%,50%">
+							<cl:MatrixLayoutRow>
+								<cl:MatrixLayoutCell>
+									<Input value="" id="idUnitMngrsDepALSInpt"/>
+								</cl:MatrixLayoutCell>
+								<cl:MatrixLayoutCell>
+									<Select id="idUnitMngrsDepALSSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</cl:MatrixLayoutCell>
+							</cl:MatrixLayoutRow>
+						</cl:MatrixLayout>
+						<cl:MatrixLayout width="100%" widths="50%,50%">
+							<cl:MatrixLayoutRow>
+								<cl:MatrixLayoutCell>
+									<Input value="" id="idUnitMngrsAggregateALSInpt"/>
+								</cl:MatrixLayoutCell>
+								<cl:MatrixLayoutCell>
+									<Select id="idUnitMngrsAggregateALSSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</cl:MatrixLayoutCell>
+							</cl:MatrixLayoutRow>
+						</cl:MatrixLayout>
+					</cells>
+				</ColumnListItem>
+
+			</items>
+		</Table>
+	</VBox>
+</core:View>

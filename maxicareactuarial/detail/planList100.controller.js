@@ -27,12 +27,37 @@ sap.ui.controller("maxicareactuarial.detail.planList100", {
 		});
 	},
 	
+	onPressViewPolicy: function(){
+		this.getOwnerComponent().getRouter().navTo("quotationItem100");
+	},
+	
 	onPressCreatePlan: function(){
 		this.getOwnerComponent().getRouter().navTo("planItem100");
 	},
 	
 	onPressItemList: function(){
 		this.getOwnerComponent().getRouter().navTo("planItem100");
+	},
+	
+	onPressComparePolicy: function(){
+		this.getOwnerComponent().getRouter().navTo("comparePolicy100");
+	},
+	
+	onPressCopyAs: function(){
+		var oView = this.getView();
+		
+		if (!this.copyAsDialog) {
+            this.copyAsDialog = sap.ui.xmlfragment("copyAs","maxicareactuarial.fragment.copyAs100", this);
+        }
+		
+		oView.addDependent(this.copyAsDialog);
+        this.copyAsDialog.open();
+	},
+	
+	onPressCloseDialog: function(){
+		 if(this.copyAsDialog){
+            this.copyAsDialog.close();
+        }
 	}
 
 /**

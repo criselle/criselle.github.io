@@ -46,8 +46,40 @@ sap.ui.controller("maxicareactuarial.master.planItem100", {
 			case "MembershipEligibility":
 				this.getOwnerComponent().getRouter().navTo("membershipEligibility100");
 				break;
+			case "SalientFeatures":
+				this.getOwnerComponent().getRouter().navTo("salientFeatures100");
+				break;
+			case "DailyCashAllowance":
+				this.getOwnerComponent().getRouter().navTo("dailyCashAllowance100");
+				break;
+			case "ProviderAccess":
+				this.getOwnerComponent().getRouter().navTo("providerAccess100");
+				break;
+			case "MemberShare":
+				this.getOwnerComponent().getRouter().navTo("memberShare100");
+				break;
+			case "Benefits":
+				this.getOwnerComponent().getRouter().navTo("benefits100");
+				break;
+			case "Riders":
+				this.getOwnerComponent().getRouter().navTo("riders100");
+				break;
+			case "ExclusionsAndLimitations":
+				this.getOwnerComponent().getRouter().navTo("exclusionsLimitations100");
+				break;
+			case "ExclusionsAndLimitations":
+				this.getOwnerComponent().getRouter().navTo("exclusionsLimitations100");
+				break;
+			case "MedicalInsurance":
+				this.getOwnerComponent().getRouter().navTo("medicalInsurance100");
+				break;
+			case "Rates":
+				this.getOwnerComponent().getRouter().navTo("rates100");
+				break;
+			case "Adjustments":
+				this.getOwnerComponent().getRouter().navTo("adjustments100");
+				break;
 		}
-		
 	}
 
 /**

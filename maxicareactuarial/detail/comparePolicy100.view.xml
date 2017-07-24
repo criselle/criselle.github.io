@@ -1,0 +1,346 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" xmlns:cl="sap.ui.commons.layout"
+		controllerName="maxicareactuarial.detail.comparePolicy100" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Account Details">
+		<content>
+			<cl:MatrixLayout width="100%" widths="50%,50%">
+				<cl:MatrixLayoutRow>
+					<cl:MatrixLayoutCell/>
+					<cl:MatrixLayoutCell>
+						<f:Form editable="true" class="custom-bg-form">
+							<f:layout>
+								<f:ResponsiveGridLayout
+									labelSpanXL="2"
+									labelSpanL="2"
+									labelSpanM="2"
+									labelSpanS="3"
+									adjustLabelSpan="false"
+									emptySpanXL="3"
+									emptySpanL="3"
+									emptySpanM="3"
+									emptySpanS="0"
+									columnsXL="1"
+									columnsL="1"
+									columnsM="1"
+									singleContainerFullSize="false" />
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer>
+									<f:formElements>
+										<f:FormElement label="QTN Ver No.">
+											<Input value="">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S3" />
+												</layoutData>
+											</Input>
+											<Button id="idCompareBtn" text="Compare" press="onPressCompare">
+												<layoutData>
+													<l:GridData span="XL3 L3 M3 S3" />
+												</layoutData>
+											</Button>
+											<Button id="idBackBtn" text="Back" press="onPressBack">
+												<layoutData>
+													<l:GridData span="XL3 L3 M3 S3" />
+												</layoutData>
+											</Button>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+					</cl:MatrixLayoutCell>
+				</cl:MatrixLayoutRow>
+				<cl:MatrixLayoutRow>
+					<cl:MatrixLayoutCell>
+						<Table inset="false" items="">
+							<columns>
+								<Column/>
+								<Column hAlign="Center">
+									<Text text="Principals" />
+								</Column>
+								<Column hAlign="Center">
+									<Text text="Dependents" />
+								</Column>
+								<Column hAlign="Center">
+									<Text text="Totals" />
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="No. of Enrollees"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="Estimated TCV"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="Estimated TCV (Net of VAT)"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="Average Premium"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="VAT"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="Average Premium (Net of VAT) (P)"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="Average Claims"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="Riders Cost"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="Commission per Head (Co)"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="CM per Head (C)"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="CM % (C/P)"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="Commission % (Co/P)"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+							<layoutData>
+								<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+							</layoutData>
+						</Table>
+						<f:Form editable="true" class="custom-bg-form">
+							<f:layout>
+								<f:ResponsiveGridLayout
+									labelSpanXL="3"
+									labelSpanL="3"
+									labelSpanM="3"
+									labelSpanS="3"
+									adjustLabelSpan="false"
+									emptySpanXL="3"
+									emptySpanL="3"
+									emptySpanM="3"
+									emptySpanS="0"
+									columnsXL="1"
+									columnsL="1"
+									columnsM="1"
+									singleContainerFullSize="false" />
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer title="Revised Items">
+									<f:formElements>
+										<f:FormElement label="MBL">
+											<Input value="" enabled="false"/>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+					</cl:MatrixLayoutCell>
+					<cl:MatrixLayoutCell>
+						<Table inset="false" items="">
+							<columns>
+								<Column/>
+								<Column hAlign="Center">
+									<Text text="Principals" />
+								</Column>
+								<Column hAlign="Center">
+									<Text text="Dependents" />
+								</Column>
+								<Column hAlign="Center">
+									<Text text="Totals" />
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="No. of Enrollees"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="Estimated TCV"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="Estimated TCV (Net of VAT)"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="Average Premium"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="VAT"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="Average Premium (Net of VAT) (P)"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="Average Claims"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="Riders Cost"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="Commission per Head (Co)"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="CM per Head (C)"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="CM % (C/P)"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="Commission % (Co/P)"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+										<Input text="" enabled="false"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+							<layoutData>
+								<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+							</layoutData>
+						</Table>
+						<f:Form editable="true" class="custom-bg-form">
+							<f:layout>
+								<f:ResponsiveGridLayout
+									labelSpanXL="3"
+									labelSpanL="3"
+									labelSpanM="3"
+									labelSpanS="3"
+									adjustLabelSpan="false"
+									emptySpanXL="3"
+									emptySpanL="3"
+									emptySpanM="3"
+									emptySpanS="0"
+									columnsXL="1"
+									columnsL="1"
+									columnsM="1"
+									singleContainerFullSize="false" />
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer title="Revised Items">
+									<f:formElements>
+										<f:FormElement label="MBL">
+											<Input value="" enabled="false"/>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+					</cl:MatrixLayoutCell>
+				</cl:MatrixLayoutRow>
+			</cl:MatrixLayout>
+		</content>
+	</Page>
+</core:View>

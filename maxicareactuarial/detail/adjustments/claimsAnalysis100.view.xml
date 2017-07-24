@@ -1,0 +1,1049 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" xmlns:cl="sap.ui.commons.layout"
+		controllerName="maxicareactuarial.detail.adjustments.claimsAnalysis100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Claims Analysis">
+		<content>
+			<ObjectHeader binding="" title="Company Name"
+						  number="Quotation No 0001" backgroundDesign="Solid">
+				<statuses>
+					<ObjectStatus text="Plan ID"/>
+				</statuses>
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+			<cl:MatrixLayout width="100%" widths="50%,50%">
+				<cl:MatrixLayoutRow>
+					<cl:MatrixLayoutCell>
+						<f:Form id="idRequestedForm" editable="true">
+							<f:layout>
+								<f:ResponsiveGridLayout
+									labelSpanXL="4"
+									labelSpanL="4"
+									labelSpanM="4"
+									labelSpanS="4"
+									adjustLabelSpan="false"
+									emptySpanXL="3"
+									emptySpanL="3"
+									emptySpanM="3"
+									emptySpanS="0"
+									columnsXL="1"
+									columnsL="1"
+									columnsM="1"
+									singleContainerFullSize="false" />
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer>
+									<f:formElements>
+										<f:FormElement label="Compare to">
+											<Input value="" id="idCompareToInpt">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S4"/>
+												</layoutData>
+											</Input>
+										</f:FormElement>
+										<f:FormElement>
+											<html:center>
+												<Title level="H5" text="Requested" class="custom-title-top"/>
+											</html:center>
+										</f:FormElement>
+										<f:FormElement label="Effective Date">
+											<Input value="" id="idEffectiveDateInpt">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S4"/>
+												</layoutData>
+											</Input>
+										</f:FormElement>
+										<f:FormElement label="Expiry Date">
+											<Input value="" id="idExpiryDateInpt">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S4"/>
+												</layoutData>
+											</Input>
+										</f:FormElement>
+										<f:FormElement label="Util Cut-off Date">
+											<Input value="" id="idUtilCutoffDateInpt">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S4"/>
+												</layoutData>
+											</Input>
+										</f:FormElement>
+										<f:FormElement label="Util Dload Date">
+											<Input value="" id="idUtilDloadDateInpt">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S4"/>
+												</layoutData>
+											</Input>
+										</f:FormElement>
+										<f:FormElement label="Monthly Multiple">
+											<Input value="" id="idMonthlyMultipleInpt">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S4"/>
+												</layoutData>
+											</Input>
+										</f:FormElement>
+										<f:FormElement label="IBNR Factor">
+											<Input value="" id="idIbnrFactorInpt">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S4"/>
+												</layoutData>
+											</Input>
+										</f:FormElement>
+										<f:FormElement label="Inflation Rate">
+											<Input value="" id="idInflationRateInpt">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S4"/>
+												</layoutData>
+											</Input>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+						<html:center>
+							<Table id="idMembershipCountReqTable" inset="false" items="" width="90%">
+								<columns>
+									<Column/>
+									<Column hAlign="Center">
+										<Text text="Principals"/>
+									</Column>
+									<Column hAlign="Center">
+										<Text text="Dependents" />
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem vAlign="Middle">
+										<cells>
+											<Text text="Membership Count" />
+											<Input value="" id="idMemCountPrincipalsReqInpt" />
+											<Input value="" id="idMemCountDepReqInpt" />
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+							<Table id="idClaimsExpReqTable" inset="false" items="" 
+									width="90%" class="custom-panel">
+								<columns>
+									<Column hAlign="Left">
+										<Text text="Claims Experience"/>
+									</Column>
+									<Column hAlign="Center">
+										<Text text="Principals"/>
+									</Column>
+									<Column hAlign="Center">
+										<Text text="Dependents" />
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem vAlign="Middle">
+										<cells>
+											<Text text="Reported Claims" />
+											<Input value="" id="idRepClaimsPrincipalsReqInpt" />
+											<Input value="" id="idRepClaimsDepReqInpt" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem vAlign="Middle">
+										<cells>
+											<Text text="Unreported Claims/IBNR" />
+											<Input value="" id="idUnrepClaimsPrincipalsReqInpt" />
+											<Input value="" id="idUnrepClaimsDepReqInpt" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem vAlign="Middle">
+										<cells>
+											<Text text="Annualized Claims" />
+											<Input value="" id="idAnnualizedClaimsPrincipalsCEReqInpt" />
+											<Input value="" id="idAnnualizedClaimsDepCEReqInpt" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem vAlign="Middle">
+										<cells>
+											<Text text="Average Claims" />
+											<Input value="" id="idAveClaimsPrincipalsReqInpt" />
+											<Input value="" id="idAveClaimsDepReqInpt" />
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+							<Table id="idProjectedClaimsReqTable" inset="false" items="" 
+									width="90%" class="custom-panel">
+								<columns>
+									<Column hAlign="Left">
+										<Text text="Projected Claims"/>
+									</Column>
+									<Column hAlign="Center">
+										<Text text="Principals"/>
+									</Column>
+									<Column hAlign="Center">
+										<Text text="Dependents" />
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem vAlign="Middle">
+										<cells>
+											<Text text="Annualized Claims" />
+											<Input value="" id="idAnnualizedClaimsPrincipalsPCReqInpt" />
+											<Input value="" id="idAnnualizedClaimsDepPCReqInpt" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem vAlign="Middle">
+										<cells>
+											<Text text="Inflation" />
+											<Input value="" id="idInflationPrincipalsReqInpt" />
+											<Input value="" id="idInflationDepReqInpt" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem vAlign="Middle">
+										<cells>
+											<Text text="Modified Benefits" />
+											<Input value="" id="idModBenPrincipalsReqInpt" />
+											<Input value="" id="idModBenDepReqInpt" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem vAlign="Middle">
+										<cells>
+											<Text text="Total Projected Claims" />
+											<Input value="" id="idTotalProjClaimsPrincipalsReqInpt" />
+											<Input value="" id="idTotalProjClaimsDepReqInpt" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem vAlign="Middle">
+										<cells>
+											<Text text="Ave Projected Claims" />
+											<Input value="" id="idAveProjClaimsPrincipalsReqInpt" />
+											<Input value="" id="idAveProjClaimsDepReqInpt" />
+										</cells>
+									</ColumnListItem>
+									<ColumnListItem vAlign="Middle">
+										<cells>
+											<Text text="Credibility" />
+											<Input value="" id="idCredibilityPrincipalsReqInpt" />
+											<Input value="" id="idCredibilityDepReqInpt" />
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</html:center>
+					</cl:MatrixLayoutCell>
+					<cl:MatrixLayoutCell>
+						<Carousel class="" loop="true" 
+									pageIndicatorPlacement="Top" arrowsPlacement="PageIndicator">
+							<pages>
+								<html:center>
+									<f:Form id="idCompareForm1" editable="true">
+										<f:layout>
+											<f:ResponsiveGridLayout
+												labelSpanXL="4"
+												labelSpanL="4"
+												labelSpanM="4"
+												labelSpanS="4"
+												adjustLabelSpan="false"
+												emptySpanXL="3"
+												emptySpanL="3"
+												emptySpanM="3"
+												emptySpanS="0"
+												columnsXL="1"
+												columnsL="1"
+												columnsM="1"
+												singleContainerFullSize="false" />
+										</f:layout>
+										<f:formContainers>
+											<f:FormContainer>
+												<f:formElements>
+													<f:FormElement>
+														<html:center>
+															<Title level="H5" text="Compare1"/>
+														</html:center>
+													</f:FormElement>
+													<f:FormElement label="Effective Date">
+														<Input value="" id="idEffectiveDateC1Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Expiry Date">
+														<Input value="" id="idExpiryDateC1Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Util Cut-off Date">
+														<Input value="" id="idUtilCutoffDateC1Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Util Dload Date">
+														<Input value="" id="idUtilDloadDateC1Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Monthly Multiple">
+														<Input value="" id="idMonthlyMultipleC1Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="IBNR Factor">
+														<Input value="" id="idIbnrFactorC1Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Inflation Rate">
+														<Input value="" id="idInflationRateC1Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer>
+										</f:formContainers>
+									</f:Form>
+									<Table id="idMembershipCountC1Table" inset="false" items="" width="90%">
+										<columns>
+											<Column/>
+											<Column hAlign="Center">
+												<Text text="Principals"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Dependents" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Membership Count" />
+													<Input value="" id="idMemCountPrincipalsC1Inpt" />
+													<Input value="" id="idMemCountDepC1Inpt" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+									<Table id="idClaimsExpC1Table" inset="false" items="" 
+											width="90%" class="custom-panel">
+										<columns>
+											<Column hAlign="Left">
+												<Text text="Claims Experience"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Principals"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Dependents" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Reported Claims" />
+													<Input value="" id="idRepClaimsPrincipalsC1Inpt" />
+													<Input value="" id="idRepClaimsDepC1Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Unreported Claims/IBNR" />
+													<Input value="" id="idUnrepClaimsPrincipalsC1Inpt" />
+													<Input value="" id="idUnrepClaimsDepC1Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Annualized Claims" />
+													<Input value="" id="idAnnualizedClaimsPrincipalsCEC1Inpt" />
+													<Input value="" id="idAnnualizedClaimsDepCEC1Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Average Claims" />
+													<Input value="" id="idAveClaimsPrincipalsC1Inpt" />
+													<Input value="" id="idAveClaimsDepC1Inpt" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+									<Table id="idProjectedClaimsC1Table" inset="false" items="" 
+											width="90%" class="custom-panel">
+										<columns>
+											<Column hAlign="Left">
+												<Text text="Projected Claims"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Principals"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Dependents" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Annualized Claims" />
+													<Input value="" id="idAnnualizedClaimsPrincipalsPCC1Inpt" />
+													<Input value="" id="idAnnualizedClaimsDepPCC1Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Inflation" />
+													<Input value="" id="idInflationPrincipalsC1Inpt" />
+													<Input value="" id="idInflationDepC1Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Modified Benefits" />
+													<Input value="" id="idModBenPrincipalsC1Inpt" />
+													<Input value="" id="idModBenDepC1Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Total Projected Claims" />
+													<Input value="" id="idTotalProjClaimsPrincipalsC1Inpt" />
+													<Input value="" id="idTotalProjClaimsDepC1Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Ave Projected Claims" />
+													<Input value="" id="idAveProjClaimsPrincipalsC1Inpt" />
+													<Input value="" id="idAveProjClaimsDepC1Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Credibility" />
+													<Input value="" id="idCredibilityPrincipalsC1Inpt" />
+													<Input value="" id="idCredibilityDepC1Inpt" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</html:center>
+								<html:center>
+									<f:Form id="idCompareForm2" editable="true">
+										<f:layout>
+											<f:ResponsiveGridLayout
+												labelSpanXL="4"
+												labelSpanL="4"
+												labelSpanM="4"
+												labelSpanS="4"
+												adjustLabelSpan="false"
+												emptySpanXL="3"
+												emptySpanL="3"
+												emptySpanM="3"
+												emptySpanS="0"
+												columnsXL="1"
+												columnsL="1"
+												columnsM="1"
+												singleContainerFullSize="false" />
+										</f:layout>
+										<f:formContainers>
+											<f:FormContainer>
+												<f:formElements>
+													<f:FormElement>
+														<html:center>
+															<Title level="H5" text="Compare2"/>
+														</html:center>
+													</f:FormElement>
+													<f:FormElement label="Effective Date">
+														<Input value="" id="idEffectiveDateC2Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Expiry Date">
+														<Input value="" id="idExpiryDateC2Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Util Cut-off Date">
+														<Input value="" id="idUtilCutoffDateC2Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Util Dload Date">
+														<Input value="" id="idUtilDloadDateC2Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Monthly Multiple">
+														<Input value="" id="idMonthlyMultipleC2Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="IBNR Factor">
+														<Input value="" id="idIbnrFactorC2Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Inflation Rate">
+														<Input value="" id="idInflationRateC2Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer>
+										</f:formContainers>
+									</f:Form>
+									<Table id="idMembershipCountC2Table" inset="false" items="" width="90%">
+										<columns>
+											<Column/>
+											<Column hAlign="Center">
+												<Text text="Principals"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Dependents" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Membership Count" />
+													<Input value="" id="idMemCountPrincipalsC2Inpt" />
+													<Input value="" id="idMemCountDepC2Inpt" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+									<Table id="idClaimsExpC2Table" inset="false" items="" 
+											width="90%" class="custom-panel">
+										<columns>
+											<Column hAlign="Left">
+												<Text text="Claims Experience"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Principals"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Dependents" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Reported Claims" />
+													<Input value="" id="idRepClaimsPrincipalsC2Inpt" />
+													<Input value="" id="idRepClaimsDepC2Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Unreported Claims/IBNR" />
+													<Input value="" id="idUnrepClaimsPrincipalsC2Inpt" />
+													<Input value="" id="idUnrepClaimsDepC2Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Annualized Claims" />
+													<Input value="" id="idAnnualizedClaimsPrincipalsCEC2Inpt" />
+													<Input value="" id="idAnnualizedClaimsDepCEC2Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Average Claims" />
+													<Input value="" id="idAveClaimsPrincipalsC2Inpt" />
+													<Input value="" id="idAveClaimsDepC2Inpt" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+									<Table id="idProjectedClaimsC2Table" inset="false" items="" 
+											width="90%" class="custom-panel">
+										<columns>
+											<Column hAlign="Left">
+												<Text text="Projected Claims"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Principals"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Dependents" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Annualized Claims" />
+													<Input value="" id="idAnnualizedClaimsPrincipalsPCC2Inpt" />
+													<Input value="" id="idAnnualizedClaimsDepPCC2Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Inflation" />
+													<Input value="" id="idInflationPrincipalsC2Inpt" />
+													<Input value="" id="idInflationDepC2Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Modified Benefits" />
+													<Input value="" id="idModBenPrincipalsC2Inpt" />
+													<Input value="" id="idModBenDepC2Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Total Projected Claims" />
+													<Input value="" id="idTotalProjClaimsPrincipalsC2Inpt" />
+													<Input value="" id="idTotalProjClaimsDepC2Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Ave Projected Claims" />
+													<Input value="" id="idAveProjClaimsPrincipalsC2Inpt" />
+													<Input value="" id="idAveProjClaimsDepC2Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Credibility" />
+													<Input value="" id="idCredibilityPrincipalsC2Inpt" />
+													<Input value="" id="idCredibilityDepC2Inpt" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</html:center>
+								<html:center>
+									<f:Form id="idCompareForm3" editable="true">
+										<f:layout>
+											<f:ResponsiveGridLayout
+												labelSpanXL="4"
+												labelSpanL="4"
+												labelSpanM="4"
+												labelSpanS="4"
+												adjustLabelSpan="false"
+												emptySpanXL="3"
+												emptySpanL="3"
+												emptySpanM="3"
+												emptySpanS="0"
+												columnsXL="1"
+												columnsL="1"
+												columnsM="1"
+												singleContainerFullSize="false" />
+										</f:layout>
+										<f:formContainers>
+											<f:FormContainer>
+												<f:formElements>
+													<f:FormElement>
+														<html:center>
+															<Title level="H5" text="Compare3"/>
+														</html:center>
+													</f:FormElement>
+													<f:FormElement label="Effective Date">
+														<Input value="" id="idEffectiveDateC3Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Expiry Date">
+														<Input value="" id="idExpiryDateC3Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Util Cut-off Date">
+														<Input value="" id="idUtilCutoffDateC3Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Util Dload Date">
+														<Input value="" id="idUtilDloadDateC3Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Monthly Multiple">
+														<Input value="" id="idMonthlyMultipleC3Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="IBNR Factor">
+														<Input value="" id="idIbnrFactorC3Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Inflation Rate">
+														<Input value="" id="idInflationRateC3Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer>
+										</f:formContainers>
+									</f:Form>
+									<Table id="idMembershipCountC3Table" inset="false" items="" width="90%">
+										<columns>
+											<Column/>
+											<Column hAlign="Center">
+												<Text text="Principals"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Dependents" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Membership Count" />
+													<Input value="" id="idMemCountPrincipalsC3Inpt" />
+													<Input value="" id="idMemCountDepC3Inpt" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+									<Table id="idClaimsExpC3Table" inset="false" items="" 
+											width="90%" class="custom-panel">
+										<columns>
+											<Column hAlign="Left">
+												<Text text="Claims Experience"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Principals"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Dependents" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Reported Claims" />
+													<Input value="" id="idRepClaimsPrincipalsC3Inpt" />
+													<Input value="" id="idRepClaimsDepC3Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Unreported Claims/IBNR" />
+													<Input value="" id="idUnrepClaimsPrincipalsC3Inpt" />
+													<Input value="" id="idUnrepClaimsDepC3Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Annualized Claims" />
+													<Input value="" id="idAnnualizedClaimsPrincipalsCEC3Inpt" />
+													<Input value="" id="idAnnualizedClaimsDepCEC3Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Average Claims" />
+													<Input value="" id="idAveClaimsPrincipalsC3Inpt" />
+													<Input value="" id="idAveClaimsDepC3Inpt" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+									<Table id="idProjectedClaimsC3Table" inset="false" items="" 
+											width="90%" class="custom-panel">
+										<columns>
+											<Column hAlign="Left">
+												<Text text="Projected Claims"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Principals"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Dependents" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Annualized Claims" />
+													<Input value="" id="idAnnualizedClaimsPrincipalsPCC3Inpt" />
+													<Input value="" id="idAnnualizedClaimsDepPCC3Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Inflation" />
+													<Input value="" id="idInflationPrincipalsC3Inpt" />
+													<Input value="" id="idInflationDepC3Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Modified Benefits" />
+													<Input value="" id="idModBenPrincipalsC3Inpt" />
+													<Input value="" id="idModBenDepC3Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Total Projected Claims" />
+													<Input value="" id="idTotalProjClaimsPrincipalsC3Inpt" />
+													<Input value="" id="idTotalProjClaimsDepC3Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Ave Projected Claims" />
+													<Input value="" id="idAveProjClaimsPrincipalsC3Inpt" />
+													<Input value="" id="idAveProjClaimsDepC3Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Credibility" />
+													<Input value="" id="idCredibilityPrincipalsC3Inpt" />
+													<Input value="" id="idCredibilityDepC3Inpt" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</html:center>
+								<html:center>
+									<f:Form id="idCompareForm4" editable="true">
+										<f:layout>
+											<f:ResponsiveGridLayout
+												labelSpanXL="4"
+												labelSpanL="4"
+												labelSpanM="4"
+												labelSpanS="4"
+												adjustLabelSpan="false"
+												emptySpanXL="3"
+												emptySpanL="3"
+												emptySpanM="3"
+												emptySpanS="0"
+												columnsXL="1"
+												columnsL="1"
+												columnsM="1"
+												singleContainerFullSize="false" />
+										</f:layout>
+										<f:formContainers>
+											<f:FormContainer>
+												<f:formElements>
+													<f:FormElement>
+														<html:center>
+															<Title level="H5" text="Compare4"/>
+														</html:center>
+													</f:FormElement>
+													<f:FormElement label="Effective Date">
+														<Input value="" id="idEffectiveDateC4Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Expiry Date">
+														<Input value="" id="idExpiryDateC4Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Util Cut-off Date">
+														<Input value="" id="idUtilCutoffDateC4Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Util Dload Date">
+														<Input value="" id="idUtilDloadDateC4Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Monthly Multiple">
+														<Input value="" id="idMonthlyMultipleC4Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="IBNR Factor">
+														<Input value="" id="idIbnrFactorC4Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+													<f:FormElement label="Inflation Rate">
+														<Input value="" id="idInflationRateC4Inpt">
+															<layoutData>
+																<l:GridData span="XL4 L4 M4 S4"/>
+															</layoutData>
+														</Input>
+													</f:FormElement>
+												</f:formElements>
+											</f:FormContainer>
+										</f:formContainers>
+									</f:Form>
+									<Table id="idMembershipCountC4Table" inset="false" items="" width="90%">
+										<columns>
+											<Column/>
+											<Column hAlign="Center">
+												<Text text="Principals"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Dependents" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Membership Count" />
+													<Input value="" id="idMemCountPrincipalsC4Inpt" />
+													<Input value="" id="idMemCountDepC4Inpt" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+									<Table id="idClaimsExpC4Table" inset="false" items="" 
+											width="90%" class="custom-panel">
+										<columns>
+											<Column hAlign="Left">
+												<Text text="Claims Experience"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Principals"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Dependents" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Reported Claims" />
+													<Input value="" id="idRepClaimsPrincipalsC4Inpt" />
+													<Input value="" id="idRepClaimsDepC4Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Unreported Claims/IBNR" />
+													<Input value="" id="idUnrepClaimsPrincipalsC4Inpt" />
+													<Input value="" id="idUnrepClaimsDepC4Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Annualized Claims" />
+													<Input value="" id="idAnnualizedClaimsPrincipalsCEC4Inpt" />
+													<Input value="" id="idAnnualizedClaimsDepCEC4Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Average Claims" />
+													<Input value="" id="idAveClaimsPrincipalsC4Inpt" />
+													<Input value="" id="idAveClaimsDepC4Inpt" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+									<Table id="idProjectedClaimsC4Table" inset="false" items="" 
+											width="90%" class="custom-panel">
+										<columns>
+											<Column hAlign="Left">
+												<Text text="Projected Claims"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Principals"/>
+											</Column>
+											<Column hAlign="Center">
+												<Text text="Dependents" />
+											</Column>
+										</columns>
+										<items>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Annualized Claims" />
+													<Input value="" id="idAnnualizedClaimsPrincipalsPCC4Inpt" />
+													<Input value="" id="idAnnualizedClaimsDepPCC4Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Inflation" />
+													<Input value="" id="idInflationPrincipalsC4Inpt" />
+													<Input value="" id="idInflationDepC4Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Modified Benefits" />
+													<Input value="" id="idModBenPrincipalsC4Inpt" />
+													<Input value="" id="idModBenDepC4Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Total Projected Claims" />
+													<Input value="" id="idTotalProjClaimsPrincipalsC4Inpt" />
+													<Input value="" id="idTotalProjClaimsDepC4Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Ave Projected Claims" />
+													<Input value="" id="idAveProjClaimsPrincipalsC4Inpt" />
+													<Input value="" id="idAveProjClaimsDepC4Inpt" />
+												</cells>
+											</ColumnListItem>
+											<ColumnListItem vAlign="Middle">
+												<cells>
+													<Text text="Credibility" />
+													<Input value="" id="idCredibilityPrincipalsC4Inpt" />
+													<Input value="" id="idCredibilityDepC4Inpt" />
+												</cells>
+											</ColumnListItem>
+										</items>
+									</Table>
+								</html:center>
+							</pages>
+						</Carousel>
+					</cl:MatrixLayoutCell>
+				</cl:MatrixLayoutRow>
+			</cl:MatrixLayout>
+		</content>
+	</Page>
+</core:View>

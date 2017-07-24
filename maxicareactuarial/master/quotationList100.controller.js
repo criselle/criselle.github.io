@@ -27,8 +27,21 @@ sap.ui.controller("maxicareactuarial.master.quotationList100", {
 		});
 	},
 	
+	onMenuAction: function(oEvent) {
+		var oItem = oEvent.getParameter("item"),
+			sItemPath = "";
+		while (oItem instanceof sap.m.MenuItem) {
+			sItemPath = oItem.getText() + " > " + sItemPath;
+			oItem = oItem.getParent();
+		}
+
+		sItemPath = sItemPath.substr(0, sItemPath.lastIndexOf(" > "));
+
+		sap.m.MessageToast.show("Action triggered on item: " + sItemPath);
+	},
+	
 	onPressNewQuotation: function(){
-		this.getOwnerComponent().getRouter().navTo("addNewQuotation100");
+		this.getOwnerComponent().getRouter().navTo("quotationItem100");
 	},
 	
 	onListItemPress: function(){

@@ -1,0 +1,94 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" xmlns:cl="sap.ui.commons.layout"
+		controllerName="maxicareactuarial.detail.adjustments.tab.network.pointOfService100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel id="idPointOfServicePanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Point of Service"/>
+				</Toolbar>
+			</headerToolbar>
+			<cl:MatrixLayout width="100%" widths="50%,50%">
+				<cl:MatrixLayoutRow>
+					<cl:MatrixLayoutCell>
+						<Table id="idPointOfServiceMRTable" inset="false" items="">
+							<columns>
+								<Column hAlign="Center">
+									<Text text="Maxicare Rates" />
+								</Column>
+								<Column hAlign="Center">
+									<Text text="80% of HB and PF"/>
+								</Column>
+								<Column hAlign="Center">
+									<Text text="100% of HB and PF" />
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="IP and OP" />
+										<Input value="" id="idIPOP80MRInpt" />
+										<Input value="" id="idIPOP100MRInpt" />
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="IP only" />
+										<Input value="" id="idIPOnly80MRInpt" />
+										<Input value="" id="idIPOnly100MRInpt" />
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="OP only" />
+										<Input value="" id="idOPOnly80MRInpt" />
+										<Input value="" id="idOPOnly100MRInpt" />
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</cl:MatrixLayoutCell>
+					<cl:MatrixLayoutCell>
+						<Table id="idPointOfServiceACTable" inset="false" items="">
+							<columns>
+								<Column hAlign="Center">
+									<Text text="Actual Cost" />
+								</Column>
+								<Column hAlign="Center">
+									<Text text="80% of HB and PF"/>
+								</Column>
+								<Column hAlign="Center">
+									<Text text="100% of HB and PF" />
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="IP and OP" />
+										<Input value="" id="idIPOP80ACInpt" />
+										<Input value="" id="idIPOP100ACInpt" />
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="IP only" />
+										<Input value="" id="idIPOnly80ACInpt" />
+										<Input value="" id="idIPOnly100ACInpt" />
+									</cells>
+								</ColumnListItem>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Text text="OP only" />
+										<Input value="" id="idOPOnly80ACInpt" />
+										<Input value="" id="idOPOnly100ACInpt" />
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</cl:MatrixLayoutCell>
+				</cl:MatrixLayoutRow>	
+			</cl:MatrixLayout>
+		</Panel>
+	</VBox>
+</core:View>

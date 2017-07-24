@@ -1,0 +1,39 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" 
+		controllerName="maxicareactuarial.detail.adjustments.network100" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Network">
+		<content>
+			<ObjectHeader binding="" title="Company Name"
+						  number="Quotation No 0001" backgroundDesign="Solid">
+				<statuses>
+					<ObjectStatus text="Plan ID"/>
+				</statuses>
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+			<IconTabBar id="idNetworkIconTabBar" select="handleIconTabBarSelect"
+						class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter icon="sap-icon://approvals" text="Provider Access"
+									key="ProviderAccess">
+						<mvc:XMLView viewName="maxicareactuarial.detail.adjustments.tab.network.providerAccess100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Major Hospitals"
+									key="MajorHospitals">
+						<mvc:XMLView viewName="maxicareactuarial.detail.adjustments.tab.network.majorHospitals100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Special Access"
+									key="SpecialAccess">
+						<mvc:XMLView viewName="maxicareactuarial.detail.adjustments.tab.network.specialAccess100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Point of Service"
+									key="PointOfService">
+						<mvc:XMLView viewName="maxicareactuarial.detail.adjustments.tab.network.pointOfService100"/>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</core:View>

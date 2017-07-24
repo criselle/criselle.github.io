@@ -1,0 +1,143 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.planItem.medicalInsurance100" 
+		xmlns:html="http://www.w3.org/1999/xhtml" xmlns:t="sap.ui.table">
+	<Page title="Medical Insurance">
+		<content>
+			<ObjectHeader binding="" backgroundDesign="Solid"
+						title="Company Name" number="Quotation No 0001">
+				<statuses>
+					<ObjectStatus text="Plan ID"/>
+				</statuses>
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+			<VBox class="sapUiSmallMargin">
+				<f:Form id="idMedicalInsuranceForm" editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="3"
+							emptySpanL="3"
+							emptySpanM="3"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Available">
+									<Switch id="idAvailableSwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangeAvailable"/>
+								</f:FormElement>
+								<f:FormElement label="Condition">
+									<Select id="idConditionSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</f:FormElement>
+								<f:FormElement label="Amount">
+									<Input value="" id="idAmountInpt">
+										<layoutData>
+											<l:GridData span="XL3 L3 M3 S6" />
+										</layoutData>
+									</Input>
+									<Select id="idAmountUnitSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+										<layoutData>
+											<l:GridData span="XL3 L3 M3 S6" />
+										</layoutData>
+									</Select>
+								</f:FormElement>
+								<f:FormElement label="Type">
+									<Select id="idTypeSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</f:FormElement>
+								<f:FormElement label="Maximum Number of Days">
+									<Input value="" id="idMaxNumOfDaysInpt"/>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+				<t:Table
+					id="idMedInsuranceTable"
+					selectionMode="MultiToggle"
+					rows="{}"
+					visibleRowCount="7"
+					enableCellFilter=""
+					filter=""
+					ariaLabelledBy="title"
+					class="sapUiSizeCozy">
+					<t:toolbar>
+						<Toolbar>
+							<ToolbarSpacer/>
+							<Button id="idAddMedInsuranceBtn" icon="sap-icon://add"
+									press="onPressAddMedInsurance"/>
+							<Button id="idEditMedInsuranceBtn" icon="sap-icon://edit"
+									press="onPressEditMedInsurance"/>
+							<Button id="idDeleteMedInsuranceBtn" icon="sap-icon://delete"
+									press="onPressDeleteMedInsurance"/>
+							<ToolbarSeparator/>
+							<SearchField
+								placeholder="Search"
+								value=""
+								search="filterGlobally"
+								width="15rem"/>
+						</Toolbar>
+					</t:toolbar>
+					<t:columns>
+						<t:Column
+							filterProperty="Condition">
+							<Label text="Condition" />
+							<t:template>
+								<Text text="{}"/>
+							</t:template>
+						</t:Column>
+						<t:Column
+							filterProperty="Amount">
+							<Label text="Amount" />
+							<t:template>
+								<Text text="{}"/>
+							</t:template>
+						</t:Column>
+						<t:Column filterProperty="Unit">
+							<Label text="Unit"/>
+							<t:template>
+								<Text text="{}"/>
+							</t:template>
+						</t:Column>
+						<t:Column
+							filterProperty="Type">
+							<Label text="Type" />
+							<t:template>
+								<Text text="{}"/>
+							</t:template>
+						</t:Column>
+						<t:Column
+							filterProperty="MaxNumOfDays">
+							<Label text="Maximum Number of Days" />
+							<t:template>
+								<Text text="{}"/>
+							</t:template>
+						</t:Column>
+					</t:columns>
+				</t:Table>
+			</VBox>
+		</content>
+	</Page>
+</core:View>

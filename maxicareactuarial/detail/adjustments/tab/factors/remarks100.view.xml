@@ -1,0 +1,15 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" 
+		controllerName="maxicareactuarial.detail.adjustments.tab.factors.remarks100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel id="idRemarksPanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Remarks"/>
+				</Toolbar>
+			</headerToolbar>
+			<TextArea id="idRemarksTextArea" rows="8" width="100%"/>
+		</Panel>
+	</VBox>
+</core:View>

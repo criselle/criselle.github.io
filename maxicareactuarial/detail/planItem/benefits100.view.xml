@@ -1,0 +1,43 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.planItem.benefits100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Benefits">
+		<content>
+			<ObjectHeader binding="" title="Company Name"
+						  number="Quotation No 0001" backgroundDesign="Solid">
+				<statuses>
+					<ObjectStatus text="Plan ID"/>
+				</statuses>
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+			<IconTabBar id="idBenefitsIconTabBar" select="handleIconTabBarSelect"
+						class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter icon="sap-icon://approvals" text="Outpatient"
+									key="Outpatient">
+						<mvc:XMLView viewName="maxicareactuarial.detail.planItem.tab.benefits.outpatient100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Inpatient"
+									key="Inpatient">
+						<mvc:XMLView viewName="maxicareactuarial.detail.planItem.tab.benefits.inpatient100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Diagnostic/Therapeutic Procedures"
+									key="DiagnosticProcedures">
+						<mvc:XMLView viewName="maxicareactuarial.detail.planItem.tab.benefits.diagnosticProcedures100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Emergency Care"
+									key="EmergencyCare">
+						<mvc:XMLView viewName="maxicareactuarial.detail.planItem.tab.benefits.emergencyCare100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Conditions And Specific Limitations"
+									key="ConditionsLimitations">
+						<mvc:XMLView viewName="maxicareactuarial.detail.planItem.tab.benefits.conditions100"/>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</core:View>

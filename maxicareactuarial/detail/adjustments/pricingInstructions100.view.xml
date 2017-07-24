@@ -1,0 +1,38 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="maxicareactuarial.detail.adjustments.pricingInstructions100" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Pricing Instructions">
+		<content>
+			<ObjectHeader binding="" title="Company Name"
+						  number="Quotation No 0001" backgroundDesign="Solid">
+				<statuses>
+					<ObjectStatus text="Plan ID"/>
+				</statuses>
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+			<IconTabBar id="idPricingInstructionsIconTabBar" select="handleIconTabBarSelect"
+						class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter icon="sap-icon://approvals" text="Premium"
+									key="Premium">
+						<mvc:XMLView viewName="maxicareactuarial.detail.adjustments.tab.pricingInstructions.premium100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Rates for Overaged Employees"
+									key="RatesForOveragedEmployees">		
+						<mvc:XMLView viewName="maxicareactuarial.detail.adjustments.tab.pricingInstructions.ratesForOveragedEmployees100"/>				
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Lock-in Program"
+									key="LockInProgram">
+						<mvc:XMLView viewName="maxicareactuarial.detail.adjustments.tab.pricingInstructions.lockInProgram100"/>				
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Riders Cost"
+									key="RidersCost">
+						<mvc:XMLView viewName="maxicareactuarial.detail.adjustments.tab.pricingInstructions.ridersCost100"/>		
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</core:View>

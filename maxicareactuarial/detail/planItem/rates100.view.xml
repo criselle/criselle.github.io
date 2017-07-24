@@ -1,0 +1,35 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.planItem.rates100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Rates">
+		<content>
+			<ObjectHeader binding="" title="Company Name"
+						  number="Quotation No 0001" backgroundDesign="Solid">
+				<statuses>
+					<ObjectStatus text="Plan ID"/>
+				</statuses>
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+			<IconTabBar id="idRatesIconTabBar" select="handleIconTabBarSelect"
+						class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter icon="sap-icon://approvals" text="Plan Rates"
+									key="PlanRates">
+						<mvc:XMLView viewName="maxicareactuarial.detail.planItem.tab.rates.planRates100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="ASO Fund"
+									key="ASOFund">
+						<mvc:XMLView viewName="maxicareactuarial.detail.planItem.tab.rates.asoFund100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Clinic Management"
+									key="ClinicManagement">
+						<mvc:XMLView viewName="maxicareactuarial.detail.planItem.tab.rates.clinicManagement100"/>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</core:View>

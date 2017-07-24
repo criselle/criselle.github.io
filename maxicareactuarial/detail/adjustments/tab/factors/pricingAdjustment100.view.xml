@@ -1,0 +1,74 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" 
+		controllerName="maxicareactuarial.detail.adjustments.tab.factors.pricingAdjustment100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel id="idPricingAdjPanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Pricing Adjustment"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idPricingAdjForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Additional for PCS">
+								<Input value="" id="idAddtlForPCSInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Clinic Based">
+								<Input value="" id="idClinicBasedInpt"/>
+							</f:FormElement>
+							<f:FormElement label="FlexBen">
+								<Input value="" id="idFlexBenInpt1"/>
+							</f:FormElement>
+							<f:FormElement label="Discount for Seafarers">
+								<Input value="" id="idDiscForSeafarersInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Escalation Clause">
+								<Input value="" id="idEscClauseInpt"/>
+							</f:FormElement>
+							<f:FormElement label="FlexBen">
+								<Input value="" id="idFlexBenInpt2"/>
+							</f:FormElement>
+							<f:FormElement label="Medical Insurance">
+								<Input value="" id="idMedInsuranceInpt"/>
+							</f:FormElement>
+							<f:FormElement label="No PEC Coverage">
+								<Input value="" id="idNoPecCoverageInpt"/>
+							</f:FormElement>
+							<f:FormElement label="PEC Contestability">
+								<Input value="" id="idPecContestabilityInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Take-off CM Maxicare Plus">
+								<Input value="" id="idTakeOffCMInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Voluntary Group">
+								<Input value="" id="idVoluntaryGroupInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Waived Hierarchy for Dependents">
+								<Input value="" id="idWaivedHierarchyInpt"/>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+	</VBox>
+</core:View>

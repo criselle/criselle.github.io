@@ -1,0 +1,1798 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.planItem.exclusionsLimitations100" 
+		xmlns:html="http://www.w3.org/1999/xhtml"
+		xmlns:cl="sap.ui.commons.layout">
+	<Page title="Exclusions and Limitations">
+		<content>
+			<ObjectHeader binding="" title="Company Name"
+						  number="Quotation No 0001" backgroundDesign="Solid">
+				<statuses>
+					<ObjectStatus text="Plan ID"/>
+				</statuses>
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+			<VBox>
+				<List items="{benefitsModel>/benefits}" >
+					<CustomListItem>
+						<VBox>
+							<HBox>
+								<Text text="{benefitsModel>number}" 
+										class="custom-margin-left custom-numbering custom-title-top"/>
+								<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+									<Text width="100%" text="{benefitsModel>text}" class="custom-title-top"/>
+								</VBox>
+							</HBox>
+							<f:Form editable="true">
+								<f:layout>
+									<f:ResponsiveGridLayout
+										labelSpanXL="3"
+										labelSpanL="3"
+										labelSpanM="3"
+										labelSpanS="12"
+										adjustLabelSpan="false"
+										emptySpanXL="3"
+										emptySpanL="3"
+										emptySpanM="3"
+										emptySpanS="0"
+										columnsXL="1"
+										columnsL="1"
+										columnsM="1"
+										singleContainerFullSize="false" />
+								</f:layout>
+								<f:formContainers>
+									<f:FormContainer>
+										<f:formElements>
+											<f:FormElement>
+												<Label text="Coverage:" textAlign="Right"
+														class="custom-label-align-small">
+													<layoutData>
+														<l:GridData indent="XL1 L1 M1 S0" span="XL2 L2 M2 S2"/>
+													</layoutData>
+												</Label>
+												<Switch state="false" customTextOn="Yes"
+														customTextOff="No" change="onChangeCoverage">
+													<layoutData>
+														<l:GridData span="XL2 L2 M2 S12"/>
+													</layoutData>
+												</Switch>
+												<!-- 1 -->
+												<Label text="Shared IP and OP:" textAlign="Right"
+														class="custom-label-align-small">
+													<layoutData>
+														<l:GridData span="XL2 L2 M2 S4"/>
+													</layoutData>
+												</Label>
+												<Switch state="false" customTextOn="Yes"
+														customTextOff="No" change="onChangeCoverage">
+													<layoutData>
+														<l:GridData span="XL2 L2 M2 S2"/>
+													</layoutData>
+												</Switch>
+												<!-- 2 -->
+<!-- 												<Label text="Limit:" textAlign="Right" -->
+<!-- 														class="custom-label-align-medium"> -->
+<!-- 													<layoutData> -->
+<!-- 														<l:GridData span="XL1 L1 M1 S2"/> -->
+<!-- 													</layoutData> -->
+<!-- 												</Label> -->
+<!-- 												<Input value=""> -->
+<!-- 													<layoutData> -->
+<!-- 														<l:GridData span="XL3 L3 M3 S5"/> -->
+<!-- 													</layoutData> -->
+<!-- 												</Input> -->
+<!-- 												<Select selectedKey=""> -->
+<!-- 													<items> -->
+<!-- 														<core:Item text="" key=""/> -->
+<!-- 													</items> -->
+<!-- 													<layoutData> -->
+<!-- 														<l:GridData span="XL3 L3 M3 S5"/> -->
+<!-- 													</layoutData> -->
+<!-- 												</Select> -->
+												<!-- 3 -->
+<!-- 												<Label text="Outpatient Medicines:" textAlign="Right" -->
+<!-- 														class="custom-label-align-small"> -->
+<!-- 													<layoutData> -->
+<!-- 														<l:GridData span="XL2 L2 M2 S3"/> -->
+<!-- 													</layoutData> -->
+<!-- 												</Label> -->
+<!-- 												<Switch state="false" customTextOn="Yes" -->
+<!-- 														customTextOff="No" change="onChangeOPMeds"> -->
+<!-- 													<layoutData> -->
+<!-- 														<l:GridData span="XL1 L1 M1 S3"/> -->
+<!-- 													</layoutData> -->
+<!-- 												</Switch> -->
+<!-- 												<Label text="Take-Home Medicines:" textAlign="Right" -->
+<!-- 														class="custom-label-align-small"> -->
+<!-- 													<layoutData> -->
+<!-- 														<l:GridData span="XL2 L2 M2 S3"/> -->
+<!-- 													</layoutData> -->
+<!-- 												</Label> -->
+<!-- 												<Switch state="false" customTextOn="Yes" -->
+<!-- 														customTextOff="No" change="onChangeTakeHomeMeds"> -->
+<!-- 													<layoutData> -->
+<!-- 														<l:GridData span="XL2 L2 M2 S3"/> -->
+<!-- 													</layoutData> -->
+<!-- 												</Switch> -->
+											</f:FormElement>
+										</f:formElements>
+									</f:FormContainer>
+								</f:formContainers>
+							</f:Form>
+							<f:Form editable="true">
+								<f:layout>
+									<f:ResponsiveGridLayout
+										labelSpanXL="3"
+										labelSpanL="3"
+										labelSpanM="3"
+										labelSpanS="12"
+										adjustLabelSpan="false"
+										emptySpanXL="3"
+										emptySpanL="3"
+										emptySpanM="3"
+										emptySpanS="0"
+										columnsXL="1"
+										columnsL="1"
+										columnsM="1"
+										singleContainerFullSize="false" />
+								</f:layout>
+								<f:formContainers>
+									<f:FormContainer>
+										<f:formElements>
+											<f:FormElement label="Limit">
+												<Input value="">
+													<layoutData>
+														<l:GridData span="XL3 L3 M3 S6"/>
+													</layoutData>
+												</Input>
+												<Select selectedKey="">
+													<items>
+														<core:Item text="" key=""/>
+													</items>
+													<layoutData>
+														<l:GridData span="XL3 L3 M3 S6"/>
+													</layoutData>
+												</Select>
+											</f:FormElement>
+											<f:FormElement label="Funding Arrangement">
+												<Select selectedKey="">
+													<items>
+														<core:Item text="" key=""/>
+													</items>
+												</Select>
+											</f:FormElement>
+										</f:formElements>
+									</f:FormContainer>
+								</f:formContainers>
+							</f:Form>
+							<Panel expandable="true" expanded="true"
+									width="auto" class="custom-panel-bottom">
+								<headerToolbar>
+									<Toolbar height="3rem">
+										<Title text="Point of Service"/>
+									</Toolbar>
+								</headerToolbar>
+								<Title level="H3" text="Shared IP and OP" 
+										class="custom-title-exlimit"/>
+								<Table inset="false" items="">
+									<columns>
+										<Column/>
+										<Column width="55%" hAlign="Center">
+											<cl:MatrixLayout width="100%" widths="50%,50%">
+												<cl:MatrixLayoutRow>
+													<cl:MatrixLayoutCell hAlign="Center">
+														<Text text="Minimum"/>
+													</cl:MatrixLayoutCell>
+													<cl:MatrixLayoutCell hAlign="Center">
+														<Text text="Maximum" />
+													</cl:MatrixLayoutCell>
+												</cl:MatrixLayoutRow>
+											</cl:MatrixLayout>
+										</Column>
+										<Column hAlign="Center">
+											<Text text="Based On" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem vAlign="Middle">
+											<cells>
+												<Text text="Hospital Bills:" />
+												<cl:MatrixLayout width="100%" widths="25%,25%,25%,25%">
+													<cl:MatrixLayoutRow>
+														<cl:MatrixLayoutCell>
+															<Input value="" width="100%"/>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Select selectedKey="" width="100%">
+																<items>
+																	<core:Item text="" key=""/>
+																</items>
+															</Select>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Input value="" width="100%"/>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Select selectedKey="" width="100%">
+																<items>
+																	<core:Item text="" key=""/>
+																</items>
+															</Select>
+														</cl:MatrixLayoutCell>
+													</cl:MatrixLayoutRow>
+												</cl:MatrixLayout>
+												<Select selectedKey="" width="100%">
+													<items>
+														<core:Item text="" key=""/>
+													</items>
+												</Select>
+											</cells>
+										</ColumnListItem>
+										<ColumnListItem vAlign="Middle">
+											<cells>
+												<Text text="Professional Fees:" />
+												<cl:MatrixLayout width="100%" widths="25%,25%,25%,25%">
+													<cl:MatrixLayoutRow>
+														<cl:MatrixLayoutCell>
+															<Input value="" width="100%"/>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Select selectedKey="" width="100%">
+																<items>
+																	<core:Item text="" key=""/>
+																</items>
+															</Select>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Input value="" width="100%"/>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Select selectedKey="" width="100%">
+																<items>
+																	<core:Item text="" key=""/>
+																</items>
+															</Select>
+														</cl:MatrixLayoutCell>
+													</cl:MatrixLayoutRow>
+												</cl:MatrixLayout>
+												<Select selectedKey="" width="100%">
+													<items>
+														<core:Item text="" key=""/>
+													</items>
+												</Select>
+											</cells>
+										</ColumnListItem>
+										<ColumnListItem vAlign="Middle">
+											<cells>
+												<Text text="Hospital Bills:" />
+												<Select selectedKey="" width="100%">
+													<items>
+														<core:Item text="" key=""/>
+													</items>
+												</Select>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Title level="H3" text="Inpatient" 
+										class="custom-title-exlimit"/>
+								<Table inset="false" items="">
+									<columns>
+										<Column/>
+										<Column width="55%" hAlign="Center">
+											<cl:MatrixLayout width="100%" widths="50%,50%">
+												<cl:MatrixLayoutRow>
+													<cl:MatrixLayoutCell hAlign="Center">
+														<Text text="Minimum"/>
+													</cl:MatrixLayoutCell>
+													<cl:MatrixLayoutCell hAlign="Center">
+														<Text text="Maximum" />
+													</cl:MatrixLayoutCell>
+												</cl:MatrixLayoutRow>
+											</cl:MatrixLayout>
+										</Column>
+										<Column hAlign="Center">
+											<Text text="Based On" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem vAlign="Middle">
+											<cells>
+												<Text text="Hospital Bills:" />
+												<cl:MatrixLayout width="100%" widths="25%,25%,25%,25%">
+													<cl:MatrixLayoutRow>
+														<cl:MatrixLayoutCell>
+															<Input value="" width="100%"/>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Select selectedKey="" width="100%">
+																<items>
+																	<core:Item text="" key=""/>
+																</items>
+															</Select>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Input value="" width="100%"/>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Select selectedKey="" width="100%">
+																<items>
+																	<core:Item text="" key=""/>
+																</items>
+															</Select>
+														</cl:MatrixLayoutCell>
+													</cl:MatrixLayoutRow>
+												</cl:MatrixLayout>
+												<Select selectedKey="" width="100%">
+													<items>
+														<core:Item text="" key=""/>
+													</items>
+												</Select>
+											</cells>
+										</ColumnListItem>
+										<ColumnListItem vAlign="Middle">
+											<cells>
+												<Text text="Professional Fees:" />
+												<cl:MatrixLayout width="100%" widths="25%,25%,25%,25%">
+													<cl:MatrixLayoutRow>
+														<cl:MatrixLayoutCell>
+															<Input value="" width="100%"/>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Select selectedKey="" width="100%">
+																<items>
+																	<core:Item text="" key=""/>
+																</items>
+															</Select>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Input value="" width="100%"/>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Select selectedKey="" width="100%">
+																<items>
+																	<core:Item text="" key=""/>
+																</items>
+															</Select>
+														</cl:MatrixLayoutCell>
+													</cl:MatrixLayoutRow>
+												</cl:MatrixLayout>
+												<Select selectedKey="" width="100%">
+													<items>
+														<core:Item text="" key=""/>
+													</items>
+												</Select>
+											</cells>
+										</ColumnListItem>
+										<ColumnListItem vAlign="Middle">
+											<cells>
+												<Text text="Hospital Bills:" />
+												<Select selectedKey="" width="100%">
+													<items>
+														<core:Item text="" key=""/>
+													</items>
+												</Select>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Title level="H3" text="Outpatient" 
+										class="custom-title-exlimit"/>
+								<Table inset="false" items="">
+									<columns>
+										<Column/>
+										<Column width="55%" hAlign="Center">
+											<cl:MatrixLayout width="100%" widths="50%,50%">
+												<cl:MatrixLayoutRow>
+													<cl:MatrixLayoutCell hAlign="Center">
+														<Text text="Minimum"/>
+													</cl:MatrixLayoutCell>
+													<cl:MatrixLayoutCell hAlign="Center">
+														<Text text="Maximum" />
+													</cl:MatrixLayoutCell>
+												</cl:MatrixLayoutRow>
+											</cl:MatrixLayout>
+										</Column>
+										<Column hAlign="Center">
+											<Text text="Based On" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem vAlign="Middle">
+											<cells>
+												<Text text="Hospital Bills:" />
+												<cl:MatrixLayout width="100%" widths="25%,25%,25%,25%">
+													<cl:MatrixLayoutRow>
+														<cl:MatrixLayoutCell>
+															<Input value="" width="100%"/>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Select selectedKey="" width="100%">
+																<items>
+																	<core:Item text="" key=""/>
+																</items>
+															</Select>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Input value="" width="100%"/>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Select selectedKey="" width="100%">
+																<items>
+																	<core:Item text="" key=""/>
+																</items>
+															</Select>
+														</cl:MatrixLayoutCell>
+													</cl:MatrixLayoutRow>
+												</cl:MatrixLayout>
+												<Select selectedKey="" width="100%">
+													<items>
+														<core:Item text="" key=""/>
+													</items>
+												</Select>
+											</cells>
+										</ColumnListItem>
+										<ColumnListItem vAlign="Middle">
+											<cells>
+												<Text text="Professional Fees:" />
+												<cl:MatrixLayout width="100%" widths="25%,25%,25%,25%">
+													<cl:MatrixLayoutRow>
+														<cl:MatrixLayoutCell>
+															<Input value="" width="100%"/>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Select selectedKey="" width="100%">
+																<items>
+																	<core:Item text="" key=""/>
+																</items>
+															</Select>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Input value="" width="100%"/>
+														</cl:MatrixLayoutCell>
+														<cl:MatrixLayoutCell>
+															<Select selectedKey="" width="100%">
+																<items>
+																	<core:Item text="" key=""/>
+																</items>
+															</Select>
+														</cl:MatrixLayoutCell>
+													</cl:MatrixLayoutRow>
+												</cl:MatrixLayout>
+												<Select selectedKey="" width="100%">
+													<items>
+														<core:Item text="" key=""/>
+													</items>
+												</Select>
+											</cells>
+										</ColumnListItem>
+										<ColumnListItem vAlign="Middle">
+											<cells>
+												<Text text="Hospital Bills:" />
+												<Select selectedKey="" width="100%">
+													<items>
+														<core:Item text="" key=""/>
+													</items>
+												</Select>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</Panel>
+							<Panel expandable="true" expanded="true"
+									width="auto" class="custom-panel-bottom">
+								<headerToolbar>
+									<Toolbar height="3rem">
+										<Title text="Maternity Assistance"/>
+									</Toolbar>
+								</headerToolbar>
+								<f:Form editable="true">
+									<f:layout>
+										<f:ResponsiveGridLayout
+											labelSpanXL="3"
+											labelSpanL="3"
+											labelSpanM="3"
+											labelSpanS="12"
+											adjustLabelSpan="false"
+											emptySpanXL="3"
+											emptySpanL="3"
+											emptySpanM="3"
+											emptySpanS="0"
+											columnsXL="1"
+											columnsL="1"
+											columnsM="1"
+											singleContainerFullSize="false" />
+									</f:layout>
+									<f:formContainers>
+										<f:FormContainer>
+											<f:formElements>
+												<f:FormElement label="280-day Waiting Perion (Applicable)">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChange280DayWaiting"/>
+												</f:FormElement>
+												<f:FormElement label="Philhealth Application (Required)">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangePhilhealthApp"/>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+										<f:FormContainer title="Covered Enrollees">
+											<f:formElements>
+												<f:FormElement label="Female Employees (Married)">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeFemaleEmpMarried"/>
+												</f:FormElement>
+												<f:FormElement label="Female Employees (Single)">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeFemaleEmpSingle"/>
+												</f:FormElement>
+												<f:FormElement label="Spouse of Male Employees">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeSpouseOfMaleEmp"/>
+												</f:FormElement>
+												<f:FormElement label="All Female Dependents">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeAllFemaleDep"/>
+												</f:FormElement>
+												<f:FormElement label="Others">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeOthers"/>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+										<f:FormContainer title="Mode of Availment">
+											<f:formElements>
+												<f:FormElement label="LOA Facilitated">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeLOAFac"/>
+												</f:FormElement>
+												<f:FormElement label="Reimbursement">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeReimbursement"/>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+										<f:FormContainer title="Limit">
+											<f:formElements>
+												<f:FormElement>
+													<Title level="H5" text="Type of Delivery" 
+															class="custom-title-exlimit custom-padding-zero">
+														<layoutData>
+															<l:GridData indent="XL1 L1 M1 S0" />
+														</layoutData>
+													</Title>
+												</f:FormElement>
+												<f:FormElement label="Caesarian">
+													<Input value=""/>
+												</f:FormElement>
+												<f:FormElement label="Normal Spontaneous Vaginal Delivery">
+													<Input value=""/>
+												</f:FormElement>
+												<f:FormElement label="Home">
+													<Input value=""/>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+										<f:FormContainer title="Complications">
+											<f:formElements>
+												<f:FormElement label="Inclusive on Delivery Limit">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeIncOnDelLimit"/>
+												</f:FormElement>
+												<f:FormElement label="Complication">
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Amount">
+													<Input value=""/>
+												</f:FormElement>
+												<f:FormElement>
+													<Button icon="sap-icon://add"
+															press="onPressAddComplication">
+														<layoutData>
+															<l:GridData indent="XL7 L7 M7 S0" span="XL1 L1 M1 S6" />
+														</layoutData>
+													</Button>
+													<Button icon="sap-icon://delete"
+															press="onPressDeleteComplication">
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S6" />
+														</layoutData>
+													</Button>
+												</f:FormElement>
+												<f:FormElement>
+													<Table inset="false" items="">
+														<columns>
+															<Column hAlign="Left">
+																<Text text="Complication" />
+															</Column>
+															<Column hAlign="Center">
+																<Text text="Amount" />
+															</Column>
+														</columns>
+														<items>
+															<ColumnListItem vAlign="Middle">
+																<cells>
+																	<Text text="" />
+																	<Text text="" />
+																</cells>
+															</ColumnListItem>
+														</items>
+														<layoutData>
+															<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+														</layoutData>
+													</Table>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+										<f:FormContainer title="Laboratory Procedures/Workups">
+											<f:formElements>
+												<f:FormElement label="Limit">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Funding Arrangement">
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+													</Select>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+									</f:formContainers>
+								</f:Form>
+								<f:Form editable="true">
+									<f:layout>
+										<f:ResponsiveGridLayout
+											labelSpanXL="6"
+											labelSpanL="6"
+											labelSpanM="6"
+											labelSpanS="12"
+											adjustLabelSpan="false"
+											emptySpanXL="3"
+											emptySpanL="3"
+											emptySpanM="3"
+											emptySpanS="0"
+											columnsXL="1"
+											columnsL="1"
+											columnsM="1"
+											singleContainerFullSize="false" />
+									</f:layout>
+									<f:formContainers>
+										<f:FormContainer>
+											<f:formElements>
+												<f:FormElement label="Charged of OP Limit">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeChargedOfOPLim"/>
+												</f:FormElement>
+												<f:FormElement label="Pre and Post-natal Consultations">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeNatalConsult"/>
+												</f:FormElement>
+												<f:FormElement label="Complete Blood Count And Blood Type">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeCBCAndBloodType"/>
+												</f:FormElement>
+												<f:FormElement label="Urinalysis">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeUrinalysis"/>
+												</f:FormElement>
+												<f:FormElement label="Papsmear">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangePapsmear"/>
+												</f:FormElement>
+												<f:FormElement label="Transvaginal Ultrasound">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeTransvUltrasound"/>
+												</f:FormElement>
+												<f:FormElement label="Pelvic Ultrasound">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangePelvicUltrasound"/>
+												</f:FormElement>
+												<f:FormElement label="Oral Glucose Tolerance Test/Oral Glucose Challenge Test">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeGlucoseTest"/>
+												</f:FormElement>
+												<f:FormElement label="Hepatitis B Surface Antigen(HbSag)">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeHbSag"/>
+												</f:FormElement>
+												<f:FormElement label="Biophysical Profile Or Scoring">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeBioProf"/>
+												</f:FormElement>
+												<f:FormElement label="Non-Stress Test (For Er Cases Only)">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeNonStressTest"/>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+									</f:formContainers>
+								</f:Form>
+								<f:Form editable="true">
+									<f:layout>
+										<f:ResponsiveGridLayout
+											labelSpanXL="3"
+											labelSpanL="3"
+											labelSpanM="3"
+											labelSpanS="12"
+											adjustLabelSpan="false"
+											emptySpanXL="3"
+											emptySpanL="3"
+											emptySpanM="3"
+											emptySpanS="0"
+											columnsXL="1"
+											columnsL="1"
+											columnsM="1"
+											singleContainerFullSize="false" />
+									</f:layout>
+									<f:formContainers>
+										<f:FormContainer>
+											<f:formElements>
+												<f:FormElement label="Laboratory Procedure/Workups">
+													<Input value=""/>
+												</f:FormElement>
+												<f:FormElement>
+													<Button icon="sap-icon://add"
+															press="onPressLabProc">
+														<layoutData>
+															<l:GridData indent="XL7 L7 M7 S0" span="XL1 L1 M1 S6" />
+														</layoutData>
+													</Button>
+													<Button icon="sap-icon://delete"
+															press="onPressLabProc">
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S6" />
+														</layoutData>
+													</Button>
+												</f:FormElement>
+												<f:FormElement>
+													<Table inset="false" items="">
+														<columns>
+															<Column hAlign="Left">
+																<Text text="Laboratory Procedure/Workups" />
+															</Column>
+														</columns>
+														<items>
+															<ColumnListItem vAlign="Middle">
+																<cells>
+																	<Text text="" />
+																</cells>
+															</ColumnListItem>
+														</items>
+														<layoutData>
+															<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+														</layoutData>
+													</Table>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+									</f:formContainers>
+								</f:Form>
+							</Panel>
+							<Panel expandable="true" expanded="true"
+									width="auto" class="custom-panel-bottom">
+								<headerToolbar>
+									<Toolbar height="3rem">
+										<Title text="Limit"/>
+									</Toolbar>
+								</headerToolbar>
+								<f:Form editable="true">
+									<f:layout>
+										<f:ResponsiveGridLayout
+											labelSpanXL="3"
+											labelSpanL="3"
+											labelSpanM="3"
+											labelSpanS="12"
+											adjustLabelSpan="false"
+											emptySpanXL="3"
+											emptySpanL="3"
+											emptySpanM="3"
+											emptySpanS="0"
+											columnsXL="1"
+											columnsL="1"
+											columnsM="1"
+											singleContainerFullSize="false" />
+									</f:layout>
+									<f:formContainers>
+										<f:FormContainer>
+											<f:formElements>
+												<f:FormElement label="Circumcision (except for treatment of urological conditions)">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Sex transformation">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Diagnosis, treatment and procedures related to fertility or infertility, artificial insemination, sterilization or reversal of such and their complications">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Internal Prosthetic Devices">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Hearing Aids">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Pacemaker">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Artificial limbs">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Knee-tibial insert for total knee arthroplasty">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Vascular grafts">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Bone screws/plates">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Pins">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Wires">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Balloons">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Orthopedic internal fixator/fixation systems">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Orthopedic external fixator/fixation systems">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Intraocular lens">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Braces">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Crutches">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+									</f:formContainers>
+								</f:Form>
+							</Panel>
+							<Panel expandable="true" expanded="true"
+									width="auto" class="custom-panel-bottom">
+								<headerToolbar>
+									<Toolbar height="3rem">
+										<Title text="Outpatient Medicines"/>
+									</Toolbar>
+								</headerToolbar>
+								<f:Form editable="true">
+									<f:layout>
+										<f:ResponsiveGridLayout
+											labelSpanXL="3"
+											labelSpanL="3"
+											labelSpanM="3"
+											labelSpanS="12"
+											adjustLabelSpan="false"
+											emptySpanXL="3"
+											emptySpanL="3"
+											emptySpanM="3"
+											emptySpanS="0"
+											columnsXL="1"
+											columnsL="1"
+											columnsM="1"
+											singleContainerFullSize="false" />
+									</f:layout>
+									<f:formContainers>
+										<f:FormContainer>
+											<f:formElements>
+												<f:FormElement label="Internal Prosthetic Devices">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Select>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Hearing Aids">
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Pacemaker">
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+													</Select>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+									</f:formContainers>
+								</f:Form>
+							</Panel>
+							<Panel expandable="true" expanded="true"
+									width="auto" class="custom-panel-bottom">
+								<headerToolbar>
+									<Toolbar height="3rem">
+										<Title text="Take-home Medicines"/>
+									</Toolbar>
+								</headerToolbar>
+								<f:Form editable="true">
+									<f:layout>
+										<f:ResponsiveGridLayout
+											labelSpanXL="3"
+											labelSpanL="3"
+											labelSpanM="3"
+											labelSpanS="12"
+											adjustLabelSpan="false"
+											emptySpanXL="3"
+											emptySpanL="3"
+											emptySpanM="3"
+											emptySpanS="0"
+											columnsXL="1"
+											columnsL="1"
+											columnsM="1"
+											singleContainerFullSize="false" />
+									</f:layout>
+									<f:formContainers>
+										<f:FormContainer>
+											<f:formElements>
+												<f:FormElement label="Internal Prosthetic Devices">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Select>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S4"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Hearing Aids">
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Pacemaker">
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+													</Select>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+									</f:formContainers>
+								</f:Form>
+							</Panel>
+							<Panel expandable="true" expanded="true"
+									width="auto" class="custom-panel-bottom">
+								<headerToolbar>
+									<Toolbar height="3rem">
+										<Title text="Covered Medicines"/>
+									</Toolbar>
+								</headerToolbar>
+								<f:Form editable="true">
+									<f:layout>
+										<f:ResponsiveGridLayout
+											labelSpanXL="6"
+											labelSpanL="6"
+											labelSpanM="6"
+											labelSpanS="12"
+											adjustLabelSpan="false"
+											emptySpanXL="3"
+											emptySpanL="3"
+											emptySpanM="3"
+											emptySpanS="0"
+											columnsXL="1"
+											columnsL="1"
+											columnsM="1"
+											singleContainerFullSize="false" />
+									</f:layout>
+									<f:formContainers>
+										<f:FormContainer>
+											<f:formElements>
+												<f:FormElement label="Vitamins">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeVitamins"/>
+												</f:FormElement>
+												<f:FormElement label="Food Supplements">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeFoodSupp"/>
+												</f:FormElement>
+												<f:FormElement label="Alternative medicines like herbal/non-conventional treatments">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeAlternativeMeds"/>
+												</f:FormElement>
+												<f:FormElement label="Herbal medicines">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeHerbalMeds"/>
+												</f:FormElement>
+												<f:FormElement label="Pre and post natal medicines">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeNatalMeds"/>
+												</f:FormElement>
+												<f:FormElement label="Contraceptive pills">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeContraPills"/>
+												</f:FormElement>
+												<f:FormElement label="Injectable medicines (such as but not limited to chemotherapeutic drugs, vaccines and  immunomodulators)">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeInjectableMeds"/>
+												</f:FormElement>
+												<f:FormElement label="Beautification / cosmetic products (such as but not limited to slimming and skin whitening products; and creams, ointments, solutions and lotions for derma cases)">
+													<Switch state="false" customTextOn="Yes"
+															customTextOff="No" change="onChangeBeautification"/>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+									</f:formContainers>
+								</f:Form>
+								<f:Form editable="true">
+									<f:layout>
+										<f:ResponsiveGridLayout
+											labelSpanXL="3"
+											labelSpanL="3"
+											labelSpanM="3"
+											labelSpanS="12"
+											adjustLabelSpan="false"
+											emptySpanXL="3"
+											emptySpanL="3"
+											emptySpanM="3"
+											emptySpanS="0"
+											columnsXL="1"
+											columnsL="1"
+											columnsM="1"
+											singleContainerFullSize="false" />
+									</f:layout>
+									<f:formContainers>
+										<f:FormContainer>
+											<f:formElements>
+												<f:FormElement label="Additional Covered Medicines">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL4 L4 M4 S8"/>
+														</layoutData>
+													</Input>
+													<Button icon="sap-icon://add"
+															press="onPressAddCoveredMeds">
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S2" />
+														</layoutData>
+													</Button>
+													<Button icon="sap-icon://delete"
+															press="onPressDeleteCoveredMeds">
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S2" />
+														</layoutData>
+													</Button>
+												</f:FormElement>
+												<f:FormElement>
+													<Table inset="false" items="">
+														<columns>
+															<Column hAlign="Left">
+																<Text text="Covered Medicines" />
+															</Column>
+														</columns>
+														<items>
+															<ColumnListItem vAlign="Middle">
+																<cells>
+																	<Text text="" />
+																</cells>
+															</ColumnListItem>
+														</items>
+														<layoutData>
+															<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+														</layoutData>
+													</Table>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+									</f:formContainers>
+								</f:Form>
+							</Panel>
+							<Panel expandable="true" expanded="true"
+									width="auto" class="custom-panel-bottom">
+								<headerToolbar>
+									<Toolbar height="3rem">
+										<Title text="Dreaded Conditions"/>
+									</Toolbar>
+								</headerToolbar>
+								<f:Form editable="true">
+									<f:layout>
+										<f:ResponsiveGridLayout
+											labelSpanXL="3"
+											labelSpanL="3"
+											labelSpanM="3"
+											labelSpanS="12"
+											adjustLabelSpan="false"
+											emptySpanXL="3"
+											emptySpanL="3"
+											emptySpanM="3"
+											emptySpanS="0"
+											columnsXL="1"
+											columnsL="1"
+											columnsM="1"
+											singleContainerFullSize="false" />
+									</f:layout>
+									<f:formContainers>
+										<f:FormContainer title="Existing Enrollees">
+											<f:formElements>
+												<f:FormElement label="By">
+													<Select selectedKey="">
+														<items>
+															<core:Item text="Calendar" key="Calendar"/>
+															<core:Item text="Date" key="Date"/>
+															<core:Item text="Age" key="Age"/>
+														</items>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Coverage Year">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Date">
+													<DatePicker value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S5"/>
+														</layoutData>
+													</DatePicker>
+													<Label text="to" textAlign="Center"
+															class="custom-label-align-small">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S2"/>
+														</layoutData>
+													</Label>
+													<DatePicker value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S5"/>
+														</layoutData>
+													</DatePicker>
+												</f:FormElement>
+												<f:FormElement label="Age">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S2"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S3"/>
+														</layoutData>
+													</Select>
+													<Label text="to" textAlign="Center"
+															class="custom-label-align-small">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S2"/>
+														</layoutData>
+													</Label>
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S2"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S3"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Limit">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+										<f:FormContainer title="Additional Enrollees">
+											<f:formElements>
+												<f:FormElement label="By">
+													<Select selectedKey="">
+														<items>
+															<core:Item text="Calendar" key="Calendar"/>
+															<core:Item text="Date" key="Date"/>
+															<core:Item text="Age" key="Age"/>
+														</items>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Coverage Year">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Date">
+													<DatePicker value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S5"/>
+														</layoutData>
+													</DatePicker>
+													<Label text="to" textAlign="Center"
+															class="custom-label-align-small">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S2"/>
+														</layoutData>
+													</Label>
+													<DatePicker value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S5"/>
+														</layoutData>
+													</DatePicker>
+												</f:FormElement>
+												<f:FormElement label="Age">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S2"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S3"/>
+														</layoutData>
+													</Select>
+													<Label text="to" textAlign="Center"
+															class="custom-label-align-small">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S2"/>
+														</layoutData>
+													</Label>
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S2"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S3"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Limit">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+									</f:formContainers>
+								</f:Form>
+							</Panel>
+							<Panel expandable="true" expanded="true"
+									width="auto" class="custom-panel-bottom">
+								<headerToolbar>
+									<Toolbar height="3rem">
+										<Title text="Non-Dreaded Conditions"/>
+									</Toolbar>
+								</headerToolbar>
+								<f:Form editable="true">
+									<f:layout>
+										<f:ResponsiveGridLayout
+											labelSpanXL="3"
+											labelSpanL="3"
+											labelSpanM="3"
+											labelSpanS="12"
+											adjustLabelSpan="false"
+											emptySpanXL="3"
+											emptySpanL="3"
+											emptySpanM="3"
+											emptySpanS="0"
+											columnsXL="1"
+											columnsL="1"
+											columnsM="1"
+											singleContainerFullSize="false" />
+									</f:layout>
+									<f:formContainers>
+										<f:FormContainer title="Existing Enrollees">
+											<f:formElements>
+												<f:FormElement label="By">
+													<Select selectedKey="">
+														<items>
+															<core:Item text="Calendar" key="Calendar"/>
+															<core:Item text="Date" key="Date"/>
+															<core:Item text="Age" key="Age"/>
+														</items>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Coverage Year">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Date">
+													<DatePicker value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S5"/>
+														</layoutData>
+													</DatePicker>
+													<Label text="to" textAlign="Center"
+															class="custom-label-align-small">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S2"/>
+														</layoutData>
+													</Label>
+													<DatePicker value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S5"/>
+														</layoutData>
+													</DatePicker>
+												</f:FormElement>
+												<f:FormElement label="Age">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S2"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S3"/>
+														</layoutData>
+													</Select>
+													<Label text="to" textAlign="Center"
+															class="custom-label-align-small">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S2"/>
+														</layoutData>
+													</Label>
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S2"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S3"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Limit">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+										<f:FormContainer title="Additional Enrollees">
+											<f:formElements>
+												<f:FormElement label="By">
+													<Select selectedKey="">
+														<items>
+															<core:Item text="Calendar" key="Calendar"/>
+															<core:Item text="Date" key="Date"/>
+															<core:Item text="Age" key="Age"/>
+														</items>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Coverage Year">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Date">
+													<DatePicker value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S5"/>
+														</layoutData>
+													</DatePicker>
+													<Label text="to" textAlign="Center"
+															class="custom-label-align-small">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S2"/>
+														</layoutData>
+													</Label>
+													<DatePicker value="">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S5"/>
+														</layoutData>
+													</DatePicker>
+												</f:FormElement>
+												<f:FormElement label="Age">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S2"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S3"/>
+														</layoutData>
+													</Select>
+													<Label text="to" textAlign="Center"
+															class="custom-label-align-small">
+														<layoutData>
+															<l:GridData span="XL2 L2 M2 S2"/>
+														</layoutData>
+													</Label>
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S2"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL1 L1 M1 S3"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+												<f:FormElement label="Limit">
+													<Input value="">
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Input>
+													<Select selectedKey="">
+														<items>
+															<core:Item text="" key=""/>
+														</items>
+														<layoutData>
+															<l:GridData span="XL3 L3 M3 S6"/>
+														</layoutData>
+													</Select>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+									</f:formContainers>
+								</f:Form>
+							</Panel>
+						</VBox>
+					</CustomListItem>
+				</List>
+			</VBox>
+		</content>
+	</Page>
+</core:View>

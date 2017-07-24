@@ -1,0 +1,184 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.planItem.tab.riders.cancerBenefits100" 
+		xmlns:html="http://www.w3.org/1999/xhtml" xmlns:cl="sap.ui.commons.layout">
+	<VBox class="sapUiSmallMargin">
+		<Panel id="idCancerBenefitsPanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Cancer Benefits"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idCancerBenefitsForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Coverage">
+								<Select id="idCoverageSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Provider">
+								<Select id="idProviderSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+			<Toolbar>
+				<Title level="H3" text="Age Eligibility" />
+			</Toolbar>
+			<Table id="idAgeEligibilityTable" inset="false" items="">
+				<columns>
+					<Column width="25%"/>
+					<Column hAlign="Center">
+						<Text text="Minimum" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Maximum" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Principals" />
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idPrincipalsMinInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idPrincipalsMinSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idPrincipalsMaxInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idPrincipalsMaxSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Minor Dependents" />
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idMinorDepMinInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idMinorDepMinSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idMinorDepMaxInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idMinorDepMaxSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Adult Dependents" />
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idAdultDepMinInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idAdultDepMinSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idAdultDepMaxInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idAdultDepMaxSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+	</VBox>
+</core:View>

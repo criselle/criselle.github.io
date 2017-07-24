@@ -1,0 +1,55 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" 
+		controllerName="maxicareactuarial.detail.adjustments.tab.network.majorHospitals100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel id="idMajorHospitalsPanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Major Hospitals"/>
+				</Toolbar>
+			</headerToolbar>
+			<Title level="H5" text="Discounts" class="custom-title-padding"/>
+			<Table id="idMajorHospitalsTable" inset="false" items="">
+				<columns>
+					<Column/>
+					<Column hAlign="Center">
+						<Text text="Principals" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Dependents" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Aggregate" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Membership Fees:" />
+							<Input value="" id="idMFPrincipalsInpt" />
+							<Input value="" id="idMFDependentsInpt" />
+							<Input value="" id="idMFAggregateInpt" />
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Riders:" />
+							<Input value="" id="idRidersPrincipalsInpt" />
+							<Input value="" id="idRidersDependentsInpt" />
+							<Input value="" id="idRidersAggregateInpt" />
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Clinic Management:" />
+							<Input value="" id="idCMPrincipalsInpt" />
+							<Input value="" id="idCMDependentsInpt" />
+							<Input value="" id="idCMAggregateInpt" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+	</VBox>
+</core:View>

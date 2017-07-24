@@ -1,0 +1,2820 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.planItem.tab.rates.planRates100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<f:Form id="idActionsForm" editable="true">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="3"
+					emptySpanL="3"
+					emptySpanM="3"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement>
+							<Button id="idRefreshBtn" text="Refresh" press="onPressRefresh">
+								<layoutData>
+									<l:GridData indent="XL3 L3 M3 S0" span="XL3 L3 M3 S6" />
+								</layoutData>
+							</Button>
+							<Button id="idEditBtn" text="Edit" press="onPressEdit">
+								<layoutData>
+									<l:GridData span="XL3 L3 M3 S6" />
+								</layoutData>
+							</Button>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+		<Panel expandable="true" expanded="true" id="idPlanDetailsPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Plan Details"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idPlanDetailsForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Plan Type">
+								<Input value="" id="idPlanTypeInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Rank Classification">
+								<Input value="" id="idRankClassificationInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Member Type">
+								<Input value="" id="idMemberTypeInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Number of Enrollees">
+								<Input value="" id="idNumOfEnrolleesInpt"/>
+							</f:FormElement>
+							<f:FormElement label="VAT Status">
+								<Select id="idVATStatusSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idMembershipFeesPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Membership Fees"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idMembershipFeesForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Contribution Margin">
+								<Input value="" id="idContributionMarginMFInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Mode of Payment">
+								<Select id="idModeOfPaymentMFSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionMFSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionMFInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionMFSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Agency Level Set-up">
+						<f:formElements>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenMFSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenMFInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenMFSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrMFSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrMFInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrMFSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadMFSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadMFInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadMFSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Standard Rate">
+						<f:formElements>
+							<f:FormElement label="Amount">
+								<Input value="" id="idAmountMFInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Unit Type">
+								<Select id="idUnitTypeMFSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Number of Units">
+								<Input value="" id="idNumOfUnitsMFInpt"/>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idMembershipFeesIPPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Membership Fees Inpatient"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idMembershipFeesIPForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Contribution Margin">
+								<Input value="" id="idContributionMarginMFIPInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Mode of Payment">
+								<Select id="idModeOfPaymentMFIPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionMFIPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionMFIPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionMFIPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Agency Level Set-up">
+						<f:formElements>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenMFIPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenMFIPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenMFIPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrMFIPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrMFIPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrMFIPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadMFIPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadMFIPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadMFIPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Standard Rate">
+						<f:formElements>
+							<f:FormElement label="Amount">
+								<Input value="" id="idAmountMFIPInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Unit Type">
+								<Select id="idUnitTypeMFIPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Number of Units">
+								<Input value="" id="idNumOfUnitsMFIPInpt"/>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idMembershipFeesOPPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Membership Fees Outpatient"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idMembershipFeesOPForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Contribution Margin">
+								<Input value="" id="idContributionMarginMFOPInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Mode of Payment">
+								<Select id="idModeOfPaymentMFOPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionMFOPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionMFOPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionMFOPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Agency Level Set-up">
+						<f:formElements>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenMFOPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenMFOPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenMFOPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrMFOPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrMFOPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrMFOPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadMFOPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadMFOPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadMFOPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Standard Rate">
+						<f:formElements>
+							<f:FormElement label="Amount">
+								<Input value="" id="idAmountMFOPInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Unit Type">
+								<Select id="idUnitTypeMFOPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Number of Units">
+								<Input value="" id="idNumOfUnitsMFOPInpt"/>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idAsoFeesPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="ASO Fees"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idAsoFeesForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Contribution Margin">
+								<Input value="" id="idContributionMarginAsoFeesInpt"/>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Network Access Fee">
+						<f:formElements>
+							<f:FormElement label="Amount">
+								<Select id="idAmountAsoNafSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idAmountAsoNafInpt">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Input>
+								<FormattedText htmlText="{FormattedText>/NAFNoteText}">
+									<layoutData>
+										<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12" />
+									</layoutData>
+								</FormattedText>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionAsoNafSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionAsoNafInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionAsoNafSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Agency Level Set-up" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenAsoNafSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenAsoNafInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenAsoNafSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrAsoNafSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrAsoNafInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrAsoNafSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadAsoNafSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadAsoNafInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadAsoNafSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Claims Handling Fee Inpatient">
+						<f:formElements>
+							<f:FormElement label="Amount">
+								<Select id="idAmountAsoCHFIPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idAmountAsoCHFIPInpt">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Input>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionAsoCHFIPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionAsoCHFIPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionAsoCHFIPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Agency Level Set-up" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenAsoCHFIPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenAsoCHFIPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenAsoCHFIPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrAsoCHFIPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrAsoCHFIPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrAsoCHFIPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadAsoCHFIPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadAsoCHFIPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadAsoCHFIPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Claims Handling Fee Outpatient">
+						<f:formElements>
+							<f:FormElement label="Amount">
+								<Select id="idAmountAsoCHFOPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idAmountAsoCHFOPInpt">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Input>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionAsoCHFOPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionAsoCHFOPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionAsoCHFOPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Agency Level Set-up" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenAsoCHFOPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenAsoCHFOPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenAsoCHFOPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrAsoCHFOPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrAsoCHFOPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrAsoCHFOPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadAsoCHFOPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadAsoCHFOPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadAsoCHFOPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Stop Loss Premium">
+						<f:formElements>
+							<f:FormElement label="Amount">
+								<Select id="idAmountSLPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idAmountSLPInpt">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Input>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionSLPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionSLPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionSLPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Agency Level Set-up" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenSLPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenSLPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenSLPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrSLPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrSLPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrSLPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadSLPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadSLPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadSLPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Attachment Point">
+								<Select id="idAttachmentPtSLPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Quarterly Initial Deposit">
+								<Select id="idQuarterlyInitDepSLPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idFeeForServicePanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Fee-for-Service (66 years old and above)"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idFeeForServiceForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer title="Network Access Fee">
+						<f:formElements>
+							<f:FormElement label="Amount">
+								<Select id="idAmountFfsNafSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idAmountFfsNafInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idAmountFfsNafSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<FormattedText htmlText="{FormattedText>/NAFNoteText}">
+									<layoutData>
+										<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12" />
+									</layoutData>
+								</FormattedText>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionFfsNafSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionFfsNafInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionFfsNafSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Agency Level Set-up" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenFfsNafSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenFfsNafInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenFfsNafSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrFfsNafSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrFfsNafInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrFfsNafSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadFfsNafSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadFfsNafInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadFfsNafSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Claims Handling Fee Inpatient">
+						<f:formElements>
+							<f:FormElement label="Amount">
+								<Select id="idAmountFfsCHFIPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idAmountFfsCHFIPInpt">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Input>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionFfsCHFIPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionFfsCHFIPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionFfsCHFIPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Agency Level Set-up" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenFfsCHFIPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenFfsCHFIPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenFfsCHFIPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrFfsCHFIPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrFfsCHFIPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrFfsCHFIPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadFfsCHFIPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadFfsCHFIPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadFfsCHFIPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Claims Handling Fee Outpatient">
+						<f:formElements>
+							<f:FormElement label="Amount">
+								<Select id="idAmountFfsCHFOPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idAmountFfsCHFOPInpt">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Input>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionFfsCHFOPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionFfsCHFOPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionFfsCHFOPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Agency Level Set-up" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenFfsCHFOPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenFfsCHFOPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenFfsCHFOPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrFfsCHFOPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrFfsCHFOPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrFfsCHFOPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadFfsCHFOPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadFfsCHFOPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadFfsCHFOPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idRiderFeesPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Rider Fees"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idRiderFeesForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Contribution Margin">
+								<Input value="" id="idContributionMarginRFInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Additional Fee for Non-PhilHealth Members">
+								<Select id="idAddtlFeeNonPhilMemRFSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idAddtlFeeNonPhilMemRFInpt">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Input>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Annual Check-up">
+						<f:formElements>
+							<f:FormElement label="Type of Payment">
+								<Select id="idTypeOfPaymentRFACSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Amount">
+								<Input value="" id="idAmountRFACInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Mode of Payment">
+								<Select id="idModeOfPaymentRFACSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Claims Handling Fee">
+								<Select id="idClaimsHandlingFeeRFACSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idClaimsHandlingFeeRFACInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idClaimsHandlingFeeRFACSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionRFACSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionRFACInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionRFACSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Agency Level Set-up" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenRFACSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenRFACInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenRFACSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrRFACSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrRFACInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrRFACSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadRFACSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadRFACInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadRFACSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Pre-employment Exam">
+						<f:formElements>
+							<f:FormElement label="Type of Payment">
+								<Select id="idTypeOfPaymentRFPEESelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Amount">
+								<Input value="" id="idAmountRFPEEInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Mode of Payment">
+								<Select id="idModeOfPaymentRFPEESelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Claims Handling Fee">
+								<Select id="idClaimsHandlingFeeRFPEESelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idClaimsHandlingFeeRFPEEInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idClaimsHandlingFeeRFPEESelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionRFPEESelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionRFPEEInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionRFPEESelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Agency Level Set-up" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenRFPEESelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenRFPEEInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenRFPEESelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrRFPEESelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrRFPEEInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrRFPEESelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadRFPEESelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadRFPEEInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadRFPEESelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Group Life ADD and D">
+						<f:formElements>
+							<f:FormElement label="Type of Payment">
+								<Select id="idTypeOfPaymentRFGLADSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Amount">
+								<Input value="" id="idAmountRFGLADInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Mode of Payment">
+								<Select id="idModeOfPaymentRFGLADSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Claims Handling Fee">
+								<Select id="idClaimsHandlingFeeRFGLADSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idClaimsHandlingFeeRFGLADInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idClaimsHandlingFeeRFGLADSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionRFGLADSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionRFGLADInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionRFGLADSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Agency Level Set-up" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenRFGLADSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenRFGLADInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenRFGLADSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrRFGLADSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrRFGLADInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrRFGLADSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadRFGLADSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadRFGLADInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadRFGLADSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Cancer">
+						<f:formElements>
+							<f:FormElement label="Type of Payment">
+								<Select id="idTypeOfPaymentRFCancerSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Amount">
+								<Input value="" id="idAmountRFCancerInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Mode of Payment">
+								<Select id="idModeOfPaymentRFCancerSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Claims Handling Fee">
+								<Select id="idClaimsHandlingFeeRFCancerSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idClaimsHandlingFeeRFCancerInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idClaimsHandlingFeeRFCancerSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionRFCancerSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionRFCancerInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionRFCancerSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Agency Level Set-up" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenRFCancerSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenRFCancerInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenRFCancerSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrRFCancerSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrRFCancerInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrRFCancerSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadRFCancerSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadRFCancerInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadRFCancerSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Optical">
+						<f:formElements>
+							<f:FormElement label="Type of Payment">
+								<Select id="idTypeOfPaymentRFOptSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Amount">
+								<Input value="" id="idAmountRFOptInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Mode of Payment">
+								<Select id="idModeOfPaymentRFOptSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Claims Handling Fee">
+								<Select id="idClaimsHandlingFeeRFOptSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idClaimsHandlingFeeRFOptInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idClaimsHandlingFeeRFOptSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionRFOptSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionRFOptInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionRFOptSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Agency Level Set-up" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenRFOptSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenRFOptInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenRFOptSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrRFOptSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrRFOptInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrRFOptSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadRFOptSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadRFOptInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadRFOptSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="List of Doctors">
+						<f:formElements>
+							<f:FormElement label="Type of Payment">
+								<Select id="idTypeOfPaymentRFLODSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Amount">
+								<Input value="" id="idAmountRFLODInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Mode of Payment">
+								<Select id="idModeOfPaymentRFLODSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Claims Handling Fee">
+								<Select id="idClaimsHandlingFeeRFLODSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idClaimsHandlingFeeRFLODInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idClaimsHandlingFeeRFLODSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionRFLODSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionRFLODInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionRFLODSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Agency Level Set-up" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenRFLODSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenRFLODInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenRFLODSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrRFLODSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrRFLODInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrRFLODSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadRFLODSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadRFLODInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadRFLODSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="OP Medicines">
+						<f:formElements>
+							<f:FormElement label="Type of Payment">
+								<Select id="idTypeOfPaymentRFOPMedsSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Amount">
+								<Input value="" id="idAmountRFOPMedsInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Mode of Payment">
+								<Select id="idModeOfPaymentRFOPMedsSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Claims Handling Fee">
+								<Select id="idClaimsHandlingFeeRFOPMedsSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idClaimsHandlingFeeRFOPMedsInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idClaimsHandlingFeeRFOPMedsSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionRFOPMedsSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionRFOPMedsInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionRFOPMedsSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Agency Level Set-up" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenRFOPMedsSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenRFOPMedsInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenRFOPMedsSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrRFOPMedsSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrRFOPMedsInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrRFOPMedsSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadRFOPMedsSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadRFOPMedsInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadRFOPMedsSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Maternity">
+						<f:formElements>
+							<f:FormElement label="Type of Payment">
+								<Select id="idTypeOfPaymentRFMatSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Amount">
+								<Input value="" id="idAmountRFMatInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Mode of Payment">
+								<Select id="idModeOfPaymentRFMatSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Claims Handling Fee">
+								<Select id="idClaimsHandlingFeeRFMatSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idClaimsHandlingFeeRFMatInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idClaimsHandlingFeeRFMatSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionRFMatSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionRFMatInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionRFMatSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Agency Level Set-up" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenRFMatSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenRFMatInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenRFMatSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrRFMatSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrRFMatInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrRFMatSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadRFMatSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadRFMatInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadRFMatSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Wellness Program">
+						<f:formElements>
+							<f:FormElement label="Type of Payment">
+								<Select id="idTypeOfPaymentRFWPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Amount">
+								<Input value="" id="idAmountRFWPInpt"/>
+							</f:FormElement>
+							<f:FormElement label="Mode of Payment">
+								<Select id="idModeOfPaymentRFWPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Claims Handling Fee">
+								<Select id="idClaimsHandlingFeeRFWPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idClaimsHandlingFeeRFWPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idClaimsHandlingFeeRFWPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Commission">
+								<Select id="idCommissionRFWPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idCommissionRFWPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idCommissionRFWPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Title level="H5" text="Agency Level Set-up" class="custom-title">
+									<layoutData>
+										<l:GridData indent="XL1 L1 M1 S0" />
+									</layoutData>
+								</Title>
+							</f:FormElement>
+							<f:FormElement label="Health Benefit Agent">
+								<Select id="idHealthBenRFWPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idHealthBenRFWPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idHealthBenRFWPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Manager">
+								<Select id="idUnitMngrRFWPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitMngrRFWPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitMngrRFWPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Unit Head">
+								<Select id="idUnitHeadRFWPSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Input value="" id="idUnitHeadRFWPInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idUnitHeadRFWPSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+	</VBox>
+</core:View>

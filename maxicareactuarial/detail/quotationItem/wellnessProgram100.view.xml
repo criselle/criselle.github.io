@@ -1,0 +1,66 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.quotationItem.wellnessProgram100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Wellness Program">
+		<content>
+			<ObjectHeader class="custom-padding" binding="" title="Company Name"
+						  number="Quotation No" numberUnit="######" >
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+			<VBox class="sapUiSmallMargin">
+				<f:Form id="WellnessProgram" editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="3"
+							emptySpanL="3"
+							emptySpanM="3"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Type">
+									<Select id="idTypeSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</f:FormElement>
+								<f:FormElement label="Amount">
+									<Input value="" id="idAmountInpt"/>
+								</f:FormElement>
+								<f:FormElement label="Lectures">
+									<Input value="" id="idLecturesInpt"/>
+								</f:FormElement>
+								<f:FormElement label="Fitness">
+									<Input value="" id="idFitnessInpt"/>
+								</f:FormElement>
+								<f:FormElement label="Screening">
+									<Input value="" id="idScreeningInpt"/>
+								</f:FormElement>
+								<f:FormElement label="Stress Relief">
+									<Input value="" id="idStressReliefInpt"/>
+								</f:FormElement>
+								<f:FormElement label="Women's Health">
+									<Input value="" id="idWomensHealthInpt"/>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+			</VBox>
+		</content>
+	</Page>
+</core:View>

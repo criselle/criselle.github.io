@@ -1,0 +1,161 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.planItem.tab.riders.optical100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel expandable="true" expanded="true" id="idOpticalPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Optical"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idOpticalForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Limit">
+								<Input value="" id="idLimitInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+								<Select id="idLimitSelect1" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Select id="idLimitSelect2" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Mode of Availment">
+								<Select id="idModeOfAvailSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Provider">
+								<Select id="idProviderSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Charged of OP Limit">
+								<Switch id="idChargedOfOPLimitSwitch" state="false" customTextOn="Yes"
+										customTextOff="No" change="onChangeChargedOfOPL"/>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idItemsPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Items"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idItemsForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Item">
+								<Input value="" id="idItemInpt"/>
+							</f:FormElement>
+							<f:FormElement>
+								<Select id="idItemSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12" />
+									</layoutData>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Button id="idAddItemBtn" icon="sap-icon://add"
+										press="onPressAddItem">
+									<layoutData>
+										<l:GridData indent="XL7 L7 M7 S0" span="XL1 L1 M1 S6" />
+									</layoutData>
+								</Button>
+								<Button id="idDeleteItemBtn" icon="sap-icon://delete"
+										press="onPressDeleteItem">
+									<layoutData>
+										<l:GridData span="XL1 L1 M1 S6" />
+									</layoutData>
+								</Button>
+							</f:FormElement>
+							<f:FormElement>
+								<Table id="idItemsTable" inset="false" items="{}">
+									<columns>
+										<Column hAlign="Left">
+											<Text text="Item" />
+										</Column>
+										<Column hAlign="Center">
+											<Text text="Item" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="" />
+												<Text text="" />
+											</cells>
+										</ColumnListItem>
+									</items>
+									<layoutData>
+										<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+									</layoutData>
+								</Table>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+	</VBox>
+</core:View>

@@ -1,0 +1,54 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="maxicareactuarial.detail.planItem.riders100" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Riders">
+		<content>
+			<ObjectHeader binding="" title="Company Name"
+						  number="Quotation No 0001" backgroundDesign="Solid">
+				<statuses>
+					<ObjectStatus text="Plan ID"/>
+				</statuses>
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+			<IconTabBar id="idRidersIconTabBar" select="handleIconTabBarSelect"
+						class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter icon="sap-icon://approvals" text="Annual Checkup"
+									key="AnnualCheckup">
+						<mvc:XMLView viewName="maxicareactuarial.detail.planItem.tab.riders.annualCheckup100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Pre-employment Exam"
+									key="PreemploymentExam">
+						<mvc:XMLView viewName="maxicareactuarial.detail.planItem.tab.riders.preemploymentExam100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Group Life ADD and D"
+									key="GroupLife">
+						<mvc:XMLView viewName="maxicareactuarial.detail.planItem.tab.riders.groupLife100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Dental"
+									key="Dental">
+						<mvc:XMLView viewName="maxicareactuarial.detail.planItem.tab.riders.dental100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Cancer Benefits"
+									key="CancerBenefits">
+						<mvc:XMLView viewName="maxicareactuarial.detail.planItem.tab.riders.cancerBenefits100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="International Assistance"
+									key="IntlAssistance">
+						<mvc:XMLView viewName="maxicareactuarial.detail.planItem.tab.riders.internationalAssistance100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Optical"
+									key="Optical">
+						<mvc:XMLView viewName="maxicareactuarial.detail.planItem.tab.riders.optical100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="List of Doctors"
+									key="ListOfDoctors">
+						<mvc:XMLView viewName="maxicareactuarial.detail.planItem.tab.riders.listOfDoctors100"/>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</core:View>

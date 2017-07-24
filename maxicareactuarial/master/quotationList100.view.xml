@@ -1,8 +1,18 @@
 <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
 		controllerName="maxicareactuarial.master.quotationList100" xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="Products">
+	<Page title="Policies">
 		<headerContent>
-     		<Button icon="sap-icon://filter" tooltip="Settings" press="" />
+			<MenuButton icon="sap-icon://filter">
+	            <menu>
+	                <Menu itemSelected="onMenuAction">
+	                    <items>
+	                        <MenuItem text="View All" />
+	                        <MenuItem text="All Quotation Version"/>
+	                        <MenuItem text="All Policy" />
+	                    </items>
+	                </Menu>
+	            </menu>
+	        </MenuButton>
 		</headerContent>
   		<subHeader>
 	        <Bar id="idSearchQuotation">

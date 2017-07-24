@@ -1,0 +1,168 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.quotationItem.tab.otherArrangement.finance100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel id="idFinancePanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Finance"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="FinanceForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Billing To">
+								<f:fields>
+									<Select id="idBillingToSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+									</Select>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Billing Cycle">
+								<Select id="idBillingCycleSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Credit Term">
+								<f:fields>
+									<Input value="" id="idCreditTermInpt">
+										<layoutData>
+											<l:GridData span="XL3 L3 M3 S6" />
+										</layoutData>
+									</Input>
+									<Select id="idCreditTermSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+										<layoutData>
+											<l:GridData span="XL3 L3 M3 S6" />
+										</layoutData>
+									</Select>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Payment First">
+								<Switch id="idPaymentSwitch" state="false" customTextOn="Yes"
+										customTextOff="No">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+										<FlexItemData growFactor="1" />
+									</layoutData>
+								</Switch>
+							</f:FormElement>
+							<f:FormElement label="Pro-rating of Membership Fee">
+								<Select id="idProratingMFSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Pro-rating of Cancellation Fee">
+								<Select id="idProratingCFSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Treatment of Unused MFs">
+								<Select id="idTreatmentOfUnusedMFsSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Replenishment of Revolving Fund">
+								<Select id="idReplenishmentSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+					<f:FormContainer title="Delivery Instruction">
+						<f:formElements>
+							<f:FormElement label="Email (SMTP)">
+								<Switch id="idEmailSwitch" state="false" customTextOn="Yes"
+										customTextOff="No">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Switch>
+							</f:FormElement>
+							<f:FormElement label="Courier">
+								<Switch id="idCourierSwitch" state="false" customTextOn="Yes"
+										customTextOff="No">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</Switch>
+							</f:FormElement>
+							<f:FormElement label="Claims Billing Prescription Period">
+								<f:fields>
+									<Input value="" id="idClaimsPrescriptInpt">
+										<layoutData>
+											<l:GridData span="XL3 L3 M3 S6" />
+										</layoutData>
+									</Input>
+									<Select id="idClaimsPrescriptSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+										<layoutData>
+											<l:GridData span="XL3 L3 M3 S6" />
+										</layoutData>
+									</Select>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Claims Billing Prescription Period (Within)">
+								<f:fields>
+									<Input value="" id="idClaimsPrescriptWithinInpt">
+										<layoutData>
+											<l:GridData span="XL3 L3 M3 S6" />
+										</layoutData>
+									</Input>
+									<Select id="idClaimsPrescriptWithinSelect" selectedKey="">
+										<items>
+											<core:Item text="" key=""/>
+										</items>
+										<layoutData>
+											<l:GridData span="XL3 L3 M3 S6" />
+										</layoutData>
+									</Select>
+								</f:fields>
+							</f:FormElement>
+							<f:FormElement label="Required Documents for Claims Processing">
+								<Select id="idReqDocsForCPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+	</VBox>
+</core:View>

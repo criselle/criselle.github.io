@@ -1,0 +1,1143 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.planItem.salientFeatures100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Salient Features">
+		<content>
+			<ObjectHeader binding="" title="Company Name"
+						  number="Quotation No 0001" backgroundDesign="Solid">
+				<statuses>
+					<ObjectStatus text="Plan ID"/>
+				</statuses>
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+			<VBox class="sapUiSmallMargin">
+				<Panel expandable="true" expanded="true" id="idModeOfAvailmentPanel" 
+						width="auto" class="custom-panel-bottom">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Mode of Availment"/>
+						</Toolbar>
+					</headerToolbar>
+					<f:Form id="idModeOfAvailmentForm1" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="6"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="LOA Facilitated">
+										<Switch id="idLOAFacilitatedSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeLOAFacilitated">
+											<layoutData>
+												<l:GridData span="XL6 L6 M6 S6" />
+											</layoutData>
+										</Switch>
+									</f:FormElement>
+									<f:FormElement label="Reimbursement">
+										<Switch id="idReimbursementSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeReimbursement">
+											<layoutData>
+												<l:GridData span="XL6 L6 M6 S6" />
+											</layoutData>
+										</Switch>
+									</f:FormElement>
+									<f:FormElement label="Outright Denial">
+										<Switch id="idOutrightDenialSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeOutrightDenial">
+											<layoutData>
+												<l:GridData span="XL6 L6 M6 S6" />
+											</layoutData>
+										</Switch>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</Panel>
+				<Panel expandable="true" expanded="true" id="idRoomAndBoardPanel" 
+						width="auto" class="custom-panel-bottom">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Room and Board"/>
+						</Toolbar>
+					</headerToolbar>
+					<f:Form id="idRoomAndBoardForm1" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="Room Nomenclature Type">
+										<Select id="idRoomNomenTypeSelect" selectedKey=""/>
+									</f:FormElement>
+									<f:FormElement label="Room Nomenclature">
+										<Select id="idRoomNomenSelect" selectedKey=""/>
+									</f:FormElement>
+									<f:FormElement label="Room Amount">
+										<Input value="" id="idRoomAmountInpt"/>
+									</f:FormElement>
+									<f:FormElement label="Maximum Number of Days">
+										<Input value="" id="idMaxNumOfDaysInpt"/>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</Panel>
+				<Panel expandable="true" expanded="true" id="idPhilhealthBenefitsPanel" 
+						width="auto" class="custom-panel-bottom">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Philhealth Benefits"/>
+						</Toolbar>
+					</headerToolbar>
+					<f:Form id="idPhilhealthBenefitsForm1" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="Requires Filing Set-up">
+										<Select id="idReqFilingSetupSelect" selectedKey=""/>
+									</f:FormElement>
+									<f:FormElement label="Application of Limit">
+										<Select id="idAppOfLimitSelect" selectedKey=""/>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</Panel>
+				<Panel expandable="true" expanded="true" id="idBenefitLimitPanel" 
+						width="auto" class="custom-panel-bottom">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Benefit Limit"/>
+						</Toolbar>
+					</headerToolbar>
+					<f:Form id="idBenefitLimitForm1" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="6"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="Shared IP and OP">
+										<Switch id="idSharedIPandOPSFSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeSharedIPandOPSF">
+											<layoutData>
+												<l:GridData span="XL6 L6 M6 S6" />
+											</layoutData>
+										</Switch>
+									</f:FormElement>
+									<f:FormElement label="One-time Availment">
+										<Switch id="idOneTimeAvailmentSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeOneTimeAvailment">
+											<layoutData>
+												<l:GridData span="XL6 L6 M6 S6" />
+											</layoutData>
+										</Switch>
+									</f:FormElement>
+									<f:FormElement label="Professional Fees Only">
+										<Switch id="idProfFeesOnlySwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeProfFeesOnly">
+											<layoutData>
+												<l:GridData span="XL6 L6 M6 S6" />
+											</layoutData>
+										</Switch>
+									</f:FormElement>
+									<f:FormElement label="Include 2nd Layer">
+										<Switch id="idInclude2ndLayerSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeInclude2ndLayer">
+											<layoutData>
+												<l:GridData span="XL6 L6 M6 S6" />
+											</layoutData>
+										</Switch>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+					<f:Form id="idBenefitLimitForm2" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer title="Shared IP and OP">
+								<f:formElements>
+									<f:FormElement label="Type">
+										<Select id="idSharedIPOPTypeSelect" items=""
+												selectedKey="">
+											<items>
+												<core:Item key="" text=""/>
+											</items>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="Amount">
+										<Input value="" id="idSharedIPOPAmountInpt"/>
+									</f:FormElement>
+									<f:FormElement label="Sharing">
+										<Select id="idSharedIPOPSharingSelect1" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Select id="idSharedIPOPSharingSelect2" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Input value="" id="idSharedIPOPSharingInpt">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Input>
+									</f:FormElement>
+									<f:FormElement label="Refreshment">
+										<Switch id="idSharedIPOPRefreshmentSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeSharedIPOPRefreshment"/>
+									</f:FormElement> 
+									<f:FormElement label="Refeshment Type">
+										<Select id="idSharedIPOPRefreshTypeSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</f:FormElement>
+									<f:FormElement>
+										<Label text="By Calendar Date:" textAlign="Left"
+												class="custom-label-align-small">
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL2 L2 M2 S12"/>
+											</layoutData>
+										</Label>
+										<DatePicker id="idSharedIPOPByCalendarDateInpt" value="">
+											<layoutData>
+												<l:GridData span="XL4 L4 M4 S12" />
+											</layoutData>
+										</DatePicker>
+									</f:FormElement>
+									<f:FormElement>
+										<Label text="By Event:" textAlign="Left"
+												class="custom-label-align-small">
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL2 L2 M2 S12"/>
+											</layoutData>
+										</Label>
+										<Input value="" id="idSharedIPOPByEventInpt">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Input>
+										<Select id="idSharedIPOPByEventSelect1" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Select id="idSharedIPOPByEventSelect2" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>											
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="Specific Illness Only">
+										<Switch id="idSharedIPOPIllnessSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeSharedIPOPIllness"/>
+									</f:FormElement> 
+									<f:FormElement>
+										<Select id="idSharedIPOPIllnessSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL4 L4 M4 S8" />
+											</layoutData>
+										</Select>
+										<Button id="idAddSharedIPOPIllnessBtn" icon="sap-icon://add"
+												press="onPressAddSharedIPOPIllness">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S2" />
+											</layoutData>
+										</Button>
+										<Button id="idDeleteSharedIPOPIllnessBtn" icon="sap-icon://delete"
+												press="onPressDeleteSharedIPOPIllness">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S2" />
+											</layoutData>
+										</Button>
+									</f:FormElement>
+									<f:FormElement>
+										<List id="idSharedIPOPIllnessList" mode="MultiSelect"
+											  delete="handleDeleteSharedIPOPIllness" enableBusyIndicator="true"
+											  headerText="Specific Illnesses" growing="true" items="{}" >
+											<StandardListItem title=""/>
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12" />
+											</layoutData>
+										</List>
+									</f:FormElement>
+									<f:FormElement label="Pro-rata">
+										<Switch id="idSharedIPOPProrataSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeSharedIPOPProrata"/>
+									</f:FormElement>
+									<f:FormElement label="Accumulated Limit">
+										<Switch id="idSharedIPOPAccLimitSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeSharedIPOPAccLimit"/>
+									</f:FormElement>
+									<f:FormElement label="Advance Limit">
+										<Switch id="idSharedIPOPAdvLimitSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeSharedIPOPAdvLimit"/>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer title="Inpatient">
+								<f:formElements>
+									<f:FormElement label="Type">
+										<Select id="idIPTypeSelect" items=""
+												selectedKey="">
+											<items>
+												<core:Item key="" text=""/>
+											</items>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="Amount">
+										<Input value="" id="idIPAmountInpt"/>
+									</f:FormElement>
+									<f:FormElement label="Sharing">
+										<Select id="idIPSharingSelect1" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Select id="idIPSharingSelect2" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Input value="" id="idIPSharingInpt">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Input>
+									</f:FormElement>
+									<f:FormElement label="Refreshment">
+										<Switch id="idIPRefreshmentSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeIPRefreshment"/>
+									</f:FormElement> 
+									<f:FormElement label="Refeshment Type">
+										<Select id="idIPRefreshTypeSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</f:FormElement>
+									<f:FormElement>
+										<Label text="By Calendar Date:" textAlign="Left"
+												class="custom-label-align-small">
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL2 L2 M2 S12"/>
+											</layoutData>
+										</Label>
+										<DatePicker id="idIPByCalendarDateInpt" value="">
+											<layoutData>
+												<l:GridData span="XL4 L4 M4 S12" />
+											</layoutData>
+										</DatePicker>
+									</f:FormElement>
+									<f:FormElement>
+										<Label text="By Event:" textAlign="Left"
+												class="custom-label-align-small">
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL2 L2 M2 S12"/>
+											</layoutData>
+										</Label>
+										<Input value="" id="idIPByEventInpt">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Input>
+										<Select id="idIPByEventSelect1" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Select id="idIPByEventSelect2" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>											
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="Specific Illness Only">
+										<Switch id="idIPIllnessSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeIPIllness"/>
+									</f:FormElement> 
+									<f:FormElement>
+										<Select id="idIPIllnessSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL4 L4 M4 S8" />
+											</layoutData>
+										</Select>
+										<Button id="idAddIPIllnessBtn" icon="sap-icon://add"
+												press="onPressAddIPIllness">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S2" />
+											</layoutData>
+										</Button>
+										<Button id="idDeleteIPIllnessBtn" icon="sap-icon://delete"
+												press="onPressDeleteIPIllness">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S2" />
+											</layoutData>
+										</Button>
+									</f:FormElement>
+									<f:FormElement>
+										<List id="idIPIllnessList" mode="MultiSelect"
+											  delete="handleDeleteIPIllness" enableBusyIndicator="true"
+											  headerText="Specific Illnesses" growing="true" items="{}" >
+											<StandardListItem title=""/>
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12" />
+											</layoutData>
+										</List>
+									</f:FormElement>
+									<f:FormElement label="Pro-rata">
+										<Switch id="idIPProrataSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeIPProrata"/>
+									</f:FormElement>
+									<f:FormElement label="Accumulated Limit">
+										<Switch id="idIPAccLimitSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeIPAccLimit"/>
+									</f:FormElement>
+									<f:FormElement label="Advance Limit">
+										<Switch id="idIPAdvLimitSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeIPAdvLimit"/>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer title="Outpatient">
+								<f:formElements>
+									<f:FormElement label="Type">
+										<Select id="idOPTypeSelect" items=""
+												selectedKey="">
+											<items>
+												<core:Item key="" text=""/>
+											</items>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="Amount">
+										<Input value="" id="idOPAmountInpt"/>
+									</f:FormElement>
+									<f:FormElement label="Sharing">
+										<Select id="idOPSharingSelect1" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Select id="idOPSharingSelect2" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Input value="" id="idOPSharingInpt">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Input>
+									</f:FormElement>
+									<f:FormElement label="Refreshment">
+										<Switch id="idOPRefreshmentSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeOPRefreshment"/>
+									</f:FormElement> 
+									<f:FormElement label="Refeshment Type">
+										<Select id="idOPRefreshTypeSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</f:FormElement>
+									<f:FormElement>
+										<Label text="By Calendar Date:" textAlign="Left"
+												class="custom-label-align-small">
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL2 L2 M2 S12"/>
+											</layoutData>
+										</Label>
+										<DatePicker id="idOPByCalendarDateInpt" value="">
+											<layoutData>
+												<l:GridData span="XL4 L4 M4 S12" />
+											</layoutData>
+										</DatePicker>
+									</f:FormElement>
+									<f:FormElement>
+										<Label text="By Event:" textAlign="Left"
+												class="custom-label-align-small">
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL2 L2 M2 S12"/>
+											</layoutData>
+										</Label>
+										<Input value="" id="idOPByEventInpt">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Input>
+										<Select id="idOPByEventSelect1" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Select id="idOPByEventSelect2" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>											
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="Specific Illness Only">
+										<Switch id="idOPIllnessSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeOPIllness"/>
+									</f:FormElement> 
+									<f:FormElement>
+										<Select id="idOPIllnessSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL4 L4 M4 S8" />
+											</layoutData>
+										</Select>
+										<Button id="idAddOPIllnessBtn" icon="sap-icon://add"
+												press="onPressAddOPIllness">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S2" />
+											</layoutData>
+										</Button>
+										<Button id="idDeleteOPIllnessBtn" icon="sap-icon://delete"
+												press="onPressDeleteOPIllness">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S2" />
+											</layoutData>
+										</Button>
+									</f:FormElement>
+									<f:FormElement>
+										<List id="idOPIllnessList" mode="MultiSelect"
+											  delete="handleDeleteOPIllness" enableBusyIndicator="true"
+											  headerText="Specific Illnesses" growing="true" items="{}" >
+											<StandardListItem title=""/>
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12" />
+											</layoutData>
+										</List>
+									</f:FormElement>
+									<f:FormElement label="Pro-rata">
+										<Switch id="idOPProrataSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeOPProrata"/>
+									</f:FormElement>
+									<f:FormElement label="Accumulated Limit">
+										<Switch id="idOPAccLimitSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeOPAccLimit"/>
+									</f:FormElement>
+									<f:FormElement label="Advance Limit">
+										<Switch id="idOPAdvLimitSwitch" state="false" customTextOn="Yes"
+												customTextOff="No" change="onChangeOPAdvLimit"/>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+					<Panel expandable="true" expanded="true" id="id2ndLayerPanel" 
+							width="auto" class="custom-panel-bottom">
+						<headerToolbar>
+							<Toolbar height="3rem">
+								<Title text="2nd Layer"/>
+							</Toolbar>
+						</headerToolbar>
+						<f:Form id="id2ndLayerForm1" editable="true">
+							<f:layout>
+								<f:ResponsiveGridLayout
+									labelSpanXL="3"
+									labelSpanL="3"
+									labelSpanM="3"
+									labelSpanS="6"
+									adjustLabelSpan="false"
+									emptySpanXL="3"
+									emptySpanL="3"
+									emptySpanM="3"
+									emptySpanS="0"
+									columnsXL="1"
+									columnsL="1"
+									columnsM="1"
+									singleContainerFullSize="false" />
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer>
+									<f:formElements>
+										<f:FormElement label="Shared IP and OP">
+											<Switch id="id2LSharedIPandOPSFSwitch" state="false" customTextOn="Yes"
+													customTextOff="No" change="onChange2LSharedIPandOPSF">
+												<layoutData>
+													<l:GridData span="XL6 L6 M6 S6" />
+												</layoutData>
+											</Switch>
+										</f:FormElement>
+										<f:FormElement label="Funding Arrangement">
+											<Select id="idFundingArrangementSelect" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+											</Select>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+						<f:Form id="id2ndLayerForm2" editable="true">
+							<f:layout>
+								<f:ResponsiveGridLayout
+									labelSpanXL="3"
+									labelSpanL="3"
+									labelSpanM="3"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanXL="3"
+									emptySpanL="3"
+									emptySpanM="3"
+									emptySpanS="0"
+									columnsXL="1"
+									columnsL="1"
+									columnsM="1"
+									singleContainerFullSize="false" />
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer title="Shared IP and OP">
+									<f:formElements>
+										<f:FormElement label="Type">
+											<Select id="id2LSharedIPOPTypeSelect" items=""
+													selectedKey="">
+												<items>
+													<core:Item key="" text=""/>
+												</items>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Amount">
+											<Input value="" id="id2LSharedIPOPAmountInpt"/>
+										</f:FormElement>
+										<f:FormElement label="Sharing">
+											<Select id="id2LSharedIPOPSharingSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="id2LSharedIPOPSharingSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Input value="" id="id2LSharedIPOPSharingInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+										</f:FormElement>
+										<f:FormElement label="Refreshment">
+											<Switch id="id2LSharedIPOPRefreshmentSwitch" state="false" customTextOn="Yes"
+													customTextOff="No" change="onChange2LSharedIPOPRefreshment"/>
+										</f:FormElement> 
+										<f:FormElement label="Refeshment Type">
+											<Select id="id2LSharedIPOPRefreshTypeSelect" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+											</Select>
+										</f:FormElement>
+										<f:FormElement>
+											<Label text="By Calendar Date:" textAlign="Left"
+													class="custom-label-align-small">
+												<layoutData>
+													<l:GridData indent="XL3 L3 M3 S0" span="XL2 L2 M2 S12"/>
+												</layoutData>
+											</Label>
+											<DatePicker id="id2LSharedIPOPByCalendarDateInpt" value="">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S12" />
+												</layoutData>
+											</DatePicker>
+										</f:FormElement>
+										<f:FormElement>
+											<Label text="By Event:" textAlign="Left"
+													class="custom-label-align-small">
+												<layoutData>
+													<l:GridData indent="XL3 L3 M3 S0" span="XL2 L2 M2 S12"/>
+												</layoutData>
+											</Label>
+											<Input value="" id="id2LSharedIPOPByEventInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+											<Select id="id2LSharedIPOPByEventSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="id2LSharedIPOPByEventSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>											
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Specific Illness Only">
+											<Switch id="id2LSharedIPOPIllnessSwitch" state="false" customTextOn="Yes"
+													customTextOff="No" change="onChange2LSharedIPOPIllness"/>
+										</f:FormElement> 
+										<f:FormElement>
+											<Select id="id2LSharedIPOPIllnessSelect" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData indent="XL3 L3 M3 S0" span="XL4 L4 M4 S8" />
+												</layoutData>
+											</Select>
+											<Button id="id2LAddSharedIPOPIllnessBtn" icon="sap-icon://add"
+													press="onPressAdd2LSharedIPOPIllness">
+												<layoutData>
+													<l:GridData span="XL1 L1 M1 S2" />
+												</layoutData>
+											</Button>
+											<Button id="id2LDeleteSharedIPOPIllnessBtn" icon="sap-icon://delete"
+													press="onPressDelete2LSharedIPOPIllness">
+												<layoutData>
+													<l:GridData span="XL1 L1 M1 S2" />
+												</layoutData>
+											</Button>
+										</f:FormElement>
+										<f:FormElement>
+											<List id="id2LSharedIPOPIllnessList" mode="MultiSelect"
+												  delete="handleDelete2LSharedIPOPIllness" enableBusyIndicator="true"
+												  headerText="Specific Illnesses" growing="true" items="{}" >
+												<StandardListItem title=""/>
+												<layoutData>
+													<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12" />
+												</layoutData>
+											</List>
+										</f:FormElement>
+										<f:FormElement label="Pro-rata">
+											<Switch id="id2LSharedIPOPProrataSwitch" state="false" customTextOn="Yes"
+													customTextOff="No" change="onChange2LSharedIPOPProrata"/>
+										</f:FormElement>
+										<f:FormElement label="Accumulated Limit">
+											<Switch id="id2LSharedIPOPAccLimitSwitch" state="false" customTextOn="Yes"
+													customTextOff="No" change="onChange2LSharedIPOPAccLimit"/>
+										</f:FormElement>
+										<f:FormElement label="Advance Limit">
+											<Switch id="id2LSharedIPOPAdvLimitSwitch" state="false" customTextOn="Yes"
+													customTextOff="No" change="onChange2LSharedIPOPAdvLimit"/>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+								<f:FormContainer title="Inpatient">
+									<f:formElements>
+										<f:FormElement label="Type">
+											<Select id="id2LIPTypeSelect" items=""
+													selectedKey="">
+												<items>
+													<core:Item key="" text=""/>
+												</items>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Amount">
+											<Input value="" id="id2LIPAmountInpt"/>
+										</f:FormElement>
+										<f:FormElement label="Sharing">
+											<Select id="id2LIPSharingSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="id2LIPSharingSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Input value="" id="id2LIPSharingInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+										</f:FormElement>
+										<f:FormElement label="Refreshment">
+											<Switch id="id2LIPRefreshmentSwitch" state="false" customTextOn="Yes"
+													customTextOff="No" change="onChange2LIPRefreshment"/>
+										</f:FormElement> 
+										<f:FormElement label="Refeshment Type">
+											<Select id="id2LIPRefreshTypeSelect" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+											</Select>
+										</f:FormElement>
+										<f:FormElement>
+											<Label text="By Calendar Date:" textAlign="Left"
+													class="custom-label-align-small">
+												<layoutData>
+													<l:GridData indent="XL3 L3 M3 S0" span="XL2 L2 M2 S12"/>
+												</layoutData>
+											</Label>
+											<DatePicker id="id2LIPByCalendarDateInpt" value="">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S12" />
+												</layoutData>
+											</DatePicker>
+										</f:FormElement>
+										<f:FormElement>
+											<Label text="By Event:" textAlign="Left"
+													class="custom-label-align-small">
+												<layoutData>
+													<l:GridData indent="XL3 L3 M3 S0" span="XL2 L2 M2 S12"/>
+												</layoutData>
+											</Label>
+											<Input value="" id="id2LIPByEventInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+											<Select id="id2LIPByEventSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="id2LIPByEventSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>											
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Specific Illness Only">
+											<Switch id="id2LIPIllnessSwitch" state="false" customTextOn="Yes"
+													customTextOff="No" change="onChange2LIPIllness"/>
+										</f:FormElement> 
+										<f:FormElement>
+											<Select id="id2LIPIllnessSelect" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData indent="XL3 L3 M3 S0" span="XL4 L4 M4 S8" />
+												</layoutData>
+											</Select>
+											<Button id="idAdd2LIPIllnessBtn" icon="sap-icon://add"
+													press="onPressAdd2LIPIllness">
+												<layoutData>
+													<l:GridData span="XL1 L1 M1 S2" />
+												</layoutData>
+											</Button>
+											<Button id="idDelete2LIPIllnessBtn" icon="sap-icon://delete"
+													press="onPressDelete2LIPIllness">
+												<layoutData>
+													<l:GridData span="XL1 L1 M1 S2" />
+												</layoutData>
+											</Button>
+										</f:FormElement>
+										<f:FormElement>
+											<List id="id2LIPIllnessList" mode="MultiSelect"
+												  delete="handleDelete2LIPIllness" enableBusyIndicator="true"
+												  headerText="Specific Illnesses" growing="true" items="{}" >
+												<StandardListItem title=""/>
+												<layoutData>
+													<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12" />
+												</layoutData>
+											</List>
+										</f:FormElement>
+										<f:FormElement label="Pro-rata">
+											<Switch id="id2LIPProrataSwitch" state="false" customTextOn="Yes"
+													customTextOff="No" change="onChange2LIPProrata"/>
+										</f:FormElement>
+										<f:FormElement label="Accumulated Limit">
+											<Switch id="id2LIPAccLimitSwitch" state="false" customTextOn="Yes"
+													customTextOff="No" change="onChange2LIPAccLimit"/>
+										</f:FormElement>
+										<f:FormElement label="Advance Limit">
+											<Switch id="id2LIPAdvLimitSwitch" state="false" customTextOn="Yes"
+													customTextOff="No" change="onChange2LIPAdvLimit"/>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+								<f:FormContainer title="Outpatient">
+									<f:formElements>
+										<f:FormElement label="Type">
+											<Select id="id2LOPTypeSelect" items=""
+													selectedKey="">
+												<items>
+													<core:Item key="" text=""/>
+												</items>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Amount">
+											<Input value="" id="id2LOPAmountInpt"/>
+										</f:FormElement>
+										<f:FormElement label="Sharing">
+											<Select id="id2LOPSharingSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="id2LOPSharingSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Input value="" id="id2LOPSharingInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+										</f:FormElement>
+										<f:FormElement label="Refreshment">
+											<Switch id="id2LOPRefreshmentSwitch" state="false" customTextOn="Yes"
+													customTextOff="No" change="onChange2LOPRefreshment"/>
+										</f:FormElement> 
+										<f:FormElement label="Refeshment Type">
+											<Select id="id2LOPRefreshTypeSelect" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+											</Select>
+										</f:FormElement>
+										<f:FormElement>
+											<Label text="By Calendar Date:" textAlign="Left"
+													class="custom-label-align-small">
+												<layoutData>
+													<l:GridData indent="XL3 L3 M3 S0" span="XL2 L2 M2 S12"/>
+												</layoutData>
+											</Label>
+											<DatePicker id="id2LOPByCalendarDateInpt" value="">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S12" />
+												</layoutData>
+											</DatePicker>
+										</f:FormElement>
+										<f:FormElement>
+											<Label text="By Event:" textAlign="Left"
+													class="custom-label-align-small">
+												<layoutData>
+													<l:GridData indent="XL3 L3 M3 S0" span="XL2 L2 M2 S12"/>
+												</layoutData>
+											</Label>
+											<Input value="" id="id2LOPByEventInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+											<Select id="id2LOPByEventSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="id2LOPByEventSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>											
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Specific Illness Only">
+											<Switch id="id2LOPIllnessSwitch" state="false" customTextOn="Yes"
+													customTextOff="No" change="onChange2LOPIllness"/>
+										</f:FormElement> 
+										<f:FormElement>
+											<Select id="id2LOPIllnessSelect" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData indent="XL3 L3 M3 S0" span="XL4 L4 M4 S8" />
+												</layoutData>
+											</Select>
+											<Button id="idAdd2LOPIllnessBtn" icon="sap-icon://add"
+													press="onPressAdd2LOPIllness">
+												<layoutData>
+													<l:GridData span="XL1 L1 M1 S2" />
+												</layoutData>
+											</Button>
+											<Button id="idDelete2LOPIllnessBtn" icon="sap-icon://delete"
+													press="onPressDelete2LOPIllness">
+												<layoutData>
+													<l:GridData span="XL1 L1 M1 S2" />
+												</layoutData>
+											</Button>
+										</f:FormElement>
+										<f:FormElement>
+											<List id="id2LOPIllnessList" mode="MultiSelect"
+												  delete="handleDelete2LOPIllness" enableBusyIndicator="true"
+												  headerText="Specific Illnesses" growing="true" items="{}" >
+												<StandardListItem title=""/>
+												<layoutData>
+													<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12" />
+												</layoutData>
+											</List>
+										</f:FormElement>
+										<f:FormElement label="Pro-rata">
+											<Switch id="id2LOPProrataSwitch" state="false" customTextOn="Yes"
+													customTextOff="No" change="onChange2LOPProrata"/>
+										</f:FormElement>
+										<f:FormElement label="Accumulated Limit">
+											<Switch id="id2LOPAccLimitSwitch" state="false" customTextOn="Yes"
+													customTextOff="No" change="onChange2LOPAccLimit"/>
+										</f:FormElement>
+										<f:FormElement label="Advance Limit">
+											<Switch id="id2LOPAdvLimitSwitch" state="false" customTextOn="Yes"
+													customTextOff="No" change="onChange2LOPAdvLimit"/>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+					</Panel>
+				</Panel>
+			</VBox>
+		</content>
+	</Page>
+</core:View>

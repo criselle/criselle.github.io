@@ -1,0 +1,36 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form"
+		controllerName="maxicareactuarial.detail.adjustments.loadingAndFees100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Loading and Fees">
+		<content>	
+			<ObjectHeader binding="" title="Company Name"
+						  number="Quotation No 0001" backgroundDesign="Solid">
+				<statuses>
+					<ObjectStatus text="Plan ID"/>
+				</statuses>
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+			<IconTabBar id="idLoadingAndFeesIconTabBar" select="handleIconTabBarSelect"
+						class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter icon="sap-icon://approvals" text="Full Risk"
+									key="FullRisk">
+						<mvc:XMLView viewName="maxicareactuarial.detail.adjustments.tab.loadingAndFees.fullRisk100"/>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="ASO"
+									key="ASO">	
+						<mvc:XMLView viewName="maxicareactuarial.detail.adjustments.tab.loadingAndFees.aso100"/>					
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://approvals" text="Fee-for-Service"
+									key="FeeForService">
+						<mvc:XMLView viewName="maxicareactuarial.detail.adjustments.tab.loadingAndFees.feeForService100"/>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+	</Page>
+</core:View>

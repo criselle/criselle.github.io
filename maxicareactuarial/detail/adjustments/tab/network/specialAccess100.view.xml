@@ -1,0 +1,38 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" 
+		controllerName="maxicareactuarial.detail.adjustments.tab.network.specialAccess100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel id="idSpecialAccessPanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Special Access"/>
+				</Toolbar>
+			</headerToolbar>
+			<Table id="idSpecialAccessTable" inset="false" items="">
+				<columns>
+					<Column hAlign="Center">
+						<Text text="Provider Name" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Factor" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Membership Fees:" />
+							<Input value="" id="idMFFactorInpt" />
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Riders:" />
+							<Input value="" id="idRidersFactorInpt" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+	</VBox>
+</core:View>

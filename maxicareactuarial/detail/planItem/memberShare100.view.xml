@@ -1,0 +1,1373 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.planItem.memberShare100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Member Share">
+		<content>
+			<ObjectHeader binding="" title="Company Name"
+						  number="Quotation No 0001" backgroundDesign="Solid">
+				<statuses>
+					<ObjectStatus text="Plan ID"/>
+				</statuses>
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+			<VBox class="sapUiSmallMargin">
+				<f:Form id="idMemberShareForm1" editable="true">
+					<f:layout>
+						<f:ResponsiveGridLayout
+							labelSpanXL="5"
+							labelSpanL="5"
+							labelSpanM="5"
+							labelSpanS="9"
+							adjustLabelSpan="false"
+							emptySpanXL="3"
+							emptySpanL="3"
+							emptySpanM="3"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" />
+					</f:layout>
+					<f:formContainers>
+						<f:FormContainer>
+							<f:formElements>
+								<f:FormElement label="Inclusive of PhilHealth Portion and Government-mandated">
+									<Switch id="idIncPhilHealthAndGovtSwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangeIncPhilHealthAndGovt"/>
+								</f:FormElement>
+								<f:FormElement label="Shared Inpatient and Outpatient">
+									<Switch id="idSharedIPOPSwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangeSharedIPOP"/>
+								</f:FormElement>
+								<f:FormElement label="Riders">
+									<Switch id="idRidersSwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangeRiders"/>
+								</f:FormElement>
+								<f:FormElement label="Other Illness">
+									<Switch id="idOtherIllnessSwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangeOtherIllness"/>
+								</f:FormElement>
+							</f:formElements>
+						</f:FormContainer>
+					</f:formContainers>
+				</f:Form>
+				<Panel expandable="true" expanded="true" id="idSharedIPOPPanel" width="auto" class="custom-panel-bottom">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Shared Inpatient and Outpatient"/>
+						</Toolbar>
+					</headerToolbar>
+					<f:Form id="idSharedIPOPForm" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="Coverage">
+										<Select id="idSharedIPOPCoverageSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer title="Clinics and Hospitals">
+								<f:formElements>
+									<f:FormElement label="Amount">
+										<Input value="" id="idAmountCAndHInpt">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Input>
+										<Select id="idAmountCAndHSelect1" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Select id="idAmountCAndHSelect2" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="Maximum Number of Cases">
+										<Input value="" id="idMaxNumCasesCAndHInpt"/>
+									</f:FormElement>
+									<f:FormElement>
+										<Title level="H5" text="Clinics" class="custom-title">
+											<layoutData>
+												<l:GridData indent="XL1 L1 M1 S0" />
+											</layoutData>
+										</Title>
+									</f:FormElement>
+									<f:FormElement label="Amount">
+										<Input value="" id="idAmountClinicsInpt">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Input>
+										<Select id="idAmountClinicsSelect1" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Select id="idAmountClinicsSelect2" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="Maximum Number of Cases">
+										<Input value="" id="idMaxNumCasesClinicsInpt"/>
+									</f:FormElement>
+									<f:FormElement>
+										<Title level="H5" text="Hospitals" class="custom-title">
+											<layoutData>
+												<l:GridData indent="XL1 L1 M1 S0" />
+											</layoutData>
+										</Title>
+									</f:FormElement>
+									<f:FormElement label="Amount">
+										<Input value="" id="idAmountHospitalsInpt">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Input>
+										<Select id="idAmountHospitalsSelect1" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Select id="idAmountHospitalssSelect2" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="Maximum Number of Cases">
+										<Input value="" id="idMaxNumCasesHospitalsInpt"/>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer title="Specific Provider">
+								<f:formElements>
+									<f:FormElement label="Provider">
+										<Select id="idProviderSharedIPOPSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="Amount">
+										<Input value="" id="idAmountSPInpt">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Input>
+										<Select id="idAmountSPSelect1" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Select id="idAmountSPSelect2" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="Maximum Number of Cases">
+										<Input value="" id="idMaxNumCasesSPInpt"/>
+									</f:FormElement>
+									<f:FormElement>
+										<Button id="idAddProviderSharedIPOPSPBtn" icon="sap-icon://add"
+												press="onPressAddProviderSharedIPOPSP">
+											<layoutData>
+												<l:GridData indent="XL7 L7 M7 S0" span="XL1 L1 M1 S6" />
+											</layoutData>
+										</Button>
+										<Button id="idDeleteProviderSharedIPOPSPBtn" icon="sap-icon://delete"
+												press="onPressDeleteProviderSharedIPOPSP">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S6" />
+											</layoutData>
+										</Button>
+									</f:FormElement>
+									<f:FormElement>
+										<Table id="idProviderSharedIPOPSPTable" inset="false" items="{}">
+											<columns>
+												<Column hAlign="Left">
+													<Text text="Provider" />
+												</Column>
+												<Column hAlign="Center">
+													<Text text="Amount" />
+												</Column>
+												<Column hAlign="Center">
+													<Text text="Max No. of Cases" />
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<Text text="" />
+														<Text text="" />
+														<Text text="" />
+													</cells>
+												</ColumnListItem>
+											</items>
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+											</layoutData>
+										</Table>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</Panel>
+				<Panel expandable="true" expanded="true" id="idInpatientPanel" width="auto" class="custom-panel-bottom">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Inpatient"/>
+						</Toolbar>
+					</headerToolbar>
+					<f:Form id="idInpatientForm" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="All Hospitals">
+										<Switch id="idAllHospitalsIPSwitch" state="false" customTextOn="Yes"
+											customTextOff="No" change="onChangeAllHospitalsIP"/>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer title="Hospitals">
+								<f:formElements>
+									<f:FormElement label="Amount">
+										<Input value="" id="idAmountIPInpt">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Input>
+										<Select id="idAmountIPSelect1" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Select id="idAmountIPSelect2" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="Maximum Number of Cases">
+										<Input value="" id="idMaxNumCasesIPInpt" type="Number"/>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+							<f:FormContainer title="Specific Provider">
+								<f:formElements>
+									<f:FormElement label="Provider">
+										<Select id="idProviderIPSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="Amount">
+										<Input value="" id="idAmountIPSPInpt">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Input>
+										<Select id="idAmountIPSPSelect1" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Select id="idAmountIPSPSelect2" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="Maximum Number of Cases">
+										<Input value="" id="idMaxNumCasesIPSPInpt" type="Number"/>
+									</f:FormElement>
+									<f:FormElement>
+										<Button id="idAddProviderIPBtn" icon="sap-icon://add"
+												press="onPressAddProviderIP">
+											<layoutData>
+												<l:GridData indent="XL7 L7 M7 S0" span="XL1 L1 M1 S6" />
+											</layoutData>
+										</Button>
+										<Button id="idDeleteProviderIPBtn" icon="sap-icon://delete"
+												press="onPressDeleteProviderIP">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S6" />
+											</layoutData>
+										</Button>
+									</f:FormElement>
+									<f:FormElement>
+										<Table id="idProviderIPTable" inset="false" items="{}">
+											<columns>
+												<Column hAlign="Left">
+													<Text text="Provider" />
+												</Column>
+												<Column hAlign="Center">
+													<Text text="Amount" />
+												</Column>
+												<Column hAlign="Center">
+													<Text text="Max No. of Cases" />
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<Text text="" />
+														<Text text="" />
+														<Text text="" />
+													</cells>
+												</ColumnListItem>
+											</items>
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+											</layoutData>
+										</Table>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</Panel>
+				<Panel expandable="true" expanded="true" id="idOutpatientPanel" width="auto" class="custom-panel-bottom">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Outpatient"/>
+						</Toolbar>
+					</headerToolbar>
+					<f:Form id="idOutpatientForm" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement>
+										<RadioButton id="idAllCasesRadio" groupName="OPMSGroupA"
+													text="All Cases" select="onPressAllCases">
+											<layoutData>
+												<l:GridData indent="XL2 L2 M2 S0" span="XL4 L4 M4 S6" />
+											</layoutData>
+										</RadioButton>
+										<RadioButton id="idSepConsultsAndLabsRadio" groupName="OPMSGroupA"
+													text="Separate Consults and Labs" select="onPressSepConsultsAndLabs">
+											<layoutData>
+												<l:GridData span="XL4 L4 M4 S6" />
+											</layoutData>
+										</RadioButton>
+										<RadioButton id="idLabOnlyRadio" groupName="OPMSGroupA"
+													text="Laboratory Only" select="onPressLabOnly">
+											<layoutData>
+												<l:GridData indent="XL2 L2 M2 S0" span="XL4 L4 M4 S6" />
+											</layoutData>
+										</RadioButton>
+										<RadioButton id="idConsultsOnlyRadio" groupName="OPMSGroupA"
+													text="Consults Only" select="onPressConsultsOnly">
+											<layoutData>
+												<l:GridData span="XL4 L4 M4 S6" />
+											</layoutData>
+										</RadioButton>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+					<Panel expandable="true" expanded="true" id="idAllCasesPanel" width="auto" class="custom-panel-bottom">
+						<headerToolbar>
+							<Toolbar height="3rem">
+								<Title text="All Cases"/>
+							</Toolbar>
+						</headerToolbar>
+						<f:Form id="idAllCasesForm" editable="true">
+							<f:layout>
+								<f:ResponsiveGridLayout
+									labelSpanXL="3"
+									labelSpanL="3"
+									labelSpanM="3"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanXL="3"
+									emptySpanL="3"
+									emptySpanM="3"
+									emptySpanS="0"
+									columnsXL="1"
+									columnsL="1"
+									columnsM="1"
+									singleContainerFullSize="false" />
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer>
+									<f:formElements>
+										<f:FormElement>
+											<RadioButton id="idAllProvidersACOPRadio" groupName="AllCasesOPMSGroupA"
+														text="All Providers" select="onPressAllProvidersACOP">
+												<layoutData>
+													<l:GridData indent="XL2 L2 M2 S0" span="XL4 L4 M4 S6" />
+												</layoutData>
+											</RadioButton>
+											<RadioButton id="idSepClinicsAndHospitalsACOPRadio" groupName="AllCasesOPMSGroupA"
+														text="Separate Clinics and Hospitals" select="onPressSepClinicsAndHospitalsACOP">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S6" />
+												</layoutData>
+											</RadioButton>
+											<RadioButton id="idClinicOnlyACOPRadio" groupName="AllCasesOPMSGroupA"
+														text="Clinic Only" select="onPressClinicOnlyACOP">
+												<layoutData>
+													<l:GridData indent="XL2 L2 M2 S0" span="XL4 L4 M4 S6" />
+												</layoutData>
+											</RadioButton>
+											<RadioButton id="idHospitalsOnlyACOPRadio" groupName="AllCasesOPMSGroupA"
+														text="Hospitals Only" select="onPressHospitalsOnlyACOP">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S6" />
+												</layoutData>
+											</RadioButton>
+											<RadioButton id="idSpecProvidersACOPRadio" groupName="AllCasesOPMSGroupA"
+														text="Specific Providers Only" select="onPressSpecProvidersACOP">
+												<layoutData>
+													<l:GridData indent="XL2 L2 M2 S0" span="XL4 L4 M4 S6" />
+												</layoutData>
+											</RadioButton>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+								<f:FormContainer title="Clinics and Hospitals">
+									<f:formElements>
+										<f:FormElement label="Amount">
+											<Input value="" id="idAmountCAndHACOPInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+											<Select id="idAmountCAndHACOPSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="idAmountCAndHACOPSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Maximum Number of Cases">
+											<Input value="" id="idMaxNumCasesCAndHACOPInpt"/>
+										</f:FormElement>
+										<f:FormElement>
+											<Title level="H5" text="Clinics" class="custom-title">
+												<layoutData>
+													<l:GridData indent="XL1 L1 M1 S0" />
+												</layoutData>
+											</Title>
+										</f:FormElement>
+										<f:FormElement label="Amount">
+											<Input value="" id="idAmountClinicsACOPInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+											<Select id="idAmountClinicsACOPSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="idAmountClinicsACOPSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Maximum Number of Cases">
+											<Input value="" id="idMaxNumCasesClinicsACOPInpt"/>
+										</f:FormElement>
+										<f:FormElement>
+											<Title level="H5" text="Hospitals" class="custom-title">
+												<layoutData>
+													<l:GridData indent="XL1 L1 M1 S0" />
+												</layoutData>
+											</Title>
+										</f:FormElement>
+										<f:FormElement label="Amount">
+											<Input value="" id="idAmountHospitalsACOPInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+											<Select id="idAmountHospitalsACOPSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="idAmountHospitalsACOPSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Maximum Number of Cases">
+											<Input value="" id="idMaxNumCasesHospitalsACOPInpt"/>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+								<f:FormContainer title="Specific Provider">
+									<f:formElements>
+										<f:FormElement label="Provider">
+											<Select id="idProviderACOPSelect" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Amount">
+											<Input value="" id="idAmountACOPInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+											<Select id="idAmountACOPSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="idAmountACOPSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Maximum Number of Cases">
+											<Input value="" id="idMaxNumCasesACOPInpt"/>
+										</f:FormElement>
+										<f:FormElement>
+											<Button id="idAddProviderACOPBtn" icon="sap-icon://add"
+													press="onPressAddProviderACOP">
+												<layoutData>
+													<l:GridData indent="XL7 L7 M7 S0" span="XL1 L1 M1 S6" />
+												</layoutData>
+											</Button>
+											<Button id="idDeleteProviderACOPBtn" icon="sap-icon://delete"
+													press="onPressDeleteProviderACOP">
+												<layoutData>
+													<l:GridData span="XL1 L1 M1 S6" />
+												</layoutData>
+											</Button>
+										</f:FormElement>
+										<f:FormElement>
+											<Table id="idProviderACOPTable" inset="false" items="{}">
+												<columns>
+													<Column hAlign="Left">
+														<Text text="Provider" />
+													</Column>
+													<Column hAlign="Center">
+														<Text text="Amount" />
+													</Column>
+													<Column hAlign="Center">
+														<Text text="Max No. of Cases" />
+													</Column>
+												</columns>
+												<items>
+													<ColumnListItem>
+														<cells>
+															<Text text="" />
+															<Text text="" />
+															<Text text="" />
+														</cells>
+													</ColumnListItem>
+												</items>
+												<layoutData>
+													<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+												</layoutData>
+											</Table>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+					</Panel>
+					<Panel expandable="true" expanded="true" id="idConsultationsPanel"
+							width="auto" class="custom-panel-bottom">
+						<headerToolbar>
+							<Toolbar height="3rem">
+								<Title text="Consultations"/>
+							</Toolbar>
+						</headerToolbar>
+						<f:Form id="idConsultationsForm" editable="true">
+							<f:layout>
+								<f:ResponsiveGridLayout
+									labelSpanXL="3"
+									labelSpanL="3"
+									labelSpanM="3"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanXL="3"
+									emptySpanL="3"
+									emptySpanM="3"
+									emptySpanS="0"
+									columnsXL="1"
+									columnsL="1"
+									columnsM="1"
+									singleContainerFullSize="false" />
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer>
+									<f:formElements>
+										<f:FormElement>
+											<RadioButton id="idAllProvidersConsultOPRadio" groupName="ConsultOPMSGroupA"
+														text="All Providers" select="onPressAllProvidersConsultOP">
+												<layoutData>
+													<l:GridData indent="XL2 L2 M2 S0" span="XL4 L4 M4 S6" />
+												</layoutData>
+											</RadioButton>
+											<RadioButton id="idSepClinicsAndHospitalsConsultOPRadio" groupName="ConsultOPMSGroupA"
+														text="Separate Clinics and Hospitals" select="onPressSepClinicsAndHospitalsConsultOP">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S6" />
+												</layoutData>
+											</RadioButton>
+											<RadioButton id="idClinicOnlyConsultOPRadio" groupName="ConsultOPMSGroupA"
+														text="Clinic Only" select="onPressClinicOnlyConsultOP">
+												<layoutData>
+													<l:GridData indent="XL2 L2 M2 S0" span="XL4 L4 M4 S6" />
+												</layoutData>
+											</RadioButton>
+											<RadioButton id="idHospitalsOnlyConsultOPRadio" groupName="ConsultOPMSGroupA"
+														text="Hospitals Only" select="onPressHospitalsOnlyConsultOP">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S6" />
+												</layoutData>
+											</RadioButton>
+											<RadioButton id="idSpecProvidersConsultOPRadio" groupName="ConsultOPMSGroupA"
+														text="Specific Providers Only" select="onPressSpecProvidersConsultOP">
+												<layoutData>
+													<l:GridData indent="XL2 L2 M2 S0" span="XL4 L4 M4 S6" />
+												</layoutData>
+											</RadioButton>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+								<f:FormContainer title="Clinics and Hospitals">
+									<f:formElements>
+										<f:FormElement label="Amount">
+											<Input value="" id="idAmountCAndHConsultOPInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+											<Select id="idAmountCAndHConsultOPSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="idAmountCAndHConsultOPSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Maximum Number of Cases">
+											<Input value="" id="idMaxNumCasesCAndHConsultOPInpt"/>
+										</f:FormElement>
+										<f:FormElement>
+											<Title level="H5" text="Clinics" class="custom-title">
+												<layoutData>
+													<l:GridData indent="XL1 L1 M1 S0" />
+												</layoutData>
+											</Title>
+										</f:FormElement>
+										<f:FormElement label="Amount">
+											<Input value="" id="idAmountClinicsConsultOPInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+											<Select id="idAmountClinicsConsultOPSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="idAmountClinicsConsultOPSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Maximum Number of Cases">
+											<Input value="" id="idMaxNumCasesClinicsConsultOPInpt"/>
+										</f:FormElement>
+										<f:FormElement>
+											<Title level="H5" text="Hospitals" class="custom-title">
+												<layoutData>
+													<l:GridData indent="XL1 L1 M1 S0" />
+												</layoutData>
+											</Title>
+										</f:FormElement>
+										<f:FormElement label="Amount">
+											<Input value="" id="idAmountHospitalsConsultOPInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+											<Select id="idAmountHospitalsConsultOPSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="idAmountHospitalsConsultOPSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Maximum Number of Cases">
+											<Input value="" id="idMaxNumCasesHospitalsConsultOPInpt"/>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+								<f:FormContainer title="Specific Provider">
+									<f:formElements>
+										<f:FormElement label="Provider">
+											<Select id="idProviderConsultOPSelect" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Amount">
+											<Input value="" id="idAmountConsultOPInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+											<Select id="idAmountConsultOPSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="idAmountConsultOPSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Maximum Number of Cases">
+											<Input value="" id="idMaxNumCasesConsultOPInpt"/>
+										</f:FormElement>
+										<f:FormElement>
+											<Button id="idAddProviderConsultOPBtn" icon="sap-icon://add"
+													press="onPressAddProviderConsultOP">
+												<layoutData>
+													<l:GridData indent="XL7 L7 M7 S0" span="XL1 L1 M1 S6" />
+												</layoutData>
+											</Button>
+											<Button id="idDeleteProviderConsultOPBtn" icon="sap-icon://delete"
+													press="onPressDeleteProviderConsultOP">
+												<layoutData>
+													<l:GridData span="XL1 L1 M1 S6" />
+												</layoutData>
+											</Button>
+										</f:FormElement>
+										<f:FormElement>
+											<Table id="idProviderConsultOPTable" inset="false" items="{}">
+												<columns>
+													<Column hAlign="Left">
+														<Text text="Provider" />
+													</Column>
+													<Column hAlign="Center">
+														<Text text="Amount" />
+													</Column>
+													<Column hAlign="Center">
+														<Text text="Max No. of Cases" />
+													</Column>
+												</columns>
+												<items>
+													<ColumnListItem>
+														<cells>
+															<Text text="" />
+															<Text text="" />
+															<Text text="" />
+														</cells>
+													</ColumnListItem>
+												</items>
+												<layoutData>
+													<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+												</layoutData>
+											</Table>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+					</Panel>
+					<Panel expandable="true" expanded="true" id="idLaboratoriesPanel"
+							width="auto" class="custom-panel-bottom">
+						<headerToolbar>
+							<Toolbar height="3rem">
+								<Title text="Laboratories"/>
+							</Toolbar>
+						</headerToolbar>
+						<f:Form id="idLaboratoriesForm" editable="true">
+							<f:layout>
+								<f:ResponsiveGridLayout
+									labelSpanXL="3"
+									labelSpanL="3"
+									labelSpanM="3"
+									labelSpanS="12"
+									adjustLabelSpan="false"
+									emptySpanXL="3"
+									emptySpanL="3"
+									emptySpanM="3"
+									emptySpanS="0"
+									columnsXL="1"
+									columnsL="1"
+									columnsM="1"
+									singleContainerFullSize="false" />
+							</f:layout>
+							<f:formContainers>
+								<f:FormContainer>
+									<f:formElements>
+										<f:FormElement>
+											<RadioButton id="idAllProvidersLabOPRadio" groupName="LabOPMSGroupA"
+														text="All Providers" select="onPressAllProvidersLabOP">
+												<layoutData>
+													<l:GridData indent="XL2 L2 M2 S0" span="XL4 L4 M4 S6" />
+												</layoutData>
+											</RadioButton>
+											<RadioButton id="idSepClinicsAndHospitalsLabOPRadio" groupName="LabOPMSGroupA"
+														text="Separate Clinics and Hospitals" select="onPressSepClinicsAndHospitalsLabOP">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S6" />
+												</layoutData>
+											</RadioButton>
+											<RadioButton id="idClinicOnlyLabOPRadio" groupName="LabOPMSGroupA"
+														text="Clinic Only" select="onPressClinicOnlyLabOP">
+												<layoutData>
+													<l:GridData indent="XL2 L2 M2 S0" span="XL4 L4 M4 S6" />
+												</layoutData>
+											</RadioButton>
+											<RadioButton id="idHospitalsOnlyLabOPRadio" groupName="LabOPMSGroupA"
+														text="Hospitals Only" select="onPressHospitalsOnlyLabOP">
+												<layoutData>
+													<l:GridData span="XL4 L4 M4 S6" />
+												</layoutData>
+											</RadioButton>
+											<RadioButton id="idSpecProvidersLabOPRadio" groupName="LabOPMSGroupA"
+														text="Specific Providers Only" select="onPressSpecProvidersLabOP">
+												<layoutData>
+													<l:GridData indent="XL2 L2 M2 S0" span="XL4 L4 M4 S6" />
+												</layoutData>
+											</RadioButton>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+								<f:FormContainer title="Clinics and Hospitals">
+									<f:formElements>
+										<f:FormElement label="Amount">
+											<Input value="" id="idAmountCAndHLabOPInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+											<Select id="idAmountCAndHLabOPSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="idAmountCAndHLabOPSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Maximum Number of Cases">
+											<Input value="" id="idMaxNumCasesCAndHLabOPInpt"/>
+										</f:FormElement>
+										<f:FormElement>
+											<Title level="H5" text="Clinics" class="custom-title">
+												<layoutData>
+													<l:GridData indent="XL1 L1 M1 S0" />
+												</layoutData>
+											</Title>
+										</f:FormElement>
+										<f:FormElement label="Amount">
+											<Input value="" id="idAmountClinicsLabOPInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+											<Select id="idAmountClinicsLabOPSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="idAmountClinicsLabOPSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Maximum Number of Cases">
+											<Input value="" id="idMaxNumCasesClinicsLabOPInpt"/>
+										</f:FormElement>
+										<f:FormElement>
+											<Title level="H5" text="Hospitals" class="custom-title">
+												<layoutData>
+													<l:GridData indent="XL1 L1 M1 S0" />
+												</layoutData>
+											</Title>
+										</f:FormElement>
+										<f:FormElement label="Amount">
+											<Input value="" id="idAmountHospitalsLabOPInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+											<Select id="idAmountHospitalsLabOPSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="idAmountHospitalsLabOPSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Maximum Number of Cases">
+											<Input value="" id="idMaxNumCasesHospitalslabOPInpt"/>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+								<f:FormContainer title="Specific Provider">
+									<f:formElements>
+										<f:FormElement label="Provider">
+											<Select id="idProviderLabOPSelect" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Amount">
+											<Input value="" id="idAmountLabOPInpt">
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Input>
+											<Select id="idAmountLabOPSelect1" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+											<Select id="idAmountLabOPSelect2" selectedKey="">
+												<items>
+													<core:Item text="" key=""/>
+												</items>
+												<layoutData>
+													<l:GridData span="XL2 L2 M2 S4" />
+												</layoutData>
+											</Select>
+										</f:FormElement>
+										<f:FormElement label="Maximum Number of Cases">
+											<Input value="" id="idMaxNumCasesLabOPInpt"/>
+										</f:FormElement>
+										<f:FormElement>
+											<Button id="idAddProviderLabOPBtn" icon="sap-icon://add"
+													press="onPressAddProviderLabOP">
+												<layoutData>
+													<l:GridData indent="XL7 L7 M7 S0" span="XL1 L1 M1 S6" />
+												</layoutData>
+											</Button>
+											<Button id="idDeleteProviderLabOPBtn" icon="sap-icon://delete"
+													press="onPressDeleteProviderLabOP">
+												<layoutData>
+													<l:GridData span="XL1 L1 M1 S6" />
+												</layoutData>
+											</Button>
+										</f:FormElement>
+										<f:FormElement>
+											<Table id="idProviderLabOPTable" inset="false" items="{}">
+												<columns>
+													<Column hAlign="Left">
+														<Text text="Provider" />
+													</Column>
+													<Column hAlign="Center">
+														<Text text="Amount" />
+													</Column>
+													<Column hAlign="Center">
+														<Text text="Max No. of Cases" />
+													</Column>
+												</columns>
+												<items>
+													<ColumnListItem>
+														<cells>
+															<Text text="" />
+															<Text text="" />
+															<Text text="" />
+														</cells>
+													</ColumnListItem>
+												</items>
+												<layoutData>
+													<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+												</layoutData>
+											</Table>
+										</f:FormElement>
+									</f:formElements>
+								</f:FormContainer>
+							</f:formContainers>
+						</f:Form>
+					</Panel>
+				</Panel>
+				<Panel expandable="true" expanded="true" id="idRidersPanel" 
+						width="auto" class="custom-panel-bottom">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Riders"/>
+						</Toolbar>
+					</headerToolbar>
+					<f:Form id="idRidersForm" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="Dental">	
+										<Input value="" id="idDentalInpt">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Input>
+										<Select id="idDentalSelect1" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Select id="idDentalSelect2" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="OP Medicines">	
+										<Input value="" id="idOPMedicineInpt">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Input>
+										<Select id="idOPMedicines1" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Select id="idOPMedicineSelect2" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="Optical">	
+										<Input value="" id="idOpticalInpt">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Input>
+										<Select id="idOpticalSelect1" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Select id="idOpticalSelect2" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+									</f:FormElement>
+									<f:FormElement label="Maternity">	
+										<Input value="" id="idMaaternityInpt">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Input>
+										<Select id="idMaternitySelect1" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+										<Select id="idMaternitySelect2" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4" />
+											</layoutData>
+										</Select>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</Panel>
+				<Panel expandable="true" expanded="true" id="idOtherIllnessPanel" 
+						width="auto" class="custom-panel-bottom">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Other Illness"/>
+						</Toolbar>
+					</headerToolbar>
+					<f:Form id="idDailyCashAllowanceForm" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement>
+										<Select id="idIllnessMSSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL4 L4 M4 S8" />
+											</layoutData>
+										</Select>
+										<Button id="idAddIllnessMSBtn" icon="sap-icon://add"
+												press="onPressAddIllnessMS">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S2" />
+											</layoutData>
+										</Button>
+										<Button id="idDeleteIllnessMSBtn" icon="sap-icon://delete"
+												press="onPressDeleteIllnessMS">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S2" />
+											</layoutData>
+										</Button>
+									</f:FormElement>
+									<f:FormElement>
+										<List id="idIllnessMSList" mode="MultiSelect"
+											  delete="handleDeleteIllnessMS" enableBusyIndicator="true"
+											  headerText="Specific Illnesses" growing="true" items="{}" >
+											<StandardListItem title=""/>
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12" />
+											</layoutData>
+										</List>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>	
+				</Panel>
+			</VBox>
+		</content>
+	</Page>
+</core:View>

@@ -1,0 +1,295 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.planItem.tab.riders.annualCheckup100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel expandable="true" expanded="true" id="idAnnualCheckupPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Annual Checkup"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idAnnualCheckupForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Package">
+								<Select id="idPackageACSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Package Code">
+								<Select id="idPackageCodeACSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Funding Arrangement">
+								<Select id="idFundingArrangementACSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+			<Table id="idAnnualCheckupTable" inset="false" items="{}">
+				<columns>
+					<Column hAlign="Left">
+						<Text text="Procedure" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Coverage" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Gender" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Minimum Age" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="" />
+							<Text text="" />
+							<Text text="" />
+							<Text text="" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idAddtlProcedurePanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Additional Procedure"/>
+					<Switch id="idAddtlProcedureSwitch" state="false" customTextOn="Yes"
+							customTextOff="No" change="onChangeAddtlProcedure"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idAddtnlProcedureForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Funding Arrangement">
+								<Select id="idFundingArrangementAPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Package Code">
+								<Select id="idPackageCodeAPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Procedure">
+								<Select id="idProcedureAPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Coverage">
+								<Select id="idCoverageAPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="Gender">
+								<Select id="idGenderAPSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Select>
+								<Label text="Minimum Age:" textAlign="Right"
+								 		class="custom-label-align-small">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Label>
+								<Input value="" id="idMinAgeInpt">
+									<layoutData>
+										<l:GridData span="XL2 L2 M2 S4" />
+									</layoutData>
+								</Input>
+							</f:FormElement>
+							<f:FormElement>
+								<Button id="idAddProcedureBtn" icon="sap-icon://add"
+										press="onPressAddProcedure">
+									<layoutData>
+										<l:GridData indent="XL10 L10 M10 S0" span="XL1 L1 M1 S6" />
+									</layoutData>
+								</Button>
+								<Button id="idDeleteProcedureBtn" icon="sap-icon://delete"
+										press="onPressDeleteProcedure">
+									<layoutData>
+										<l:GridData span="XL1 L1 M1 S6" />
+									</layoutData>
+								</Button>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+			<Table id="idProcedureTable" inset="false" items="{}">
+				<columns>
+					<Column hAlign="Left">
+						<Text text="Procedure" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Coverage" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Gender" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Minimum Age" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="" />
+							<Text text="" />
+							<Text text="" />
+							<Text text="" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>	
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idProviderPanel"
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Provider"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idProviderForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Type">
+								<Select id="idTypeSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement label="All Providers">
+								<Switch id="idAllProvidersSwitch" state="false" customTextOn="Yes"
+										customTextOff="No" change="onChangeAllProviders"/>
+							</f:FormElement>
+							<f:FormElement label="Provider Name">
+								<Select id="idProviderNameSelect" selectedKey="">
+									<items>
+										<core:Item text="" key=""/>
+									</items>
+								</Select>
+							</f:FormElement>
+							<f:FormElement>
+								<Button id="idAddProviderBtn" icon="sap-icon://add"
+										press="onPressAddProvider">
+									<layoutData>
+										<l:GridData indent="XL7 L7 M7 S0" span="XL1 L1 M1 S6" />
+									</layoutData>
+								</Button>
+								<Button id="idDeleteProviderBtn" icon="sap-icon://delete"
+										press="onPressDeleteProvider">
+									<layoutData>
+										<l:GridData span="XL1 L1 M1 S6" />
+									</layoutData>
+								</Button>
+							</f:FormElement>
+							<f:FormElement>
+								<Table id="idProviderTable" inset="false" items="{}">
+									<columns>
+										<Column hAlign="Left" class="custom-th-padding">
+											<Text text="Type" />
+										</Column>
+										<Column hAlign="Center" class="custom-th-padding">
+											<Text text="Provider Name" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="" />
+												<Text text="" />
+											</cells>
+										</ColumnListItem>
+									</items>
+									<layoutData>
+										<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+									</layoutData>
+								</Table>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+	</VBox>
+</core:View>

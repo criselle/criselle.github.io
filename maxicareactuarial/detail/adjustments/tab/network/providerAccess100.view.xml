@@ -1,0 +1,56 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" 
+		controllerName="maxicareactuarial.detail.adjustments.tab.network.providerAccess100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel id="idProviderAccessPanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Provider Access"/>
+				</Toolbar>
+			</headerToolbar>
+			<Table id="idProviderAccessTable" inset="false" items="">
+				<columns>
+					<Column hAlign="Center">
+						<Text text="Access" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Discount" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Nationwide:" />
+							<Input value="" id="idNationwideInpt" />
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Luzon Only:" />
+							<Input value="" id="idLuzonInpt" />
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="VisMin:" />
+							<Input value="" id="idVisMinInpt" />
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Visayas Only:" />
+							<Input value="" id="idVisayasInpt" />
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Mindanao Only:" />
+							<Input value="" id="idMindanaoInpt" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+	</VBox>
+</core:View>

@@ -1,0 +1,342 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.planItem.tab.riders.groupLife100"
+		xmlns:html="http://www.w3.org/1999/xhtml" xmlns:cl="sap.ui.commons.layout">
+	<VBox class="sapUiSmallMargin">
+		<Panel expandable="true" expanded="true" id="idGroupLifePanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Group Life"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idGroupLifeForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Coverage">
+								<Input value="" id="idCoverageGLInpt"/>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+			<Toolbar>
+				<Title level="H3" text="Age Eligibility" />
+			</Toolbar>
+			<Table id="idAgeEligibilityGLTable" inset="false" items="">
+				<columns>
+					<Column width="25%"/>
+					<Column hAlign="Center">
+						<Text text="Minimum" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Maximum" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Principals" />
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idPrincipalsMinGLInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idPrincipalsMinGLSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idPrincipalsMaxGLInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idPrincipalsMaxGLSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Minor Dependents" />
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idMinorDepMinGLInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idMinorDepMinGLSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idMinorDepMaxGLInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idMinorDepMaxGLSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Adult Dependents" />
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idAdultDepMinGLInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idAdultDepMinGLSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idAdultDepMaxGLInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idAdultDepMaxGLSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idlifeADDAndDPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Life ADD and D"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idLifeADDAndDForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement label="Coverage">
+								<Input value="" id="idCoverageLADInpt"/>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+			<Toolbar>
+				<Title level="H3" text="Age Eligibility" />
+			</Toolbar>
+			<Table id="idAgeEligibilityLADTable" inset="false" items="">
+				<columns>
+					<Column width="25%"/>
+					<Column hAlign="Center">
+						<Text text="Minimum" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Maximum" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Principals" />
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idPrincipalsMinLADInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idPrincipalsMinLADSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idPrincipalsMaxLADInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idPrincipalsMaxLADSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Minor Dependents" />
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idMinorDepMinLADInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idMinorDepMinLADSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idMinorDepMaxLADInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idMinorDepMaxLADSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Adult Dependents" />
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idAdultDepMinLADInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idAdultDepMinLADSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+							<cl:MatrixLayout width="100%" widths="50%,50%">
+								<cl:MatrixLayoutRow>
+									<cl:MatrixLayoutCell>
+										<Input value="" id="idAdultDepMaxLADInpt" />
+									</cl:MatrixLayoutCell>
+									<cl:MatrixLayoutCell>
+										<Select id="idAdultDepMaxLADSelect" selectedKey=""
+												width="100%">
+											<items>
+												<core:Item text="Day/s" key="Day/s"/>
+												<core:Item text="Months/s" key="Month/s"/>
+												<core:Item text="Year/s" key="Year/s"/>
+											</items>
+										</Select>
+									</cl:MatrixLayoutCell>
+								</cl:MatrixLayoutRow>
+							</cl:MatrixLayout>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+	</VBox>
+</core:View>

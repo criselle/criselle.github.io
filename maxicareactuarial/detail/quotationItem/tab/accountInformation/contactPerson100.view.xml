@@ -1,0 +1,49 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.quotationItem.tab.accountInformation.contactPerson100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel id="idContactPersonPanel" width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Contact Person"/>
+				</Toolbar>
+			</headerToolbar>
+			<Table id="idContactPersonTable" inset="false" items="{}">
+				<columns>
+					<Column hAlign="Left">
+						<Text text="Name" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Designation" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Email Address" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Office Number" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Mobile Number" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<ObjectIdentifier
+								title=""
+								text=""/>
+							<Text
+								text="" />
+							<Text
+								text="" />
+							<Text
+								text="" />
+							<Text
+								text="" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+	</VBox>
+</core:View>

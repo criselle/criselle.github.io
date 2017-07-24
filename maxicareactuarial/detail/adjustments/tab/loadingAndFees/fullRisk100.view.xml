@@ -1,0 +1,223 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" 
+		controllerName="maxicareactuarial.detail.adjustments.tab.loadingAndFees.fullRisk100" 
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<VBox class="sapUiSmallMargin">
+		<Panel id="idFullRiskPanel" width="auto">
+			<f:Form id="idDependentUnitForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement>
+								<RadioButton groupName="FullRiskGroupA" text="Per Account">
+									<layoutData>
+										<l:GridData indent="XL2 L2 M2 S0" span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="FullRiskGroupA" text="Per Affiliate">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="FullRiskGroupA" text="Same Rate per Year">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S4" />
+									</layoutData>
+								</RadioButton>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idContributionMarginPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Contribution Margin"/>
+				</Toolbar>
+			</headerToolbar>
+			<Table id="idContributionMarginTable" inset="false" items="">
+				<columns>
+					<Column/>
+					<Column hAlign="Center">
+						<Text text="Principals" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Dependents" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Aggregate" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Membership Fees" />
+							<Input value="" id="idMFPrincipalsCMInpt"/>
+							<Input value="" id="idMFDepCMInpt"/>
+							<Input value="" id="idMFAggregateCMInpt"/>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Riders" />
+							<Input value="" id="idRidersPrincipalsCMInpt"/>
+							<Input value="" id="idRidersDepCMInpt"/>
+							<Input value="" id="idRidersAggregateCMInpt"/>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Clinic Management" />
+							<Input value="" id="idCMPrincipalsCMInpt"/>
+							<Input value="" id="idCMDepCMInpt"/>
+							<Input value="" id="idCMAggregateCMInpt"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+		<Panel expandable="true" expanded="true" id="idCommissionPanel" 
+				width="auto" class="custom-panel-bottom">
+			<headerToolbar>
+				<Toolbar height="3rem">
+					<Title text="Commission"/>
+				</Toolbar>
+			</headerToolbar>
+			<f:Form id="idCommissionForm" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+						labelSpanXL="3"
+						labelSpanL="3"
+						labelSpanM="3"
+						labelSpanS="12"
+						adjustLabelSpan="false"
+						emptySpanXL="3"
+						emptySpanL="3"
+						emptySpanM="3"
+						emptySpanS="0"
+						columnsXL="1"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false" />
+				</f:layout>
+				<f:formContainers>
+					<f:FormContainer>
+						<f:formElements>
+							<f:FormElement>
+								<RadioButton groupName="CommisionGroupA" text="Per Member">
+									<layoutData>
+										<l:GridData indent="XL3 L3 M3 S0" span="XL3 L3 M3 S6" />
+									</layoutData>
+								</RadioButton>
+								<RadioButton groupName="CommissionGroupA" text="Per Account">
+									<layoutData>
+										<l:GridData span="XL3 L3 M3 S6" />
+									</layoutData>
+								</RadioButton>
+							</f:FormElement>
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+			<Table id="idCommissionTable" inset="false" items="">
+				<columns>
+					<Column/>
+					<Column hAlign="Center">
+						<Text text="Principals" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Dependents" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Aggregate" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Membership Fees" />
+							<Input value="" id="idMFPrincipalsCommInpt"/>
+							<Input value="" id="idMFDepCommInpt"/>
+							<Input value="" id="idMFAggregateCommInpt"/>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Riders" />
+							<Input value="" id="idRidersPrincipalsCommInpt"/>
+							<Input value="" id="idRidersDepCommInpt"/>
+							<Input value="" id="idRidersAggregateCommInpt"/>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Clinic Management" />
+							<Input value="" id="idCMPrincipalsCommInpt"/>
+							<Input value="" id="idCMDepCommInpt"/>
+							<Input value="" id="idCMAggregateCommInpt"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			<Title level="H5" text="Agency Level Set-up" class="custom-form-title"/>
+			<Table id="idAgencyLevelSetupTable" inset="false" items="">
+				<columns>
+					<Column/>
+					<Column hAlign="Center">
+						<Text text="Principals" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Dependents" />
+					</Column>
+					<Column hAlign="Center">
+						<Text text="Aggregate" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Health Benefit Agent" />
+							<Input value="" id="idHealthBenPrincipalsALSInpt"/>
+							<Input value="" id="idHealthBenDepALSInpt"/>
+							<Input value="" id="idHealthBenAggregateALSInpt"/>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Unit Head" />
+							<Input value="" id="idUnitHeadPrincipalsALSInpt"/>
+							<Input value="" id="idUnitHeadDepALSInpt"/>
+							<Input value="" id="idUnitHeadAggregateALSInpt"/>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem vAlign="Middle">
+						<cells>
+							<Text text="Unit Managers" />
+							<Input value="" id="idUnitMngrsPrincipalsALSInpt"/>
+							<Input value="" id="idUnitMngrsDepALSInpt"/>
+							<Input value="" id="idUnitMngrsAggregateALSInpt"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+	</VBox>
+</core:View>

@@ -1,0 +1,339 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout"
+		xmlns:f="sap.ui.layout.form" controllerName="maxicareactuarial.detail.planItem.providerAccess100"
+		xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Provider Access">
+		<content>
+			<ObjectHeader binding="" title="Company Name"
+						  number="Quotation No 0001" backgroundDesign="Solid">
+				<statuses>
+					<ObjectStatus text="Plan ID"/>
+				</statuses>
+				<attributes>
+					<ObjectAttribute text="Company Address" />
+					<ObjectAttribute text="Company TIN" />
+				</attributes>
+			</ObjectHeader>
+			<VBox class="sapUiSmallMargin">
+				<Panel expandable="true" expanded="true" id="idAccessPanel" 
+						width="auto" class="custom-panel-bottom">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Access"/>
+						</Toolbar>
+					</headerToolbar>
+					<f:Form id="idAccessForm" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="Provider Access">
+										<MultiComboBox selectionChange="handleSelectionChange"
+													   selectionFinish="handleSelectionFinish"
+													   items="" width="100%">
+										    <core:Item key="Nationwide" text="Nationwide" />
+											<core:Item key="Luzon" text="Luzon" />
+											<core:Item key="Visayas" text="Visayas" />
+											<core:Item key="Mindano" text="Mindanao" />
+											<core:Item key="By Region" text="By Region" />
+											<core:Item key="By Province" text="By Province" />
+											<core:Item key="By Provider" text="By Provider" />
+										</MultiComboBox>
+									</f:FormElement>
+									<f:FormElement label="Region">
+										<MultiComboBox selectionChange="handleSelectionChange"
+													   selectionFinish="handleSelectionFinish"
+													   items="">
+										    <core:Item key="NIR" text="NIR" />
+											<core:Item key="NCR" text="NCR" />
+											<core:Item key="CAR" text="CAR" />
+											<core:Item key="Region 1" text="Region 1" />
+											<core:Item key="Region 2" text="Region 2" />
+											<core:Item key="Region 3" text="Region 3" />
+											<core:Item key="Region 4A" text="Region 4A" />
+											<core:Item key="Region 4B" text="Region 4B" />
+											<core:Item key="Region 5" text="Region 5" />
+											<core:Item key="Region 6" text="Region 6" />
+											<core:Item key="Region 7" text="Region 7" />
+											<core:Item key="Region 8" text="Region 8" />
+											<core:Item key="Region 9" text="Region 9" />
+											<core:Item key="Region 10" text="Region 10" />
+											<core:Item key="Region 11" text="Region 11" />
+											<core:Item key="Region 12" text="Region 12" />
+											<core:Item key="Region 13" text="Region 13" />
+											<core:Item key="ARMM" text="ARMM" />
+										</MultiComboBox>
+									</f:FormElement>
+									<f:FormElement label="Province">
+										<MultiComboBox selectionChange="handleSelectionChange"
+													   selectionFinish="handleSelectionFinish"
+													   items="">
+										    <core:Item key="NIR" text="NIR" />
+											<core:Item key="NCR" text="NCR" />
+											<core:Item key="CAR" text="CAR" />
+											<core:Item key="Region 1" text="Region 1" />
+											<core:Item key="Region 2" text="Region 2" />
+											<core:Item key="Region 3" text="Region 3" />
+											<core:Item key="Region 4A" text="Region 4A" />
+											<core:Item key="Region 4B" text="Region 4B" />
+											<core:Item key="Region 5" text="Region 5" />
+											<core:Item key="Region 6" text="Region 6" />
+											<core:Item key="Region 7" text="Region 7" />
+											<core:Item key="Region 8" text="Region 8" />
+											<core:Item key="Region 9" text="Region 9" />
+											<core:Item key="Region 10" text="Region 10" />
+											<core:Item key="Region 11" text="Region 11" />
+											<core:Item key="Region 12" text="Region 12" />
+											<core:Item key="Region 13" text="Region 13" />
+											<core:Item key="ARMM" text="ARMM" />
+										</MultiComboBox>
+									</f:FormElement>
+									<f:FormElement label="Provider">
+										<MultiComboBox selectionChange="handleSelectionChange"
+													   selectionFinish="handleSelectionFinish"
+													   items="">
+										    <core:Item key="NIR" text="NIR" />
+											<core:Item key="NCR" text="NCR" />
+											<core:Item key="CAR" text="CAR" />
+											<core:Item key="Region 1" text="Region 1" />
+											<core:Item key="Region 2" text="Region 2" />
+											<core:Item key="Region 3" text="Region 3" />
+											<core:Item key="Region 4A" text="Region 4A" />
+											<core:Item key="Region 4B" text="Region 4B" />
+											<core:Item key="Region 5" text="Region 5" />
+											<core:Item key="Region 6" text="Region 6" />
+											<core:Item key="Region 7" text="Region 7" />
+											<core:Item key="Region 8" text="Region 8" />
+											<core:Item key="Region 9" text="Region 9" />
+											<core:Item key="Region 10" text="Region 10" />
+											<core:Item key="Region 11" text="Region 11" />
+											<core:Item key="Region 12" text="Region 12" />
+											<core:Item key="Region 13" text="Region 13" />
+											<core:Item key="ARMM" text="ARMM" />
+										</MultiComboBox>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</Panel>
+				<Panel expandable="true" expanded="true" id="idExcludedProvidersPanel" 
+						width="auto" class="custom-panel-bottom">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Excluded Providers"/>
+						</Toolbar>
+					</headerToolbar>
+					<f:Form id="idExcludedProvidersForm" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="Provider Name">
+										<Select id="idProviderEPSelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</f:FormElement>
+									<f:FormElement>
+										<CheckBox text="Inpatient">
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL2 L2 M2 S4"/>
+											</layoutData>
+										</CheckBox>	
+										<CheckBox text="Outpatient">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4"/>
+											</layoutData>
+										</CheckBox>	
+										<CheckBox text="Emergency">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4"/>
+											</layoutData>
+										</CheckBox>	
+									</f:FormElement>
+									<f:FormElement>
+										<Button id="idAddProviderEPBtn" icon="sap-icon://add"
+												press="onPressAddProviderEP">
+											<layoutData>
+												<l:GridData indent="XL7 L7 M7 S0" span="XL1 L1 M1 S6" />
+											</layoutData>
+										</Button>
+										<Button id="idDeleteProviderEPBtn" icon="sap-icon://delete"
+												press="onPressDeleteProviderEP">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S6" />
+											</layoutData>
+										</Button>
+									</f:FormElement>
+									<f:FormElement>
+										<Table id="idProviderEPTable" inset="false" items="{}">
+											<columns>
+												<Column hAlign="Left">
+													<Text text="Provider" />
+												</Column>
+												<Column hAlign="Center">
+													<Text text="Inpatient" />
+												</Column>
+												<Column hAlign="Center">
+													<Text text="Outpatient" />
+												</Column>
+												<Column hAlign="Center">
+													<Text text="Emergency" />
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<Text text="" />
+														<Text text="" />
+														<Text text="" />
+														<Text text="" />
+													</cells>
+												</ColumnListItem>
+											</items>
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+											</layoutData>
+										</Table>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</Panel>
+				<Panel expandable="true" expanded="true" id="idExclusiveAccessPanel" 
+						width="auto" class="custom-panel-bottom">
+					<headerToolbar>
+						<Toolbar height="3rem">
+							<Title text="Exclusive Access"/>
+						</Toolbar>
+					</headerToolbar>
+					<f:Form id="idExclusiveAccessForm" editable="true">
+						<f:layout>
+							<f:ResponsiveGridLayout
+								labelSpanXL="3"
+								labelSpanL="3"
+								labelSpanM="3"
+								labelSpanS="12"
+								adjustLabelSpan="false"
+								emptySpanXL="3"
+								emptySpanL="3"
+								emptySpanM="3"
+								emptySpanS="0"
+								columnsXL="1"
+								columnsL="1"
+								columnsM="1"
+								singleContainerFullSize="false" />
+						</f:layout>
+						<f:formContainers>
+							<f:FormContainer>
+								<f:formElements>
+									<f:FormElement label="Provider Name">
+										<Select id="idProviderEASelect" selectedKey="">
+											<items>
+												<core:Item text="" key=""/>
+											</items>
+										</Select>
+									</f:FormElement>
+									<f:FormElement>
+										<CheckBox text="Inpatient">
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL2 L2 M2 S4"/>
+											</layoutData>
+										</CheckBox>	
+										<CheckBox text="Outpatient">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4"/>
+											</layoutData>
+										</CheckBox>	
+										<CheckBox text="Emergency">
+											<layoutData>
+												<l:GridData span="XL2 L2 M2 S4"/>
+											</layoutData>
+										</CheckBox>	
+									</f:FormElement>
+									<f:FormElement>
+										<Button id="idAddProviderEABtn" icon="sap-icon://add"
+												press="onPressAddProviderEA">
+											<layoutData>
+												<l:GridData indent="XL7 L7 M7 S0" span="XL1 L1 M1 S6" />
+											</layoutData>
+										</Button>
+										<Button id="idDeleteProviderEABtn" icon="sap-icon://delete"
+												press="onPressDeleteProviderEA">
+											<layoutData>
+												<l:GridData span="XL1 L1 M1 S6" />
+											</layoutData>
+										</Button>
+									</f:FormElement>
+									<f:FormElement>
+										<Table id="idProviderEATable" inset="false" items="{}">
+											<columns>
+												<Column hAlign="Left">
+													<Text text="Provider" />
+												</Column>
+												<Column hAlign="Center">
+													<Text text="Inpatient" />
+												</Column>
+												<Column hAlign="Center">
+													<Text text="Outpatient" />
+												</Column>
+												<Column hAlign="Center">
+													<Text text="Emergency" />
+												</Column>
+											</columns>
+											<items>
+												<ColumnListItem>
+													<cells>
+														<Text text="" />
+														<Text text="" />
+														<Text text="" />
+														<Text text="" />
+													</cells>
+												</ColumnListItem>
+											</items>
+											<layoutData>
+												<l:GridData indent="XL3 L3 M3 S0" span="XL6 L6 M6 S12"/>
+											</layoutData>
+										</Table>
+									</f:FormElement>
+								</f:formElements>
+							</f:FormContainer>
+						</f:formContainers>
+					</f:Form>
+				</Panel>						
+			</VBox>
+		</content>
+	</Page>
+</core:View>
